@@ -376,7 +376,7 @@ function ModelsMarquee() {
         onPointerCancel={resume}
         onTouchStart={pause}
         onTouchEnd={resume}
-        className="flex gap-4 overflow-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex items-start gap-4 overflow-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
 
         {[0, 1].map((copy) =>
@@ -393,7 +393,7 @@ function ModelsMarquee() {
                 decoding="async"
                 width={400}
                 height={400}
-                className="aspect-square h-full w-full object-cover"
+                className="aspect-square w-full object-cover"
               />
               <figcaption className="rounded-b-lg border border-gray-300 bg-gray-100 p-4 text-center text-xl font-bold capitalize tracking-tight text-gray-800">
                 {slide.label}
