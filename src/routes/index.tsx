@@ -305,25 +305,45 @@ const MODEL_SLIDES: { key: string; label: string }[] = [
 function ModelsMarquee() {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const pausedRef = useRef(false);
+  const offsetRef = useRef(0);
+  const targetRef = useRef(0);
 
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let raf = 0;
     let last = performance.now();
     const speed = 40; // px por segundo
 
     const tick = (now: number) => {
-      const dt = (now - last) / 1000;
+      const dt = Math.min((now - last) / 1000, 0.1);
       last = now;
-      if (!pausedRef.current) {
-        const half = track.scrollWidth / 2;
-        let next = track.scrollLeft + speed * dt;
-        if (half > 0 && next >= half) next -= half;
-        track.scrollLeft = next;
+      const half = track.scrollWidth / 2;
+
+      // avanca suavemente ate o alvo definido pelas setas
+      const delta = targetRef.current - offsetRef.current;
+      if (Math.abs(delta) > 0.5) {
+        offsetRef.current += delta * Math.min(1, dt * 8);
+      } else {
+        offsetRef.current = targetRef.current;
+        if (!pausedRef.current && !reduced) {
+          offsetRef.current += speed * dt;
+          targetRef.current = offsetRef.current;
+        }
       }
+
+      if (half > 0 && offsetRef.current >= half) {
+        offsetRef.current -= half;
+        targetRef.current -= half;
+      }
+      if (offsetRef.current < 0 && half > 0) {
+        offsetRef.current += half;
+        targetRef.current += half;
+      }
+
+      track.scrollLeft = offsetRef.current;
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
@@ -335,11 +355,7 @@ function ModelsMarquee() {
     if (!track) return;
     const card = track.querySelector("figure");
     const amount = card ? card.clientWidth + 16 : 280;
-    const half = track.scrollWidth / 2;
-    let next = track.scrollLeft + dir * amount;
-    if (next < 0) next += half;
-    if (half > 0 && next >= half) next -= half;
-    track.scrollLeft = next;
+    targetRef.current += dir * amount;
   };
 
   const pause = () => {
@@ -360,8 +376,9 @@ function ModelsMarquee() {
         onPointerCancel={resume}
         onTouchStart={pause}
         onTouchEnd={resume}
-        className="flex gap-4 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex gap-4 overflow-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
+
         {[0, 1].map((copy) =>
           MODEL_SLIDES.map((slide) => (
             <figure
