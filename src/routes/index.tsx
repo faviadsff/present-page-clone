@@ -508,9 +508,10 @@ function SocialProofToasts() {
       const city = random(SOCIAL_CITIES);
       const time = random(SOCIAL_TIMES);
 
+      // id fixo: uma nova notificacao substitui a anterior (nunca acumulam)
       toast.custom(
         () => <SocialToast plan={plan} name={name} city={city} time={time} />,
-        { duration: 5000 }
+        { id: "social-proof", duration: 5000 }
       );
 
       index += 1;
