@@ -467,7 +467,7 @@ function SocialToast({ plan, name, city, time }: SocialToastProps) {
   const planLabel = plan === "premium" ? "premium" : "básico";
 
   return (
-    <div className="flex w-[280px] items-start gap-3 rounded-xl border border-border bg-card p-3 shadow-xl sm:w-[320px]">
+    <div className="flex w-[300px] items-start gap-3 rounded-xl border border-border bg-card p-3 shadow-xl sm:w-[380px]">
       <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
         <ShoppingBag className="h-4 w-4" />
       </div>
@@ -475,19 +475,21 @@ function SocialToast({ plan, name, city, time }: SocialToastProps) {
         <p className="truncate text-sm font-bold leading-tight text-foreground">
           {name} - {city}
         </p>
-        <p className="mt-0.5 text-xs text-muted-foreground">
-          comprou o pacote{" "}
+        <p className="mt-0.5 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+          <span className="truncate">
+            comprou o pacote{" "}
+            <span
+              className={cn(
+                "font-semibold",
+                plan === "premium" ? "text-green-500" : "text-foreground"
+              )}
+            >
+              {planLabel}
+            </span>{" "}
+            {time}
+          </span>
           <span
-            className={cn(
-              "font-semibold",
-              plan === "premium" ? "text-green-500" : "text-foreground"
-            )}
-          >
-            {planLabel}
-          </span>{" "}
-          {time}
-          <span
-            className="ml-1.5 inline-block h-2 w-2 rounded-full bg-green-500 animate-pulse"
+            className="h-2 w-2 shrink-0 rounded-full bg-green-500 animate-pulse"
             aria-hidden="true"
           />
         </p>
