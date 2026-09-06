@@ -303,36 +303,125 @@ const MODEL_SLIDES: { key: string; label: string }[] = [
 ];
 
 function ModelsMarquee() {
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const pausedRef = useRef(false);
+  const offsetRef = useRef(0);
+  const targetRef = useRef(0);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let raf = 0;
+    let last = performance.now();
+    const speed = 40; // px por segundo
+
+    const tick = (now: number) => {
+      const dt = Math.min((now - last) / 1000, 0.1);
+      last = now;
+      const half = track.scrollWidth / 2;
+
+      // avanca suavemente ate o alvo definido pelas setas
+      const delta = targetRef.current - offsetRef.current;
+      if (Math.abs(delta) > 0.5) {
+        offsetRef.current += delta * Math.min(1, dt * 8);
+      } else {
+        offsetRef.current = targetRef.current;
+        if (!pausedRef.current && !reduced) {
+          offsetRef.current += speed * dt;
+          targetRef.current = offsetRef.current;
+        }
+      }
+
+      if (half > 0 && offsetRef.current >= half) {
+        offsetRef.current -= half;
+        targetRef.current -= half;
+      }
+      if (offsetRef.current < 0 && half > 0) {
+        offsetRef.current += half;
+        targetRef.current += half;
+      }
+
+      track.scrollLeft = offsetRef.current;
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  const step = (dir: -1 | 1) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const card = track.querySelector("figure");
+    const amount = card ? card.clientWidth + 16 : 280;
+    targetRef.current += dir * amount;
+  };
+
+  const pause = () => {
+    pausedRef.current = true;
+  };
+  const resume = () => {
+    pausedRef.current = false;
+  };
+
   return (
-    <div className="group relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
-      <div className="flex w-max animate-[marquee-x_28s_linear_infinite] gap-4 group-hover:[animation-play-state:paused] group-active:[animation-play-state:paused] motion-reduce:animate-none">
-        {[0, 1].map((copy) => (
-          <div key={copy} className="flex shrink-0 gap-4" aria-hidden={copy === 1}>
-            {MODEL_SLIDES.map((slide) => (
-              <figure
-                key={slide.key}
-                className="w-[240px] shrink-0 overflow-hidden rounded-lg shadow-lg sm:w-[280px]"
-              >
-                <img
-                  src={IMG[slide.key]}
-                  alt={`Modelos 3D da categoria ${slide.label}`}
-                  loading="lazy"
-                  decoding="async"
-                  width={400}
-                  height={400}
-                  className="aspect-square h-full w-full object-cover"
-                />
-                <figcaption className="rounded-b-lg border border-border bg-card p-4 text-center text-xl font-bold capitalize tracking-tight text-card-foreground">
-                  {slide.label}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        ))}
+    <div className="relative w-full px-10 sm:px-14">
+      <div
+        ref={trackRef}
+        onMouseEnter={pause}
+        onMouseLeave={resume}
+        onPointerDown={pause}
+        onPointerUp={resume}
+        onPointerCancel={resume}
+        onTouchStart={pause}
+        onTouchEnd={resume}
+        className="flex gap-4 overflow-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+
+        {[0, 1].map((copy) =>
+          MODEL_SLIDES.map((slide) => (
+            <figure
+              key={`${copy}-${slide.key}`}
+              aria-hidden={copy === 1}
+              className="w-[240px] shrink-0 overflow-hidden rounded-lg shadow-lg sm:w-[280px]"
+            >
+              <img
+                src={IMG[slide.key]}
+                alt={`Modelos 3D da categoria ${slide.label}`}
+                loading="lazy"
+                decoding="async"
+                width={400}
+                height={400}
+                className="aspect-square h-full w-full object-cover"
+              />
+              <figcaption className="rounded-b-lg border border-border bg-card p-4 text-center text-xl font-bold capitalize tracking-tight text-card-foreground">
+                {slide.label}
+              </figcaption>
+            </figure>
+          )),
+        )}
       </div>
+      <button
+        type="button"
+        onClick={() => step(-1)}
+        aria-label="Modelo anterior"
+        className="absolute -left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/80 text-foreground transition-colors hover:bg-card sm:left-2"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
+      </button>
+      <button
+        type="button"
+        onClick={() => step(1)}
+        aria-label="Próximo modelo"
+        className="absolute -right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/80 text-foreground transition-colors hover:bg-card sm:right-2"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+      </button>
     </div>
   );
 }
+
 
 function SalesPage() {
   return (
