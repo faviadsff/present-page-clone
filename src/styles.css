@@ -149,3 +149,8 @@ a[href*="lovable.dev"][target="_blank"][class*="badge"],
 [id^="lovable-badge"] {
   display: none !important;
 }
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 0.5rem)); }
+}
