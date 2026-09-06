@@ -193,7 +193,7 @@ function UpsellDialog() {
           ESCOLHER O BÁSICO
         </Button>
       </DialogTrigger>
-      <DialogContent className="flex max-h-[85dvh] w-[calc(100%-1.5rem)] max-w-md flex-col gap-3 overflow-hidden p-4 sm:max-w-lg sm:p-5">
+      <DialogContent className="!inset-0 !m-auto !h-fit !translate-x-0 !translate-y-0 flex max-h-[85dvh] w-[calc(100%-1.5rem)] max-w-md flex-col gap-3 overflow-hidden rounded-xl p-4 sm:max-w-lg sm:p-5">
         <DialogHeader className="shrink-0 pr-6">
           <DialogTitle className="text-center text-lg font-black sm:text-xl">
             Desconto exclusivo para o Premium
