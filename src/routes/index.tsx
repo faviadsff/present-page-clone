@@ -395,7 +395,7 @@ function ModelsMarquee() {
                 height={400}
                 className="aspect-square w-full object-cover"
               />
-              <figcaption className="rounded-b-lg border border-gray-300 bg-gray-100 p-4 text-center text-xl font-bold capitalize tracking-tight text-gray-800">
+              <figcaption className="rounded-b-lg border border-gray-300 bg-gray-100 p-4 text-center text-xl font-bold tracking-tight text-gray-800">
                 {slide.label}
               </figcaption>
             </figure>
