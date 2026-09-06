@@ -294,12 +294,12 @@ function CountdownBar() {
 }
 
 const MODEL_SLIDES: { key: string; label: string }[] = [
-  { key: "imgi_1_KQNPeWB-D9d9-B09.webp", label: "Animes" },
-  { key: "imgi_2_KbRrVfI-DADcOfDM.webp", label: "Desenhos" },
-  { key: "imgi_3_KQNPtft-jJrvJbbN.webp", label: "Religião" },
-  { key: "imgi_4_KQNPPbR-Hp0QWFjQ.webp", label: "Mitologia" },
-  { key: "imgi_5_KQNPD0X-Bl-v5W96.webp", label: "Decoração" },
-  { key: "imgi_6_KbRrWlt-CrrCAzgT.webp", label: "E muito mais" },
+  { key: "imgi_1_KQNPeWB-D9d9-B09.webp", label: "anime" },
+  { key: "imgi_2_KbRrVfI-DADcOfDM.webp", label: "desenho" },
+  { key: "imgi_3_KQNPtft-jJrvJbbN.webp", label: "religiao" },
+  { key: "imgi_4_KQNPPbR-Hp0QWFjQ.webp", label: "mitologia" },
+  { key: "imgi_5_KQNPD0X-Bl-v5W96.webp", label: "decoracao" },
+  { key: "imgi_6_KbRrWlt-CrrCAzgT.webp", label: "muito mais" },
 ];
 
 function ModelsMarquee() {
@@ -395,7 +395,7 @@ function ModelsMarquee() {
                 height={400}
                 className="aspect-square w-full object-cover"
               />
-              <figcaption className="rounded-b-lg border border-gray-300 bg-gray-100 p-4 text-center text-xl font-bold capitalize tracking-tight text-gray-800">
+              <figcaption className="rounded-b-lg border border-gray-300 bg-gray-100 p-4 text-center text-xl font-bold tracking-tight text-gray-800">
                 {slide.label}
               </figcaption>
             </figure>
