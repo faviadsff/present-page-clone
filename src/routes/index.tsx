@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { Check, AlertTriangle } from "lucide-react";
+import { Check, AlertTriangle, ShoppingBag } from "lucide-react";
+import { toast } from "sonner";
 
 import {
   Accordion,
