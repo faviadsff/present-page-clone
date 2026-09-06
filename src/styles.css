@@ -154,3 +154,11 @@ a[href*="lovable.dev"][target="_blank"][class*="badge"],
   from { transform: translateX(0); }
   to { transform: translateX(calc(-50% - 0.5rem)); }
 }
+
+/* Remove o wrapper padrão do sonner por trás do toast customizado */
+[data-sonner-toast] > [data-content] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
