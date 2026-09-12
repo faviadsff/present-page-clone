@@ -452,7 +452,8 @@ function TestimonialsMarquee() {
     const animate = (currentTime: number) => {
       const elapsed = Math.min((currentTime - previousTime) / 1000, 0.1);
       previousTime = currentTime;
-      const loopWidth = track.scrollWidth / 2;
+      const firstSet = track.firstElementChild;
+      const loopWidth = firstSet instanceof HTMLElement ? firstSet.offsetWidth + 16 : 0;
 
       if (!pausedRef.current && !reducedMotion) {
         track.scrollLeft += 36 * elapsed;
@@ -468,11 +469,15 @@ function TestimonialsMarquee() {
   }, []);
 
   const pause = () => {
-    pausedRef.current = true;
+    if (window.matchMedia("(pointer: fine)").matches) {
+      pausedRef.current = true;
+    }
   };
 
   const resume = () => {
-    pausedRef.current = false;
+    if (window.matchMedia("(pointer: fine)").matches) {
+      pausedRef.current = false;
+    }
   };
 
   const toggleOnTouchDevice = () => {
@@ -487,28 +492,29 @@ function TestimonialsMarquee() {
       onMouseEnter={pause}
       onMouseLeave={resume}
       onClick={toggleOnTouchDevice}
-      className="flex gap-4 overflow-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      className="flex touch-pan-y gap-4 overflow-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       aria-label="Depoimentos de clientes em movimento. Toque para pausar ou continuar."
     >
-      {[0, 1].map((copy) =>
-        TESTIMONIAL_IMAGES.map((image, index) => (
-          <figure
-            key={`${copy}-${image}`}
-            aria-hidden={copy === 1}
-            className="w-[82vw] max-w-[270px] shrink-0 overflow-hidden rounded-lg border border-border bg-card shadow-lg sm:w-[calc((100%-1rem)/2)] sm:max-w-none lg:w-[calc((100%-4rem)/5)]"
-          >
-            <img
-              src={image}
-              alt={`Conversa com depoimento de cliente ${index + 1}`}
-              loading={copy === 0 ? "eager" : "lazy"}
-              decoding="async"
-              width={393}
-              height={800}
-              className="block h-auto w-full object-contain"
-            />
-          </figure>
-        )),
-      )}
+      {[0, 1].map((copy) => (
+        <div key={copy} aria-hidden={copy === 1} className="flex shrink-0 gap-4">
+          {TESTIMONIAL_IMAGES.map((image, index) => (
+            <figure
+              key={image}
+              className="w-[82vw] max-w-[270px] shrink-0 overflow-hidden rounded-lg border border-border bg-card shadow-lg sm:w-[calc((100vw-1rem)/2)] sm:max-w-[300px] lg:w-[calc((56rem-4rem)/5)]"
+            >
+              <img
+                src={image}
+                alt={copy === 0 ? `Conversa com depoimento de cliente ${index + 1}` : ""}
+                loading={copy === 0 ? "eager" : "lazy"}
+                decoding="async"
+                width={393}
+                height={800}
+                className="block h-auto w-full object-contain"
+              />
+            </figure>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
