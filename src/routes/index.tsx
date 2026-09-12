@@ -441,80 +441,137 @@ const TESTIMONIAL_IMAGES = [
 function TestimonialsMarquee() {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const pausedRef = useRef(false);
+  const offsetRef = useRef(0);
+  const targetRef = useRef(0);
+  const resumeTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let frame = 0;
-    let previousTime = performance.now();
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const animate = (currentTime: number) => {
-      const elapsed = Math.min((currentTime - previousTime) / 1000, 0.1);
-      previousTime = currentTime;
-      const firstSet = track.firstElementChild;
-      const loopWidth = firstSet instanceof HTMLElement ? firstSet.offsetWidth + 16 : 0;
+    let raf = 0;
+    let last = performance.now();
+    const speed = 40; // px por segundo
 
-      if (!pausedRef.current && !reducedMotion) {
-        track.scrollLeft += 36 * elapsed;
+    const tick = (now: number) => {
+      const dt = Math.min((now - last) / 1000, 0.1);
+      last = now;
+      const half = track.scrollWidth / 2;
+
+      const delta = targetRef.current - offsetRef.current;
+      if (Math.abs(delta) > 0.5) {
+        offsetRef.current += delta * Math.min(1, dt * 8);
+      } else {
+        offsetRef.current = targetRef.current;
+        if (!pausedRef.current && !reduced) {
+          offsetRef.current += speed * dt;
+          targetRef.current = offsetRef.current;
+        }
       }
-      if (loopWidth > 0 && track.scrollLeft >= loopWidth) {
-        track.scrollLeft -= loopWidth;
+
+      if (half > 0 && offsetRef.current >= half) {
+        offsetRef.current -= half;
+        targetRef.current -= half;
       }
-      frame = window.requestAnimationFrame(animate);
+      if (offsetRef.current < 0 && half > 0) {
+        offsetRef.current += half;
+        targetRef.current += half;
+      }
+
+      track.scrollLeft = offsetRef.current;
+      raf = requestAnimationFrame(tick);
     };
 
-    frame = window.requestAnimationFrame(animate);
-    return () => window.cancelAnimationFrame(frame);
+    raf = requestAnimationFrame(tick);
+    return () => {
+      cancelAnimationFrame(raf);
+      if (resumeTimerRef.current) window.clearTimeout(resumeTimerRef.current);
+    };
   }, []);
 
   const pause = () => {
-    if (window.matchMedia("(pointer: fine)").matches) {
-      pausedRef.current = true;
-    }
+    pausedRef.current = true;
   };
 
   const resume = () => {
-    if (window.matchMedia("(pointer: fine)").matches) {
-      pausedRef.current = false;
-    }
+    pausedRef.current = false;
   };
 
-  const toggleOnTouchDevice = () => {
-    if (window.matchMedia("(pointer: coarse)").matches) {
-      pausedRef.current = !pausedRef.current;
-    }
+  const scheduleResume = () => {
+    if (resumeTimerRef.current) window.clearTimeout(resumeTimerRef.current);
+    pausedRef.current = true;
+    resumeTimerRef.current = window.setTimeout(() => {
+      pausedRef.current = false;
+    }, 3000);
   };
+
+  const step = (dir: -1 | 1) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const card = track.querySelector("figure");
+    const amount = card ? card.clientWidth + 16 : 300;
+    targetRef.current += dir * amount;
+    scheduleResume();
+  };
+
+  const ArrowButton = ({
+    dir,
+    label,
+  }: {
+    dir: -1 | 1;
+    label: string;
+  }) => (
+    <button
+      type="button"
+      onClick={() => step(dir)}
+      aria-label={label}
+      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-sm transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+    >
+      {dir === -1 ? (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
+      ) : (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+      )}
+    </button>
+  );
 
   return (
-    <div
-      ref={trackRef}
-      onMouseEnter={pause}
-      onMouseLeave={resume}
-      onClick={toggleOnTouchDevice}
-      className="flex touch-pan-y gap-4 overflow-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-      aria-label="Depoimentos de clientes em movimento. Toque para pausar ou continuar."
-    >
-      {[0, 1].map((copy) => (
-        <div key={copy} aria-hidden={copy === 1} className="flex shrink-0 gap-4">
-          {TESTIMONIAL_IMAGES.map((image, index) => (
-            <figure
-              key={image}
-              className="w-[82vw] max-w-[270px] shrink-0 overflow-hidden rounded-lg border border-border bg-card shadow-lg sm:w-[calc((100vw-1rem)/2)] sm:max-w-[300px] lg:w-[calc((56rem-4rem)/5)]"
-            >
-              <img
-                src={image}
-                alt={copy === 0 ? `Conversa com depoimento de cliente ${index + 1}` : ""}
-                loading={copy === 0 ? "eager" : "lazy"}
-                decoding="async"
-                width={393}
-                height={800}
-                className="block h-auto w-full object-contain"
-              />
-            </figure>
-          ))}
-        </div>
-      ))}
+    <div className="space-y-6">
+      <div
+        ref={trackRef}
+        onMouseEnter={pause}
+        onMouseLeave={resume}
+        onTouchStart={pause}
+        onTouchEnd={resume}
+        className="flex touch-pan-y gap-4 overflow-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        aria-label="Depoimentos de clientes em movimento. Passe o mouse ou toque para pausar."
+      >
+        {[0, 1].map((copy) => (
+          <div key={copy} aria-hidden={copy === 1} className="flex shrink-0 gap-4">
+            {TESTIMONIAL_IMAGES.map((image, index) => (
+              <figure
+                key={`${copy}-${image}`}
+                className="w-[82vw] max-w-[270px] shrink-0 overflow-hidden rounded-lg border border-border bg-card shadow-lg sm:w-[calc((100vw-1rem)/2)] sm:max-w-[300px] lg:w-[calc((56rem-4rem)/5)]"
+              >
+                <img
+                  src={image}
+                  alt={copy === 0 ? `Conversa com depoimento de cliente ${index + 1}` : ""}
+                  loading={copy === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                  width={393}
+                  height={800}
+                  className="block h-auto w-full object-contain"
+                />
+              </figure>
+            ))}
+          </div>
+        ))}
+      </div>
+      <div className="flex items-center justify-center gap-4">
+        <ArrowButton dir={-1} label="Depoimento anterior" />
+        <ArrowButton dir={1} label="Próximo depoimento" />
+      </div>
     </div>
   );
 }
