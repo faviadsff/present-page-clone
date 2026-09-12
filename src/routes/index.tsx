@@ -500,7 +500,7 @@ function TestimonialsMarquee() {
             <img
               src={image}
               alt={`Conversa com depoimento de cliente ${index + 1}`}
-              loading="lazy"
+              loading={copy === 0 ? "eager" : "lazy"}
               decoding="async"
               width={393}
               height={800}
