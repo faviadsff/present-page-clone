@@ -38,6 +38,11 @@ import img14 from "@/assets/imgi_7_Impressao-07-B3RCvh-G.webp.asset.json";
 import img15 from "@/assets/imgi_8_Impressao-08-BuvyrUKU.webp.asset.json";
 import img16 from "@/assets/imgi_9_KbRcpTv-DoT3QpJN.webp.asset.json";
 import img17 from "@/assets/mascote-89sfIWzW.webp.asset.json";
+import testimonial1 from "@/assets/depoimento-whatsapp-1.jpg.asset.json";
+import testimonial2 from "@/assets/depoimento-whatsapp-2.jpg.asset.json";
+import testimonial3 from "@/assets/depoimento-whatsapp-3.jpg.asset.json";
+import testimonial4 from "@/assets/depoimento-whatsapp-4.jpg.asset.json";
+import testimonial5 from "@/assets/depoimento-whatsapp-5.jpg.asset.json";
 
 /** Mapa nome-do-arquivo -> URL do asset publicado em CDN. */
 const IMG: Record<string, string> = {
@@ -421,6 +426,89 @@ function ModelsMarquee() {
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
       </button>
+    </div>
+  );
+}
+
+const TESTIMONIAL_IMAGES = [
+  testimonial1.url,
+  testimonial2.url,
+  testimonial3.url,
+  testimonial4.url,
+  testimonial5.url,
+];
+
+function TestimonialsMarquee() {
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const pausedRef = useRef(false);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let frame = 0;
+    let previousTime = performance.now();
+
+    const animate = (currentTime: number) => {
+      const elapsed = Math.min((currentTime - previousTime) / 1000, 0.1);
+      previousTime = currentTime;
+      const loopWidth = track.scrollWidth / 2;
+
+      if (!pausedRef.current && !reducedMotion) {
+        track.scrollLeft += 36 * elapsed;
+      }
+      if (loopWidth > 0 && track.scrollLeft >= loopWidth) {
+        track.scrollLeft -= loopWidth;
+      }
+      frame = window.requestAnimationFrame(animate);
+    };
+
+    frame = window.requestAnimationFrame(animate);
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+
+  const pause = () => {
+    pausedRef.current = true;
+  };
+
+  const resume = () => {
+    pausedRef.current = false;
+  };
+
+  const toggleOnTouchDevice = () => {
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      pausedRef.current = !pausedRef.current;
+    }
+  };
+
+  return (
+    <div
+      ref={trackRef}
+      onMouseEnter={pause}
+      onMouseLeave={resume}
+      onClick={toggleOnTouchDevice}
+      className="flex gap-4 overflow-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      aria-label="Depoimentos de clientes em movimento. Toque para pausar ou continuar."
+    >
+      {[0, 1].map((copy) =>
+        TESTIMONIAL_IMAGES.map((image, index) => (
+          <figure
+            key={`${copy}-${image}`}
+            aria-hidden={copy === 1}
+            className="w-[270px] shrink-0 overflow-hidden rounded-lg border border-border bg-card shadow-lg sm:w-[300px]"
+          >
+            <img
+              src={image}
+              alt={`Conversa com depoimento de cliente ${index + 1}`}
+              loading="lazy"
+              decoding="async"
+              width={393}
+              height={800}
+              className="aspect-[393/800] w-full object-cover"
+            />
+          </figure>
+        )),
+      )}
     </div>
   );
 }
