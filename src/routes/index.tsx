@@ -495,7 +495,7 @@ function TestimonialsMarquee() {
           <figure
             key={`${copy}-${image}`}
             aria-hidden={copy === 1}
-            className="w-[270px] shrink-0 overflow-hidden rounded-lg border border-border bg-card shadow-lg sm:w-[300px]"
+            className="w-[82vw] max-w-[270px] shrink-0 overflow-hidden rounded-lg border border-border bg-card shadow-lg sm:w-[calc((100%-1rem)/2)] sm:max-w-none lg:w-[calc((100%-4rem)/5)]"
           >
             <img
               src={image}
@@ -504,7 +504,7 @@ function TestimonialsMarquee() {
               decoding="async"
               width={393}
               height={800}
-              className="aspect-[393/800] w-full object-cover"
+              className="block h-auto w-full object-contain"
             />
           </figure>
         )),
