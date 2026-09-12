@@ -469,11 +469,15 @@ function TestimonialsMarquee() {
   }, []);
 
   const pause = () => {
-    pausedRef.current = true;
+    if (window.matchMedia("(pointer: fine)").matches) {
+      pausedRef.current = true;
+    }
   };
 
   const resume = () => {
-    pausedRef.current = false;
+    if (window.matchMedia("(pointer: fine)").matches) {
+      pausedRef.current = false;
+    }
   };
 
   const toggleOnTouchDevice = () => {
