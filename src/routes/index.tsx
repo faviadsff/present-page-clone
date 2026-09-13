@@ -733,7 +733,7 @@ function SalesPage() {
 
 
         {/* SEM / COM */}
-        <section className="section-padding bg-section-2">
+        <section className="section-padding bg-section-1">
           <div className="container-narrow">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="card-dark border-destructive/30">
