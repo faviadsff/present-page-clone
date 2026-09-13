@@ -649,7 +649,7 @@ function SalesPage() {
         <section className="section-padding bg-section-1">
           <div className="container-narrow">
             <h2 className="text-2xl md:text-4xl font-black text-center mb-10 leading-tight">
-              Sua mesa de RPG merece mais que fichas e miniatura genérica
+              SUA MESA DE RPG MERECE MAIS QUE FICHAS E MINIATURA <span className="text-gradient">GENÉRICA</span>
             </h2>
             <div className="space-y-0 mb-10">
               <div className="flex items-start gap-4 py-5 border-b border-border/40">
