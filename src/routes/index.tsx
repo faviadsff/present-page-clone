@@ -21,7 +21,7 @@ import img4 from "@/assets/imgi_12_KbRcDva-BRBrykzJ.webp.asset.json";
 import img5 from "@/assets/imgi_13_fIIKkSn-3q6nPj8Y.webp.asset.json";
 import img6 from "@/assets/imgi_14_fIIKOFt-DrlOT3L8.webp.asset.json";
 import img7 from "@/assets/imgi_15_KbRrXUX-B7dNbi2d.webp.asset.json";
-import img8 from "@/assets/imgi_1_KQNPeWB-D9d9-B09.webp.asset.json";
+
 import img9 from "@/assets/imgi_2_KbRrVfI-DADcOfDM.webp.asset.json";
 import img10 from "@/assets/imgi_3_KQNPtft-jJrvJbbN.webp.asset.json";
 import img11 from "@/assets/imgi_4_KQNPPbR-Hp0QWFjQ.webp.asset.json";
@@ -31,6 +31,7 @@ import img14 from "@/assets/imgi_7_Impressao-07-B3RCvh-G.webp.asset.json";
 import img15 from "@/assets/imgi_8_Impressao-08-BuvyrUKU.webp.asset.json";
 import img16 from "@/assets/imgi_9_KbRcpTv-DoT3QpJN.webp.asset.json";
 import img17 from "@/assets/mascote-89sfIWzW.webp.asset.json";
+import imgViloes from "@/assets/viloes-e-chefes.jpg.asset.json";
 import testimonial1 from "@/assets/depoimento-whatsapp-1.jpg.asset.json";
 import testimonial2 from "@/assets/depoimento-whatsapp-2.jpg.asset.json";
 import testimonial3 from "@/assets/depoimento-whatsapp-3.jpg.asset.json";
@@ -47,7 +48,7 @@ const IMG: Record<string, string> = {
   "imgi_13_fIIKkSn-3q6nPj8Y.webp": img5.url,
   "imgi_14_fIIKOFt-DrlOT3L8.webp": img6.url,
   "imgi_15_KbRrXUX-B7dNbi2d.webp": img7.url,
-  "imgi_1_KQNPeWB-D9d9-B09.webp": img8.url,
+  "viloes-e-chefes.jpg": imgViloes.url,
   "imgi_2_KbRrVfI-DADcOfDM.webp": img9.url,
   "imgi_3_KQNPtft-jJrvJbbN.webp": img10.url,
   "imgi_4_KQNPPbR-Hp0QWFjQ.webp": img11.url,
@@ -229,7 +230,7 @@ function CountdownBar() {
 }
 
 const MODEL_SLIDES: { key: string; label: string }[] = [
-  { key: "imgi_1_KQNPeWB-D9d9-B09.webp", label: "anime" },
+  { key: "viloes-e-chefes.jpg", label: "Vilões e Chefes" },
   { key: "imgi_2_KbRrVfI-DADcOfDM.webp", label: "miniaturas" },
   { key: "imgi_3_KQNPtft-jJrvJbbN.webp", label: "cosplay" },
   { key: "imgi_4_KQNPPbR-Hp0QWFjQ.webp", label: "funcionais" },
