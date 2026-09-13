@@ -974,64 +974,64 @@ function SalesPage() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-8">
               <BonusCard
                 index={1}
-                title="Pack de Cenários Épicos"
+                title="Pack Anime"
                 image={imgUrl("imgi_7_Impressao-07-B3RCvh-G.webp")}
-                description="Castelos, masmorras, florestas, cidades e terrenos modulares para criar mesas cinematográficas em qualquer campanha."
+                description="Centenas de modelos inspirados nos animes mais populares: personagens, mascotes, acessórios e figuras colecionáveis."
                 oldPrice="R$ 49,90"
               />
               <BonusCard
                 index={2}
-                title="Pack de Monstros Clássicos"
+                title="Pack Miniaturas e Figuras"
                 image={imgUrl("imgi_8_Impressao-08-BuvyrUKU.webp")}
-                description="Goblins, orcs, esqueletos, dragões e criaturas icônicas que todo mestre precisa ter à mão."
+                description="Miniaturas detalhadas prontas para impressão: heróis, criaturas, bustos e figuras decorativas em alta qualidade."
                 oldPrice="R$ 39,90"
               />
               <BonusCard
                 index={3}
-                title="Guia de Escala e Impressão"
+                title="Pack Acessórios para Cosplay"
                 image={imgUrl("imgi_9_KbRcpTv-DoT3QpJN.webp")}
-                description="Manual completo com configurações de escala 28mm/32mm, suportes, preenchimento e acabamento para FDM e resina."
+                description="Armaduras, armas, capacetes, joias e peças wearable para finalizar cosplays com detalhe profissional."
                 oldPrice="R$ 29,90"
               />
               <BonusCard
                 index={4}
-                title="Pack de Heróis e Classes"
+                title="Pack Funcionais"
                 image={imgUrl("imgi_10_KbRcbyJ-CCbV1Pyn.webp")}
-                description="Guerreiros, magos, ladinos, clérigos, rangers e arquétipos variados para representar qualquer personagem."
+                description="Peças úteis e mecânicas: suportes, engrenagens, organizadores, gadgets e acessórios que realmente funcionam."
                 oldPrice="R$ 39,90"
               />
               <BonusCard
                 index={5}
-                title="Pack de Criaturas Articuladas"
+                title="Pack Decorativos"
                 image={imgUrl("imgi_11_KbRcyjR-C9wKcza2.webp")}
-                description="Modelos com partes móveis: golems, escaravelhos, criaturas mecânicas e monstros interativos para mesas dinâmicas."
+                description="Luminárias, vasos, quadros, esculturas e adornos para transformar qualquer ambiente com estampas 3D."
                 oldPrice="R$ 49,90"
               />
               <BonusCard
                 index={6}
-                title="Pack de Vilões e Bosses"
+                title="Pack Colecionáveis"
                 image={imgUrl("imgi_12_KbRcDva-BRBrykzJ.webp")}
-                description="Lichs, demônios, gigantes, deuses menores e chefes épicos para finais de arco inesquecíveis."
+                description="Troféus, estandes, figuras temáticas e itens exclusivos para colecionadores e lojistas de impressão 3D."
                 oldPrice="R$ 59,90"
               />
               <BonusCard
                 index={7}
-                title="Pack de Acessórios para Mesa"
+                title="Pack Monstros e Criaturas"
                 image={imgUrl("imgi_13_fIIKkSn-3q6nPj8Y.webp")}
-                description="Portais, armadilhas, baús, portas, portões e objetos interativos para enriquecer seus cenários."
+                description="Dragões, monstros, criaturas épicas e personagens de fantasia para quem gosta de miniaturas imponentes."
                 oldPrice="R$ 29,90"
               />
               <BonusCard
                 index={8}
-                title="Pack de Colecionáveis"
+                title="Pack Modelos 3D Diversos"
                 image={imgUrl("imgi_14_fIIKOFt-DrlOT3L8.webp")}
-                description="Figuras exclusivas, troféus, estandes e miniaturas decorativas para colecionadores e lojistas."
+                description="Uma curadoria gigante com designs variados, perfeita para quem quer sempre ter novidades para imprimir."
                 oldPrice="R$ 39,90"
               />
             </div>
 
             <div className="my-8 text-center text-white">
-              <p className="text-3xl font-bold mb-2">🐉 NÃO ACABOU!</p>
+              <p className="text-3xl font-bold mb-2">🎁 NÃO ACABOU!</p>
               <p className="text-2xl">
                 <span className="font-bold italic bg-red-600 px-2 rounded-md text-[25px]">BÔNUS ESPECIAL</span> liberado apenas esse mês de setembro!
               </p>
@@ -1043,11 +1043,11 @@ function SalesPage() {
                     <h3 className="font-bold uppercase text-lg">🎁 BÔNUS ESPECIAL:</h3>
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h4 className="mb-4 text-center text-2xl font-bold uppercase text-[#1E2A38]">Pack de Dragões e Criaturas Épicas</h4>
+                    <h4 className="mb-4 text-center text-2xl font-bold uppercase text-[#1E2A38]">Pack de Modelos para Impressão 3D Premium</h4>
                     <div className="mb-4 overflow-hidden rounded-lg">
-                      <img alt="Pack de Dragões e Criaturas Épicas" loading="lazy" width="400" height="300" decoding="async" className="aspect-[4/3] w-full object-cover" src={IMG["imgi_15_KbRrXUX-B7dNbi2d.webp"]} />
+                      <img alt="Pack de Modelos para Impressão 3D Premium" loading="lazy" width="400" height="300" decoding="async" className="aspect-[4/3] w-full object-cover" src={IMG["imgi_15_KbRrXUX-B7dNbi2d.webp"]} />
                     </div>
-                    <p className="flex-grow mb-4 text-center text-lg font-medium text-gray-800">Coleção exclusiva com dragões anciões, hidras, grifos e outras criaturas épicas para elevar o nível das suas campanhas.</p>
+                    <p className="flex-grow mb-4 text-center text-lg font-medium text-gray-800">Coleção exclusiva com os melhores designs otimizados para resina e FDM, prontos para entregar acabamento profissional.</p>
                     <div className="mt-auto text-center">
                       <p className="text-lg font-bold">
                         <span className="text-base font-normal text-red-500 line-through">De R$ 79,90</span>
