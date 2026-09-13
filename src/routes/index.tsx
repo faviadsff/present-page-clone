@@ -854,10 +854,7 @@ function SalesPage() {
                 <button
                   id="begin_checkout_basic"
                   type="button"
-                  onClick={() => {
-                    console.log("botao basico clicado");
-                    setDownsellOpen(true);
-                  }}
+                  onClick={() => setDownsellOpen(true)}
                   className="w-full bg-transparent text-white font-bold border-2 border-white rounded-lg px-6 py-4 inline-flex items-center justify-center text-center cursor-pointer"
                 >
                   QUERO O PACOTE BÁSICO!
