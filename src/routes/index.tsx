@@ -894,7 +894,7 @@ function SalesPage() {
                     </div>
                     <div className="mt-auto text-center">
                       <p className="text-lg font-bold">
-                        <span className="text-base font-normal text-red-500 line-through">De R$ 79,90</span>
+                        <span className="text-base font-normal text-red-500 line-through">De R$ 297,90</span>
                         <br />
                         <span className="font-bold text-xl text-green-600">VAI SAIR DE GRAÇA</span>
                       </p>
