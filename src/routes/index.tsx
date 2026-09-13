@@ -871,7 +871,7 @@ function SalesPage() {
                 >
                   QUERO O PACOTE BÁSICO!
                 </button>
-                <div className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground">
+                <div className="flex items-center justify-center gap-2 mt-4 text-sm text-green-500">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield w-4 h-4"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></svg>
                   <span>Compra Segura</span>
                 </div>
@@ -893,10 +893,6 @@ function SalesPage() {
                       <span className="text-foreground/90 text-sm">{bonus}</span>
                     </div>
                   ))}
-                  <div className="flex items-center gap-3 bg-red-500/10 p-2 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-gift w-4 h-4 text-red-400 flex-shrink-0"><rect x="3" y="8" width="18" height="4" rx="1" /><path d="M12 8v13" /><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" /><path d="M7.5 8a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 2.5 2.5v5" /><path d="M16.5 8v-2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1-2.5 2.5h-5" /></svg>
-                    <span className="text-red-400 text-sm font-semibold">🎁 BÔNUS ESPECIAL: Pack de Modelos para Impressão 3D Premium</span>
-                  </div>
                 </div>
                 <div className="text-center mb-6">
                   <p className="text-sm text-muted-foreground mb-2">De <span className="line-through">R$ 489,90</span> por apenas:</p>
@@ -911,7 +907,7 @@ function SalesPage() {
                 <div className="text-center mt-4">
                   <p className="text-sm text-red-400">🎁 DESCONTO ESPECIAL! Aproveite apenas esse mês de setembro.</p>
                 </div>
-                <div className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground">
+                <div className="flex items-center justify-center gap-2 mt-4 text-sm text-green-500">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield w-4 h-4"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></svg>
                   <span>Compra Segura</span>
                 </div>
