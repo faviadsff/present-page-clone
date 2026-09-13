@@ -37,6 +37,7 @@ import imgHerois from "@/assets/herois-e-racas.jpg.asset.json";
 import imgNPCs from "@/assets/npcs.jpg.asset.json";
 import imgCenarios from "@/assets/cenarios.jpg.asset.json";
 import imgMuitoMais from "@/assets/muito-mais.jpg.asset.json";
+import imgBonusEspecial from "@/assets/bonus-especial.jpg.asset.json";
 import testimonial1 from "@/assets/depoimento-whatsapp-1.jpg.asset.json";
 import testimonial2 from "@/assets/depoimento-whatsapp-2.jpg.asset.json";
 import testimonial3 from "@/assets/depoimento-whatsapp-3.jpg.asset.json";
@@ -59,6 +60,7 @@ const IMG: Record<string, string> = {
   "npcs.jpg": imgNPCs.url,
   "cenarios.jpg": imgCenarios.url,
   "muito-mais.jpg": imgMuitoMais.url,
+  "bonus-especial.jpg": imgBonusEspecial.url,
   "imgi_3_KQNPtft-jJrvJbbN.webp": img10.url,
   "imgi_4_KQNPPbR-Hp0QWFjQ.webp": img11.url,
   "imgi_5_KQNPD0X-Bl-v5W96.webp": img12.url,
@@ -809,7 +811,7 @@ function SalesPage() {
                   <div className="flex flex-1 flex-col p-6">
                     <h4 className="mb-4 text-center text-2xl font-bold uppercase text-[#1E2A38]">3 Bônus exclusivo do STL do Mago</h4>
                     <div className="mb-4 overflow-hidden rounded-lg">
-                      <img alt="3 Bônus exclusivo do STL do Mago" loading="lazy" width="400" height="300" decoding="async" className="aspect-[4/3] w-full object-cover" src={IMG["imgi_15_KbRrXUX-B7dNbi2d.webp"]} />
+                      <img alt="3 Bônus exclusivo do STL do Mago" loading="lazy" width="400" height="300" decoding="async" className="aspect-[4/3] w-full object-cover" src={IMG["bonus-especial.jpg"]} />
                     </div>
                     <div className="flex-grow mb-4 space-y-1 text-left">
                       <p className="text-sm font-medium text-gray-800 leading-snug"><span className="font-bold text-red-600">Bônus 1:</span> Pack de Miniaturas e Figuras</p>
