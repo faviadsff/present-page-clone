@@ -190,65 +190,6 @@ function FaqAccordion() {
   );
 }
 
-function UpsellDialog() {
-  return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button id="begin_checkout" variant="outline" className="w-full py-6 text-lg font-bold border-border hover:bg-secondary">
-          ESCOLHER O BÁSICO
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="!inset-0 !m-auto !h-fit !translate-x-0 !translate-y-0 flex max-h-[85dvh] w-[calc(100%-1.5rem)] max-w-md flex-col gap-3 overflow-hidden rounded-xl p-4 sm:max-w-lg sm:p-5">
-        <DialogHeader className="shrink-0 pr-6">
-          <DialogTitle className="text-center text-lg font-black sm:text-xl">
-            Desconto exclusivo para o Premium
-          </DialogTitle>
-        </DialogHeader>
-        <div className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-contain pr-1">
-          <div className="rounded-lg border border-primary/40 bg-primary/10 p-3 text-center">
-            <p className="text-xs text-muted-foreground sm:text-sm">Leve o Premium agora por apenas:</p>
-            <div className="mt-1 flex items-center justify-center gap-1">
-              <span className="text-xl font-bold">R$</span>
-              <span className="text-4xl font-black text-primary">19,90</span>
-            </div>
-          </div>
-          <div>
-            <p className="mb-2 text-center text-xs font-semibold text-muted-foreground sm:text-sm">
-              Todos os pacotes extras inclusos no Premium:
-            </p>
-            <div className="grid gap-1.5 sm:grid-cols-2">
-              {PREMIUM_BONUSES.map((bonus) => (
-                <div key={bonus} className="flex items-start gap-2">
-                  <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-500" />
-                  <span className="text-foreground/90 text-xs leading-snug">{bonus}</span>
-                </div>
-              ))}
-              <div className="flex items-start gap-2 rounded-md bg-red-500/10 p-1.5 sm:col-span-2">
-                <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-red-400" />
-                <span className="text-xs font-semibold text-red-400">🎁 BÔNUS ESPECIAL: Pack de Colecionáveis e Troféus</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="grid shrink-0 gap-2 border-t border-border/50 pt-3">
-          <a
-            href={CHECKOUT_PREMIUM}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-cta inline-flex w-full items-center justify-center px-3 py-3 text-center text-sm text-foreground sm:text-base"
-          >
-            QUERO O PREMIUM COM DESCONTO
-          </a>
-          <Button variant="secondary" className="w-full text-sm text-muted-foreground" asChild>
-            <a href={CHECKOUT_BASIC} target="_blank" rel="noopener noreferrer">
-              continuar com o pacote basico
-            </a>
-          </Button>
-        </div>
-      </DialogContent>
-    </Dialog>
-  );
-}
 
 export const Route = createFileRoute("/")({
   head: () => ({
