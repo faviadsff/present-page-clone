@@ -126,7 +126,7 @@ const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/k22Mgh9AbZBrC7iQ1jhO"
 function VslPlayer() {
   return (
     <div className="w-full">
-      <div className="relative w-full" style={{ padding: "56.25% 0 0 0" }}>
+      <div className="relative aspect-video w-full">
         <iframe
           src="https://player.vimeo.com/video/1226402707?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
           frameBorder="0"
