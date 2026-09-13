@@ -957,6 +957,50 @@ function SalesPage() {
           </div>
         </footer>
       </main>
+
+      {/* DOWSELL */}
+      <Dialog open={downsellOpen} onOpenChange={setDownsellOpen}>
+        <DialogContent className="border-border bg-card text-foreground sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-center text-xl font-black text-gradient">
+              ESPERE! OFERTA ESPECIAL
+            </DialogTitle>
+            <DialogDescription className="text-center text-muted-foreground">
+              A equipe STL dos Magos preparou uma oferta exclusiva para você.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4 py-2">
+            <p className="text-center text-foreground">
+              Ganhe <span className="font-bold text-green-500">R$ 10,00 de desconto</span> no Pacote Premium e leve todos os bônus inclusos!
+            </p>
+            <div className="rounded-lg bg-secondary/50 p-4 text-center">
+              <p className="text-sm text-muted-foreground line-through">De R$ 27,90</p>
+              <p className="text-3xl font-black text-gradient">R$ 17,90</p>
+              <p className="text-xs text-muted-foreground">Pacote Premium + todos os bônus</p>
+            </div>
+            <a
+              id="begin_checkout_downsell"
+              href={CHECKOUT_PREMIUM}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-buy w-full inline-flex items-center justify-center text-center text-foreground"
+              onClick={() => setDownsellOpen(false)}
+            >
+              EU QUERO ESSA OFERTA!
+            </a>
+            <button
+              type="button"
+              onClick={() => {
+                setDownsellOpen(false);
+                window.open(CHECKOUT_BASIC, "_blank", "noopener,noreferrer");
+              }}
+              className="w-full text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
+            >
+              Quero continuar com o pacote básico
+            </button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
