@@ -657,51 +657,6 @@ function SalesPage() {
           </div>
         </section>
 
-        {/* SEÇÃO DE DOR — NOVA VERSÃO RPG */}
-        <section className="section-padding bg-section-1">
-          <div className="container-narrow">
-            <h2 className="text-2xl md:text-4xl font-black text-center mb-14 md:mb-20 leading-tight">
-              SUA MESA DE RPG MERECE MAIS QUE FICHAS E MINIATURA <span className="text-gradient">GENÉRICA</span>
-            </h2>
-            <div className="space-y-0 mb-10">
-              <div className="flex items-start gap-4 py-5 border-b border-border/40">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-alert-triangle w-4 h-4 text-yellow-400"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg>
-                </div>
-                <p className="text-foreground/90 text-lg leading-snug">
-                  Miniatura oficial custa R$40, R$60, R$100 cada só pra montar uma campanha inteira
-                </p>
-              </div>
-              <div className="flex items-start gap-4 py-5 border-b border-border/40">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-alert-triangle w-4 h-4 text-yellow-400"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg>
-                </div>
-                <p className="text-foreground/90 text-lg leading-snug">
-                  Loja de miniatura nunca tem o monstro exato que você precisa pra a sessão de sexta
-                </p>
-              </div>
-              <div className="flex items-start gap-4 py-5 border-b border-border/40">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-alert-triangle w-4 h-4 text-yellow-400"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg>
-                </div>
-                <p className="text-foreground/90 text-lg leading-snug">
-                  Arquivo grátis que você acha na internet vem quebrado, sem escala e sem base
-                </p>
-              </div>
-              <div className="flex items-start gap-4 py-5 border-b border-border/40">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-alert-triangle w-4 h-4 text-yellow-400"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg>
-                </div>
-                <p className="text-foreground/90 text-lg leading-snug">
-                  Mestre que improvisa com token de papel perde a imersão do grupo
-                </p>
-              </div>
-            </div>
-            <p className="text-lg md:text-xl font-bold text-center text-primary max-w-3xl mx-auto leading-relaxed">
-              A verdade é que quem tem impressora 3D e não usa pra RPG está desperdiçando a ferramenta mais poderosa pra sua mesa.
-            </p>
-          </div>
-        </section>
 
         {/* SEM / COM */}
         <section className="section-padding bg-section-1">
