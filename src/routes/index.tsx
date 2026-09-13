@@ -710,7 +710,7 @@ function SalesPage() {
                     <h3 className="font-bold uppercase text-lg">🎁 BÔNUS ESPECIAL:</h3>
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h4 className="mb-4 text-center text-2xl font-bold uppercase text-[#1E2A38]">3 Bônus exclusivo do STL do Mago</h4>
+                    <h4 className="mb-4 text-center text-2xl font-bold uppercase text-[#1E2A38]">4 Bônus exclusivos do STL do Mago</h4>
                     <div className="mb-4 overflow-hidden rounded-lg">
                       <img alt="3 Bônus exclusivo do STL do Mago" loading="lazy" width="400" height="300" decoding="async" className="aspect-[4/3] w-full object-cover" src={IMG["bonus-especial.jpg"]} />
                     </div>
