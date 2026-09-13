@@ -35,6 +35,7 @@ import imgViloes from "@/assets/viloes-e-chefes.jpg.asset.json";
 import imgMonstros from "@/assets/monstros-e-feras.jpg.asset.json";
 import imgHerois from "@/assets/herois-e-racas.jpg.asset.json";
 import imgNPCs from "@/assets/npcs.jpg.asset.json";
+import imgCenarios from "@/assets/cenarios.jpg.asset.json";
 import testimonial1 from "@/assets/depoimento-whatsapp-1.jpg.asset.json";
 import testimonial2 from "@/assets/depoimento-whatsapp-2.jpg.asset.json";
 import testimonial3 from "@/assets/depoimento-whatsapp-3.jpg.asset.json";
@@ -55,6 +56,7 @@ const IMG: Record<string, string> = {
   "monstros-e-feras.jpg": imgMonstros.url,
   "herois-e-racas.jpg": imgHerois.url,
   "npcs.jpg": imgNPCs.url,
+  "cenarios.jpg": imgCenarios.url,
   "imgi_3_KQNPtft-jJrvJbbN.webp": img10.url,
   "imgi_4_KQNPPbR-Hp0QWFjQ.webp": img11.url,
   "imgi_5_KQNPD0X-Bl-v5W96.webp": img12.url,
