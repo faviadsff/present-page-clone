@@ -253,17 +253,17 @@ function UpsellDialog() {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Miniaturas RPG 3D | +2.000 STL organizados por sistema de jogo" },
+      { title: "Pacote STL 3D | +20.500.000 Arquivos para Impressão 3D | 300 TB" },
       {
         name: "description",
         content:
-          "O maior acervo especializado em miniaturas STL para RPG e board game. Fantasia, monstros, cenários e guia de escala. Acesso imediato.",
+          "Desbloqueie mais de 20 milhões de arquivos STL de alta qualidade para impressão 3D. Anime, miniaturas, cosplay, designs funcionais e decorativos. Download instantâneo.",
       },
-      { property: "og:title", content: "Miniaturas RPG 3D | +2.000 STL organizados por sistema de jogo" },
+      { property: "og:title", content: "Pacote STL 3D | +20.500.000 Arquivos para Impressão 3D | 300 TB" },
       {
         property: "og:description",
         content:
-          "Miniaturas STL prontas para RPG e board game: heróis, monstros, cenários e guia de escala. Acesso vitalício.",
+          "Mega pacote de arquivos STL para impressão 3D. Resina e FDM, acesso vitalício, uso pessoal e comercial.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
