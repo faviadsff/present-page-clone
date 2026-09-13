@@ -882,11 +882,16 @@ function SalesPage() {
                     <h3 className="font-bold uppercase text-lg">🎁 BÔNUS ESPECIAL:</h3>
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h4 className="mb-4 text-center text-2xl font-bold uppercase text-[#1E2A38]">Pack de Modelos para Impressão 3D Premium</h4>
+                    <h4 className="mb-4 text-center text-2xl font-bold uppercase text-[#1E2A38]">3 Bônus exclusivo do STL do Mago</h4>
                     <div className="mb-4 overflow-hidden rounded-lg">
-                      <img alt="Pack de Modelos para Impressão 3D Premium" loading="lazy" width="400" height="300" decoding="async" className="aspect-[4/3] w-full object-cover" src={IMG["imgi_15_KbRrXUX-B7dNbi2d.webp"]} />
+                      <img alt="3 Bônus exclusivo do STL do Mago" loading="lazy" width="400" height="300" decoding="async" className="aspect-[4/3] w-full object-cover" src={IMG["imgi_15_KbRrXUX-B7dNbi2d.webp"]} />
                     </div>
-                    <p className="flex-grow mb-4 text-center text-lg font-medium text-gray-800">Coleção exclusiva com os melhores designs otimizados para resina e FDM, prontos para entregar acabamento profissional.</p>
+                    <div className="flex-grow mb-4 space-y-2 text-left">
+                      <p className="text-base font-medium text-gray-800"><span className="font-bold text-red-600">Bônus 1:</span> Pack de Miniaturas e Figuras</p>
+                      <p className="text-base font-medium text-gray-800"><span className="font-bold text-red-600">Bônus 2:</span> Pack de Monstros e Criaturas</p>
+                      <p className="text-base font-medium text-gray-800"><span className="font-bold text-red-600">Bônus 3:</span> Pack de Designs Decorativos</p>
+                      <p className="text-base font-medium text-gray-800"><span className="font-bold text-red-600">Bônus 4:</span> Pack de Cenários e Dioramas</p>
+                    </div>
                     <div className="mt-auto text-center">
                       <p className="text-lg font-bold">
                         <span className="text-base font-normal text-red-500 line-through">De R$ 79,90</span>
