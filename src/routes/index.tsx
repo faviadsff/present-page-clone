@@ -647,41 +647,49 @@ function SalesPage() {
           </div>
         </section>
 
-        {/* SEÇÃO DE DOR */}
+        {/* SEÇÃO DE DOR — NOVA VERSÃO RPG */}
         <section className="section-padding bg-section-1">
           <div className="container-narrow">
-            <div className="text-center mb-12">
-              <span className="highlight-box mb-4 inline-block">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lightbulb w-4 h-4 inline mr-2"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" /><path d="M9 18h6" /><path d="M10 22h4" /></svg>
-                ESTE PACK FOI FEITO PARA QUEM QUER VARIEDADE SEM LIMITES...
-              </span>
+            <h2 className="text-2xl md:text-4xl font-black text-center mb-10 leading-tight">
+              Sua mesa de RPG merece mais que fichas e miniatura genérica
+            </h2>
+            <div className="space-y-0 mb-10">
+              <div className="flex items-start gap-4 py-5 border-b border-border/40">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-alert-triangle w-4 h-4 text-yellow-400"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg>
+                </div>
+                <p className="text-foreground/90 text-lg leading-snug">
+                  Miniatura oficial custa R$40, R$60, R$100 cada — e um bicho só pra montar uma campanha inteira
+                </p>
+              </div>
+              <div className="flex items-start gap-4 py-5 border-b border-border/40">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-alert-triangle w-4 h-4 text-yellow-400"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg>
+                </div>
+                <p className="text-foreground/90 text-lg leading-snug">
+                  Loja de miniatura nunca tem o monstro exato que você precisa pra a sessão de sexta
+                </p>
+              </div>
+              <div className="flex items-start gap-4 py-5 border-b border-border/40">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-alert-triangle w-4 h-4 text-yellow-400"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg>
+                </div>
+                <p className="text-foreground/90 text-lg leading-snug">
+                  Arquivo grátis que você acha na internet vem quebrado, sem escala e sem base
+                </p>
+              </div>
+              <div className="flex items-start gap-4 py-5 border-b border-border/40">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-alert-triangle w-4 h-4 text-yellow-400"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg>
+                </div>
+                <p className="text-foreground/90 text-lg leading-snug">
+                  Mestre que improvisa com token de papel perde a imersão do grupo
+                </p>
+              </div>
             </div>
-            <div className="grid md:grid-cols-2 gap-4 mb-12">
-              <div className="flex items-start gap-4 p-5 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-4 h-4 text-primary"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
-                </div>
-                <p className="text-foreground/90 text-lg">Chega de perder horas procurando modelos STL isolados na internet.</p>
-              </div>
-              <div className="flex items-start gap-4 p-5 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-4 h-4 text-primary"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
-                </div>
-                <p className="text-foreground/90 text-lg">Pare de pagar caro por pacotes pequenos que não suprem suas ideias.</p>
-              </div>
-              <div className="flex items-start gap-4 p-5 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-4 h-4 text-primary"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
-                </div>
-                <p className="text-foreground/90 text-lg">Não fique mais limitado a poucos designs para seus projetos e impressões.</p>
-              </div>
-              <div className="flex items-start gap-4 p-5 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-4 h-4 text-primary"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
-                </div>
-                <p className="text-foreground/90 text-lg">Tenha milhões de arquivos profissionais sem precisar modelar nada do zero.</p>
-              </div>
-            </div>
+            <p className="text-lg md:text-xl font-bold text-center text-primary max-w-3xl mx-auto leading-relaxed">
+              A verdade é que quem tem impressora 3D e não usa pra RPG está desperdiçando a ferramenta mais poderosa pra sua mesa.
+            </p>
           </div>
         </section>
 
