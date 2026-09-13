@@ -578,7 +578,7 @@ function SalesPage() {
             <p className="text-lg md:text-xl text-muted-foreground text-center max-w-2xl mx-auto mb-4 px-4">
               Monstros, herois, viloes, NPCs e cenarios organizados por sistema. Baixe, imprima e leve sua mesa pro proximo nivel.
             </p>
-            <div className="mb-8 w-full">
+            <div className="vsl-frame mb-8 max-w-6xl">
               <VslPlayer />
             </div>
 
