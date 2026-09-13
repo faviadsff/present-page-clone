@@ -66,6 +66,10 @@ const IMG: Record<string, string> = {
   "mascote-89sfIWzW.webp": img17.url,
 };
 
+function imgUrl(key: keyof typeof IMG): string {
+  return IMG[key];
+}
+
 const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
     "question": "Esses arquivos funcionam na minha impressora 3D?",
