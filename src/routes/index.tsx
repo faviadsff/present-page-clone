@@ -614,7 +614,7 @@ function SalesPage() {
             </div>
 
             {/* CARROSSEL — VEJA O QUE VOCÊ IRÁ RECEBER */}
-            <section className="section-padding">
+            <section className="section-padding bg-section-2">
               <div className="container-narrow">
                 <div className="text-center mb-12">
                   <h2 className="text-2xl md:text-4xl font-black">
@@ -653,7 +653,7 @@ function SalesPage() {
         </section>
 
         {/* SEÇÃO DE DOR */}
-        <section className="section-padding bg-secondary/30">
+        <section className="section-padding bg-section-1">
           <div className="container-narrow">
             <div className="text-center mb-12">
               <span className="highlight-box mb-4 inline-block">
@@ -691,7 +691,7 @@ function SalesPage() {
         </section>
 
         {/* BENEFÍCIOS */}
-        <section className="section-padding">
+        <section className="section-padding bg-section-2">
           <div className="container-narrow">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-4xl font-black mt-4">
@@ -733,7 +733,7 @@ function SalesPage() {
 
 
         {/* SEM / COM */}
-        <section className="section-padding">
+        <section className="section-padding bg-section-1">
           <div className="container-narrow">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="card-dark border-destructive/30">
@@ -811,7 +811,7 @@ function SalesPage() {
         </section>
 
         {/* FACILIDADES */}
-        <section className="section-padding bg-secondary/30">
+        <section className="section-padding bg-section-1">
           <div className="container-narrow">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-4xl font-black">
@@ -860,7 +860,7 @@ function SalesPage() {
         </section>
 
         {/* BÔNUS */}
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-section-2">
           <div className="container-narrow">
             <div className="text-center mb-8">
               <h2 className="mb-8 font-black text-3xl text-white md:text-4xl">COMPRE HOJE E GANHE BÔNUS EXCLUSIVOS 🎁</h2>
@@ -960,7 +960,7 @@ function SalesPage() {
         </section>
 
         {/* DEPOIMENTOS */}
-        <section className="section-padding bg-secondary/30">
+        <section className="section-padding bg-section-1">
           <div className="container-narrow">
             <div className="text-center mb-12">
               <span className="highlight-box mb-4 inline-block">Depoimentos Reais</span>
@@ -973,7 +973,7 @@ function SalesPage() {
         </section>
 
         {/* PREÇOS */}
-        <section id="pricing" className="section-padding">
+        <section id="pricing" className="section-padding bg-section-2">
           <div className="container-narrow">
             <div className="text-center mb-12">
               <span className="highlight-box mb-4 inline-block">Oferta Especial</span>
@@ -1054,7 +1054,7 @@ function SalesPage() {
         </section>
 
         {/* GARANTIA */}
-        <section className="section-padding bg-secondary/30">
+        <section className="section-padding bg-section-1">
           <div className="container-narrow">
             <div className="card-dark p-8 md:p-12 text-center max-w-2xl mx-auto border-green-500/30">
               <div className="w-24 h-24 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
@@ -1072,7 +1072,7 @@ function SalesPage() {
         </section>
 
         {/* FAQ */}
-        <section className="section-padding">
+        <section className="section-padding bg-section-2">
           <div className="container-narrow max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-4xl font-black">
@@ -1084,7 +1084,7 @@ function SalesPage() {
         </section>
 
         {/* FOOTER */}
-        <footer className="section-padding bg-secondary/30 border-t border-border/50">
+        <footer className="section-padding bg-section-1 border-t border-border/50">
           <div className="container-narrow text-center">
             <p className="text-muted-foreground text-sm">
               © 2026 Mega Pacote STL 3D. Todos os direitos reservados.
