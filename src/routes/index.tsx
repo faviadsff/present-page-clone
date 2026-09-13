@@ -239,7 +239,7 @@ const MODEL_SLIDES: { key: string; label: string }[] = [
   { key: "monstros-e-feras.jpg", label: "Monstros e Feras" },
   { key: "herois-e-racas.jpg", label: "Heróis e Raças" },
   { key: "npcs.jpg", label: "NPCs" },
-  { key: "imgi_5_KQNPD0X-Bl-v5W96.webp", label: "decorativos" },
+  { key: "cenarios.jpg", label: "Cenários" },
   { key: "imgi_6_KbRrWlt-CrrCAzgT.webp", label: "muito mais" },
 ];
 
