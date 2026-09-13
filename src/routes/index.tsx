@@ -860,7 +860,7 @@ function SalesPage() {
         </section>
 
         {/* BÔNUS */}
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-section-2">
           <div className="container-narrow">
             <div className="text-center mb-8">
               <h2 className="mb-8 font-black text-3xl text-white md:text-4xl">COMPRE HOJE E GANHE BÔNUS EXCLUSIVOS 🎁</h2>
