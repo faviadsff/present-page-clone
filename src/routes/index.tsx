@@ -975,56 +975,56 @@ function SalesPage() {
               <BonusCard
                 index={1}
                 title="Pack de Cenários Épicos"
-                image={IMG["imgi_7_Impressao-07-B3RCvh-G.webp"]}
+                image={imgUrl("imgi_7_Impressao-07-B3RCvh-G.webp")}
                 description="Castelos, masmorras, florestas, cidades e terrenos modulares para criar mesas cinematográficas em qualquer campanha."
                 oldPrice="R$ 49,90"
               />
               <BonusCard
                 index={2}
                 title="Pack de Monstros Clássicos"
-                image={IMG["imgi_8_Impressao-08-BuvyrUKU.webp"]}
+                image={imgUrl("imgi_8_Impressao-08-BuvyrUKU.webp")}
                 description="Goblins, orcs, esqueletos, dragões e criaturas icônicas que todo mestre precisa ter à mão."
                 oldPrice="R$ 39,90"
               />
               <BonusCard
                 index={3}
                 title="Guia de Escala e Impressão"
-                image={IMG["imgi_9_KbRcpTv-DoT3QpJN.webp"]}
+                image={imgUrl("imgi_9_KbRcpTv-DoT3QpJN.webp")}
                 description="Manual completo com configurações de escala 28mm/32mm, suportes, preenchimento e acabamento para FDM e resina."
                 oldPrice="R$ 29,90"
               />
               <BonusCard
                 index={4}
                 title="Pack de Heróis e Classes"
-                image={IMG["imgi_10_KbRcbyJ-CCbV1Pyn.webp"]}
+                image={imgUrl("imgi_10_KbRcbyJ-CCbV1Pyn.webp")}
                 description="Guerreiros, magos, ladinos, clérigos, rangers e arquétipos variados para representar qualquer personagem."
                 oldPrice="R$ 39,90"
               />
               <BonusCard
                 index={5}
                 title="Pack de Criaturas Articuladas"
-                image={IMG["imgi_11_KbRcyjR-C9wKcza2.webp"]}
+                image={imgUrl("imgi_11_KbRcyjR-C9wKcza2.webp")}
                 description="Modelos com partes móveis: golems, escaravelhos, criaturas mecânicas e monstros interativos para mesas dinâmicas."
                 oldPrice="R$ 49,90"
               />
               <BonusCard
                 index={6}
                 title="Pack de Vilões e Bosses"
-                image={IMG["imgi_12_KbRcDva-BRBrykzJ.webp"]}
+                image={imgUrl("imgi_12_KbRcDva-BRBrykzJ.webp")}
                 description="Lichs, demônios, gigantes, deuses menores e chefes épicos para finais de arco inesquecíveis."
                 oldPrice="R$ 59,90"
               />
               <BonusCard
                 index={7}
                 title="Pack de Acessórios para Mesa"
-                image={IMG["imgi_13_fIIKkSn-3q6nPj8Y.webp"]}
+                image={imgUrl("imgi_13_fIIKkSn-3q6nPj8Y.webp")}
                 description="Portais, armadilhas, baús, portas, portões e objetos interativos para enriquecer seus cenários."
                 oldPrice="R$ 29,90"
               />
               <BonusCard
                 index={8}
                 title="Pack de Colecionáveis"
-                image={IMG["imgi_14_fIIKOFt-DrlOT3L8.webp"]}
+                image={imgUrl("imgi_14_fIIKOFt-DrlOT3L8.webp")}
                 description="Figuras exclusivas, troféus, estandes e miniaturas decorativas para colecionadores e lojistas."
                 oldPrice="R$ 39,90"
               />
