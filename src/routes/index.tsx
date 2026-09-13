@@ -36,6 +36,7 @@ import imgMonstros from "@/assets/monstros-e-feras.jpg.asset.json";
 import imgHerois from "@/assets/herois-e-racas.jpg.asset.json";
 import imgNPCs from "@/assets/npcs.jpg.asset.json";
 import imgCenarios from "@/assets/cenarios.jpg.asset.json";
+import imgMuitoMais from "@/assets/muito-mais.jpg.asset.json";
 import testimonial1 from "@/assets/depoimento-whatsapp-1.jpg.asset.json";
 import testimonial2 from "@/assets/depoimento-whatsapp-2.jpg.asset.json";
 import testimonial3 from "@/assets/depoimento-whatsapp-3.jpg.asset.json";
@@ -57,6 +58,7 @@ const IMG: Record<string, string> = {
   "herois-e-racas.jpg": imgHerois.url,
   "npcs.jpg": imgNPCs.url,
   "cenarios.jpg": imgCenarios.url,
+  "muito-mais.jpg": imgMuitoMais.url,
   "imgi_3_KQNPtft-jJrvJbbN.webp": img10.url,
   "imgi_4_KQNPPbR-Hp0QWFjQ.webp": img11.url,
   "imgi_5_KQNPD0X-Bl-v5W96.webp": img12.url,
@@ -242,7 +244,7 @@ const MODEL_SLIDES: { key: string; label: string }[] = [
   { key: "herois-e-racas.jpg", label: "Heróis e Raças" },
   { key: "npcs.jpg", label: "NPCs" },
   { key: "cenarios.jpg", label: "Cenários" },
-  { key: "imgi_6_KbRrWlt-CrrCAzgT.webp", label: "muito mais" },
+  { key: "muito-mais.jpg", label: "Muito Mais" },
 ];
 
 function ModelsMarquee() {
