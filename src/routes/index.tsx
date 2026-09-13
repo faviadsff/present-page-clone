@@ -288,14 +288,6 @@ function ModelsMarquee() {
     return () => cancelAnimationFrame(raf);
   }, []);
 
-  const step = (dir: -1 | 1) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const card = track.querySelector("figure");
-    const amount = card ? card.clientWidth + 16 : 280;
-    targetRef.current += dir * amount;
-  };
-
   const pause = () => {
     pausedRef.current = true;
   };
@@ -304,7 +296,7 @@ function ModelsMarquee() {
   };
 
   return (
-    <div className="relative w-full px-10 sm:px-14">
+    <div className="relative w-full">
       <div
         ref={trackRef}
         onMouseEnter={pause}
@@ -321,7 +313,7 @@ function ModelsMarquee() {
             <figure
               key={`${copy}-${slide.key}`}
               aria-hidden={copy === 1}
-              className="w-[240px] shrink-0 overflow-hidden rounded-lg shadow-lg sm:w-[280px]"
+              className="w-[280px] shrink-0 overflow-hidden rounded-lg shadow-lg sm:w-[340px]"
             >
               <img
                 src={IMG[slide.key]}
@@ -339,22 +331,6 @@ function ModelsMarquee() {
           )),
         )}
       </div>
-      <button
-        type="button"
-        onClick={() => step(-1)}
-        aria-label="Modelo anterior"
-        className="absolute -left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/80 text-foreground transition-colors hover:bg-card sm:left-2"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
-      </button>
-      <button
-        type="button"
-        onClick={() => step(1)}
-        aria-label="Próximo modelo"
-        className="absolute -right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/80 text-foreground transition-colors hover:bg-card sm:right-2"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-      </button>
     </div>
   );
 }
