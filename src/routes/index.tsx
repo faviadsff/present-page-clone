@@ -849,25 +849,25 @@ function SalesPage() {
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-3 h-3 text-destructive"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                     </div>
-                    <span className="text-muted-foreground">Gasta fortunas em miniaturas prontas ou modelos avulsos de qualidade incerta</span>
+                    <span className="text-muted-foreground">Gasta tempo e dinheiro comprando modelos avulsos de qualidade incerta</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-3 h-3 text-destructive"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                     </div>
-                    <span className="text-muted-foreground">Perde tempo ajustando escala e suportes para cada arquivo diferente</span>
+                    <span className="text-muted-foreground">Perde horas procurando arquivos STL em diferentes sites e repositórios</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-3 h-3 text-destructive"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                     </div>
-                    <span className="text-muted-foreground">Não encontra miniaturas que combinam com o cenário ou sistema da campanha</span>
+                    <span className="text-muted-foreground">Fica limitado a poucos designs para projetos e impressões</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-3 h-3 text-destructive"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                     </div>
-                    <span className="text-muted-foreground">Fica limitado a poucos personagens e monstros na mesa</span>
+                    <span className="text-muted-foreground">Não encontra categorias variadas como anime, cosplay e peças funcionais</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center mt-0.5">
@@ -884,31 +884,31 @@ function SalesPage() {
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-3 h-3 text-green-500"><path d="M20 6 9 17l-5-5" /></svg>
                     </div>
-                    <span className="text-foreground/90">+2.000 miniaturas STL organizadas por sistema de jogo</span>
+                    <span className="text-foreground/90">Mais de 20.500.000 arquivos STL organizados em pastas</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-3 h-3 text-green-500"><path d="M20 6 9 17l-5-5" /></svg>
                     </div>
-                    <span className="text-foreground/90">Modelos testados, compatíveis e na escala correta para RPG</span>
+                    <span className="text-foreground/90">Modelos prontos para impressão 3D em resina e FDM</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-3 h-3 text-green-500"><path d="M20 6 9 17l-5-5" /></svg>
                     </div>
-                    <span className="text-foreground/90">Economia total: paga uma vez e imprime quantas miniaturas quiser</span>
+                    <span className="text-foreground/90">Economia total: paga uma vez e acessa o acervo para sempre</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-3 h-3 text-green-500"><path d="M20 6 9 17l-5-5" /></svg>
                     </div>
-                    <span className="text-foreground/90">Fantasia, monstros, dragões, cenários e heróis em um só lugar</span>
+                    <span className="text-foreground/90">Anime, miniaturas, cosplay, funcionais e decorativos em um só lugar</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-3 h-3 text-green-500"><path d="M20 6 9 17l-5-5" /></svg>
                     </div>
-                    <span className="text-foreground/90">Suporte completo, guia de escala e acesso vitalício</span>
+                    <span className="text-foreground/90">Acesso vitalício e download digital instantâneo</span>
                   </div>
                 </div>
               </div>
