@@ -125,7 +125,7 @@ const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/k22Mgh9AbZBrC7iQ1jhO"
  */
 function VslPlayer() {
   return (
-    <div className="mx-auto w-full max-w-4xl px-4">
+    <div className="w-full">
       <div className="relative w-full" style={{ padding: "56.25% 0 0 0" }}>
         <iframe
           src="https://player.vimeo.com/video/1226402707?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
@@ -578,7 +578,7 @@ function SalesPage() {
             <p className="text-lg md:text-xl text-muted-foreground text-center max-w-2xl mx-auto mb-4 px-4">
               Monstros, herois, viloes, NPCs e cenarios organizados por sistema. Baixe, imprima e leve sua mesa pro proximo nivel.
             </p>
-            <div className="flex justify-center mb-8 px-4">
+            <div className="flex justify-center mb-8 px-2">
               <VslPlayer />
             </div>
 
