@@ -598,8 +598,8 @@ function SalesPage() {
               </span>
             </div>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-center leading-tight mb-6 px-2">
-              PACOTE DE ARQUIVOS STL 3D COM{" "}
-              <span className="text-gradient">+20.500.000 MODELOS</span> PARA IMPRESSÃO
+              +2.000 Miniaturas STL de{" "}
+              <span className="text-gradient">RPG e Board Games</span> Prontas pra Imprimir
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground text-center max-w-2xl mx-auto mb-4 px-4">
               Desbloqueie uma enorme coleção de arquivos STL de alta qualidade com este pacote definitivo para impressão 3D. Desenvolvido para criadores, entusiastas e profissionais que buscam variedade sem limites.
