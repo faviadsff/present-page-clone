@@ -121,20 +121,96 @@ const CHECKOUT_PREMIUM = "https://ggcheckout.app/checkout/v5/US0R6AVPEESuj1qmeYc
 const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/k22Mgh9AbZBrC7iQ1jhO";
 
 /**
- * VSL hospedado no Vimeo (formato vertical).
+ * VSL hospedado no Vimeo (formato vertical) com HUD oculta e
+ * progress bar customizado verde na base.
  */
 function VslPlayer() {
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const playerRef = useRef<InstanceType<typeof import("@vimeo/player").default> | null>(null);
+  const [progress, setProgress] = useState(0);
+  const [playing, setPlaying] = useState(false);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    let destroyed = false;
+    let player: InstanceType<typeof import("@vimeo/player").default> | null = null;
+
+    const init = async () => {
+      const { default: Player } = await import("@vimeo/player");
+      if (!iframeRef.current || destroyed) return;
+      player = new Player(iframeRef.current);
+      playerRef.current = player;
+
+      player.on("timeupdate", (data: { seconds: number; duration: number }) => {
+        if (data.duration > 0) {
+          setProgress((data.seconds / data.duration) * 100);
+        }
+      });
+
+      player.on("play", () => setPlaying(true));
+      player.on("pause", () => setPlaying(false));
+      player.on("ended", () => setPlaying(false));
+
+      await player.ready();
+      if (!destroyed) setReady(true);
+    };
+
+    init();
+
+    return () => {
+      destroyed = true;
+      player?.destroy().catch(() => {});
+      playerRef.current = null;
+    };
+  }, []);
+
+  const togglePlay = async () => {
+    const player = playerRef.current;
+    if (!player || !ready) return;
+    const isPaused = await player.getPaused().catch(() => true);
+    if (isPaused) {
+      await player.play().catch(() => {});
+    } else {
+      await player.pause().catch(() => {});
+    }
+  };
+
   return (
     <div className="w-full">
       <div className="relative mx-auto aspect-[9/16] w-full max-w-3xl sm:max-w-4xl lg:max-w-5xl">
         <iframe
-          src="https://player.vimeo.com/video/1226402707?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+          ref={iframeRef}
+          src="https://player.vimeo.com/video/1226402707?controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&dnt=1&playsinline=1"
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
           allowFullScreen
           title="VSL STL do Mago"
           className="absolute inset-0 h-full w-full rounded-xl"
         />
+
+        {/* Botão de play/pause customizado — a HUD do Vimeo está oculta */}
+        <button
+          type="button"
+          onClick={togglePlay}
+          aria-label={playing ? "Pausar vídeo" : "Reproduzir vídeo"}
+          className={cn(
+            "absolute inset-0 z-10 flex items-center justify-center bg-black/20 transition-opacity duration-300",
+            playing ? "opacity-0 hover:opacity-100" : "opacity-100"
+          )}
+        >
+          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-black shadow-lg backdrop-blur-sm transition-transform hover:scale-105">
+            {playing ? <Pause className="h-7 w-7 fill-current" /> : <Play className="h-7 w-7 fill-current" />}
+          </span>
+        </button>
+
+        {/* Progress bar verde colada na base do vídeo */}
+        <div className="absolute bottom-0 left-0 right-0 z-20 h-2 overflow-hidden rounded-b-xl bg-white/20">
+          <div
+            className="h-full bg-green-500 transition-[width] duration-300 ease-linear"
+            style={{ width: `${progress}%` }}
+            aria-hidden="true"
+          />
+        </div>
       </div>
     </div>
   );
