@@ -653,7 +653,7 @@ function SalesPage() {
         </section>
 
         {/* SEÇÃO DE DOR */}
-        <section className="section-padding bg-secondary/30">
+        <section className="section-padding bg-section-1">
           <div className="container-narrow">
             <div className="text-center mb-12">
               <span className="highlight-box mb-4 inline-block">
