@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { ShoppingBag } from "lucide-react";
+import { ShoppingBag, X } from "lucide-react";
 import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
@@ -577,6 +577,8 @@ function SocialProofToasts() {
 }
 
 function SalesPage() {
+  const [downsellOpen, setDownsellOpen] = useState(false);
+
   return (
     <>
       <CountdownBar />
@@ -849,9 +851,14 @@ function SalesPage() {
                     <span className="text-5xl font-black text-primary">9,90</span>
                   </div>
                 </div>
-                <a id="begin_checkout_basic" href={CHECKOUT_BASIC} target="_blank" rel="noopener noreferrer" className="w-full bg-transparent text-white font-bold border-2 border-white rounded-lg px-6 py-4 inline-flex items-center justify-center text-center">
+                <button
+                  id="begin_checkout_basic"
+                  type="button"
+                  onClick={() => setDownsellOpen(true)}
+                  className="w-full bg-transparent text-white font-bold border-2 border-white rounded-lg px-6 py-4 inline-flex items-center justify-center text-center cursor-pointer"
+                >
                   QUERO O PACOTE BÁSICO!
-                </a>
+                </button>
                 <div className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield w-4 h-4"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></svg>
                   <span>Compra Segura</span>
@@ -943,6 +950,65 @@ function SalesPage() {
           </div>
         </footer>
       </main>
+
+      {/* DOWSELL */}
+      {downsellOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true">
+          <div
+            className="absolute inset-0 bg-black/80"
+            onClick={() => setDownsellOpen(false)}
+            aria-hidden="true"
+          />
+          <div className="relative z-10 w-full max-w-md rounded-lg border border-border bg-card p-6 shadow-lg">
+            <button
+              type="button"
+              onClick={() => setDownsellOpen(false)}
+              className="absolute right-4 top-4 rounded-sm text-muted-foreground transition-opacity hover:text-foreground"
+              aria-label="Fechar"
+            >
+              <X className="h-4 w-4" />
+            </button>
+            <div className="mb-4 text-center">
+              <h2 className="text-xl font-black text-gradient">
+                ESPERE! OFERTA ESPECIAL
+              </h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                A equipe STL dos Magos preparou uma oferta exclusiva para você.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <p className="text-center text-foreground">
+                Ganhe <span className="font-bold text-green-500">R$ 10,00 de desconto</span> no Pacote Premium e leve todos os bônus inclusos!
+              </p>
+              <div className="rounded-lg bg-secondary/50 p-4 text-center">
+                <p className="text-sm text-muted-foreground line-through">De R$ 27,90</p>
+                <p className="text-3xl font-black text-gradient">R$ 17,90</p>
+                <p className="text-xs text-muted-foreground">Pacote Premium + todos os bônus</p>
+              </div>
+              <a
+                id="begin_checkout_downsell"
+                href={CHECKOUT_PREMIUM}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-buy w-full inline-flex items-center justify-center text-center text-foreground"
+                onClick={() => setDownsellOpen(false)}
+              >
+                EU QUERO ESSA OFERTA!
+              </a>
+              <button
+                type="button"
+                onClick={() => {
+                  setDownsellOpen(false);
+                  window.open(CHECKOUT_BASIC, "_blank", "noopener,noreferrer");
+                }}
+                className="w-full text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
+              >
+                Quero continuar com o pacote básico
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
