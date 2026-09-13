@@ -67,7 +67,7 @@ const IMG: Record<string, string> = {
 };
 
 function imgUrl(key: keyof typeof IMG): string {
-  return IMG[key];
+  return IMG[key]!;
 }
 
 const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
