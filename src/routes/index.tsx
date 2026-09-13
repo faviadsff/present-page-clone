@@ -33,6 +33,7 @@ import img16 from "@/assets/imgi_9_KbRcpTv-DoT3QpJN.webp.asset.json";
 import img17 from "@/assets/mascote-89sfIWzW.webp.asset.json";
 import imgViloes from "@/assets/viloes-e-chefes.jpg.asset.json";
 import imgMonstros from "@/assets/monstros-e-feras.jpg.asset.json";
+import imgHerois from "@/assets/herois-e-racas.jpg.asset.json";
 import testimonial1 from "@/assets/depoimento-whatsapp-1.jpg.asset.json";
 import testimonial2 from "@/assets/depoimento-whatsapp-2.jpg.asset.json";
 import testimonial3 from "@/assets/depoimento-whatsapp-3.jpg.asset.json";
@@ -51,6 +52,7 @@ const IMG: Record<string, string> = {
   "imgi_15_KbRrXUX-B7dNbi2d.webp": img7.url,
   "viloes-e-chefes.jpg": imgViloes.url,
   "monstros-e-feras.jpg": imgMonstros.url,
+  "herois-e-racas.jpg": imgHerois.url,
   "imgi_3_KQNPtft-jJrvJbbN.webp": img10.url,
   "imgi_4_KQNPPbR-Hp0QWFjQ.webp": img11.url,
   "imgi_5_KQNPD0X-Bl-v5W96.webp": img12.url,
@@ -233,7 +235,7 @@ function CountdownBar() {
 const MODEL_SLIDES: { key: string; label: string }[] = [
   { key: "viloes-e-chefes.jpg", label: "Vilões e Chefes" },
   { key: "monstros-e-feras.jpg", label: "Monstros e Feras" },
-  { key: "imgi_3_KQNPtft-jJrvJbbN.webp", label: "cosplay" },
+  { key: "herois-e-racas.jpg", label: "Heróis e Raças" },
   { key: "imgi_4_KQNPPbR-Hp0QWFjQ.webp", label: "funcionais" },
   { key: "imgi_5_KQNPD0X-Bl-v5W96.webp", label: "decorativos" },
   { key: "imgi_6_KbRrWlt-CrrCAzgT.webp", label: "muito mais" },
