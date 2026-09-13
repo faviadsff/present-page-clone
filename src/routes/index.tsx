@@ -858,7 +858,7 @@ function SalesPage() {
         <section className="section-padding bg-background">
           <div className="container-narrow">
             <div className="text-center mb-8">
-              <h2 className="mb-8 font-black text-3xl text-white md:text-4xl">COMPRE HOJE E GANHE BÔNUS EXCLUSIVOS 🎁</h2>
+              <h2 className="mb-8 font-black text-3xl text-foreground md:text-4xl">COMPRE HOJE E GANHE BÔNUS EXCLUSIVOS 🎁</h2>
             </div>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-8">
               <BonusCard
