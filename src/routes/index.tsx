@@ -696,72 +696,72 @@ function SalesPage() {
           <div className="container-narrow">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="card-dark border-destructive/30">
-                <h3 className="text-xl font-bold text-center mb-6 text-destructive">SEM O NOSSO PACK:</h3>
+                <h3 className="text-xl font-bold text-center mb-6 text-destructive">SEM O STL DO MAGO:</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-3 h-3 text-destructive"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                     </div>
-                    <span className="text-muted-foreground">Gasta tempo e dinheiro comprando modelos avulsos de qualidade incerta</span>
+                    <span className="text-muted-foreground">Gasta R$40, R$60, R$100 em cada miniatura oficial pra montar uma única campanha</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-3 h-3 text-destructive"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                     </div>
-                    <span className="text-muted-foreground">Perde horas procurando arquivos STL em diferentes sites e repositórios</span>
+                    <span className="text-muted-foreground">Perde horas caçando arquivo de RPG solto em grupo de Facebook ou Discord</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-3 h-3 text-destructive"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                     </div>
-                    <span className="text-muted-foreground">Fica limitado a poucos designs para projetos e impressões</span>
+                    <span className="text-muted-foreground">Fica sem o monstro ou vilão exato que precisava pra sessão de sexta</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-3 h-3 text-destructive"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                     </div>
-                    <span className="text-muted-foreground">Não encontra categorias variadas como anime, cosplay e peças funcionais</span>
+                    <span className="text-muted-foreground">Baixa arquivo grátis e descobre na hora H que a malha tá quebrada ou sem escala</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-3 h-3 text-destructive"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                     </div>
-                    <span className="text-muted-foreground">Corre risco com arquivos maliciosos ou de qualidade duvidosa</span>
+                    <span className="text-muted-foreground">Improvisa com token de papel e perde a imersão do grupo na mesa</span>
                   </div>
                 </div>
               </div>
               <div className="card-dark border-green-500/30">
-                <h3 className="text-xl font-bold text-center mb-6 text-green-500">COM O NOSSO PACK:</h3>
+                <h3 className="text-xl font-bold text-center mb-6 text-green-500">COM O STL DO MAGO:</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-3 h-3 text-green-500"><path d="M20 6 9 17l-5-5" /></svg>
                     </div>
-                    <span className="text-foreground/90">Mais de 2.000 miniaturas STL organizadas em pastas</span>
+                    <span className="text-foreground/90">Mais de 2.000 miniaturas de RPG organizadas por sistema e categoria (monstros, heróis, vilões, NPCs, cenários)</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-3 h-3 text-green-500"><path d="M20 6 9 17l-5-5" /></svg>
                     </div>
-                    <span className="text-foreground/90">Modelos prontos para impressão 3D em resina e FDM</span>
+                    <span className="text-foreground/90">Arquivos testados, com guia de escala pronto pra base 25mm/32mm de mesa</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-3 h-3 text-green-500"><path d="M20 6 9 17l-5-5" /></svg>
                     </div>
-                    <span className="text-foreground/90">Economia total: paga uma vez e acessa o acervo para sempre</span>
+                    <span className="text-foreground/90">Economia total: paga uma vez e nunca mais compra miniatura avulsa</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-3 h-3 text-green-500"><path d="M20 6 9 17l-5-5" /></svg>
                     </div>
-                    <span className="text-foreground/90">Anime, miniaturas, cosplay, funcionais e decorativos em um só lugar</span>
+                    <span className="text-foreground/90">Serve pra D&D, Pathfinder e qualquer board game de fantasia</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-3 h-3 text-green-500"><path d="M20 6 9 17l-5-5" /></svg>
                     </div>
-                    <span className="text-foreground/90">Acesso vitalício e download digital instantâneo</span>
+                    <span className="text-foreground/90">Acesso vitalício com download instantâneo — pronto pra próxima sessão</span>
                   </div>
                 </div>
               </div>
