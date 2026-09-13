@@ -106,14 +106,14 @@ const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
 ];
 
 const PREMIUM_BONUSES: ReadonlyArray<string> = [
-  "Bônus 1: Pack de Cenários Épicos",
-  "Bônus 2: Pack de Monstros Clássicos",
-  "Bônus 3: Guia de Escala e Impressão",
-  "Bônus 4: Pack de Heróis e Classes",
-  "Bônus 5: Pack de Criaturas Articuladas",
-  "Bônus 6: Pack de Vilões e Bosses",
-  "Bônus 7: Pack de Acessórios para Mesa",
-  "Bônus 8: Pack de Colecionáveis"
+  "Bônus 1: Pack Anime & Mangá",
+  "Bônus 2: Pack de Miniaturas e Figuras",
+  "Bônus 3: Pack de Acessórios para Cosplay",
+  "Bônus 4: Pack de Designs Funcionais",
+  "Bônus 5: Pack de Designs Decorativos",
+  "Bônus 6: Pack de Cenários e Dioramas",
+  "Bônus 7: Pack de Monstros e Criaturas",
+  "Bônus 8: Pack de Peças Articuladas"
 ];
 
 const PLAYER_ID = "696bdc9c9e020389f6684bd5";
