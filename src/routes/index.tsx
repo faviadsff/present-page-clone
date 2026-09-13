@@ -48,7 +48,7 @@ const IMG: Record<string, string> = {
   "imgi_13_fIIKkSn-3q6nPj8Y.webp": img5.url,
   "imgi_14_fIIKOFt-DrlOT3L8.webp": img6.url,
   "imgi_15_KbRrXUX-B7dNbi2d.webp": img7.url,
-  "imgi_1_KQNPeWB-D9d9-B09.webp": img8.url,
+  "viloes-e-chefes.jpg": imgViloes.url,
   "imgi_2_KbRrVfI-DADcOfDM.webp": img9.url,
   "imgi_3_KQNPtft-jJrvJbbN.webp": img10.url,
   "imgi_4_KQNPPbR-Hp0QWFjQ.webp": img11.url,
@@ -230,7 +230,7 @@ function CountdownBar() {
 }
 
 const MODEL_SLIDES: { key: string; label: string }[] = [
-  { key: "imgi_1_KQNPeWB-D9d9-B09.webp", label: "anime" },
+  { key: "viloes-e-chefes.jpg", label: "Vilões e Chefes" },
   { key: "imgi_2_KbRrVfI-DADcOfDM.webp", label: "miniaturas" },
   { key: "imgi_3_KQNPtft-jJrvJbbN.webp", label: "cosplay" },
   { key: "imgi_4_KQNPPbR-Hp0QWFjQ.webp", label: "funcionais" },
