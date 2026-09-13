@@ -948,7 +948,7 @@ function SalesPage() {
                 </div>
               </div>
             </div>
-            <p className="mt-8 text-lg font-medium text-white text-center">
+            <p className="mt-8 text-lg font-medium text-foreground text-center">
               Esses bônus valem <span className="font-bold">R$ 417,30</span> e somente hoje você recebe eles <span className="font-bold text-green-600">GRATUITAMENTE!</span>
             </p>
           </div>
