@@ -37,6 +37,7 @@ import imgHerois from "@/assets/herois-e-racas.jpg.asset.json";
 import imgNPCs from "@/assets/npcs.jpg.asset.json";
 import imgCenarios from "@/assets/cenarios.jpg.asset.json";
 import imgMuitoMais from "@/assets/muito-mais.jpg.asset.json";
+import imgBonusEspecial from "@/assets/bonus-especial.jpg.asset.json";
 import testimonial1 from "@/assets/depoimento-whatsapp-1.jpg.asset.json";
 import testimonial2 from "@/assets/depoimento-whatsapp-2.jpg.asset.json";
 import testimonial3 from "@/assets/depoimento-whatsapp-3.jpg.asset.json";
