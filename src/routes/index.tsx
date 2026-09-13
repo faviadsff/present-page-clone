@@ -117,8 +117,6 @@ const PREMIUM_BONUSES: ReadonlyArray<string> = [
   "Bônus 4: Pack de Cenários e Dioramas"
 ];
 
-const PLAYER_ID = "696bdc9c9e020389f6684bd5";
-const PLAYER_ACCOUNT = "d9d9e187-4260-4eb4-9363-5bcdac2c24d6";
 const CHECKOUT_PREMIUM = "https://ggcheckout.app/checkout/v5/US0R6AVPEESuj1qmeYcF";
 const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/k22Mgh9AbZBrC7iQ1jhO";
 
