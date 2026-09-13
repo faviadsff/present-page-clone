@@ -72,36 +72,36 @@ function imgUrl(key: keyof typeof IMG): string {
 
 const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
-    "question": "Esses arquivos funcionam na minha impressora 3D?",
-    "answer": "Sim! Os arquivos STL são universais e funcionam em praticamente todas as impressoras 3D resinárias e FDM, como Ender 3, Anycubic, Creality, Prusa, Phrozen e ELEGOO. Basta importar no fatiador (Cura, PrusaSlicer, Lychee, Chitubox) e mandar imprimir."
+    question: "Esses arquivos funcionam na minha impressora 3D?",
+    answer: "Sim! Os arquivos STL são universais e funcionam em praticamente todas as impressoras 3D, seja de resina ou FDM (Ender 3, Anycubic, Creality, Prusa, Phrozen, ELEGOO e outras). Basta importar no fatiador (Cura, PrusaSlicer, Lychee, Chitubox) e mandar imprimir."
   },
   {
-    "question": "As miniaturas já vêm na escala certa para RPG?",
-    "answer": "Sim! A grande maioria já está em escala 28mm/32mm, padrão para D&D, Pathfinder e Warhammer. O pack inclui ainda um guia completo de suporte e escala para você ajustar conforme o sistema e a impressora."
+    question: "Quais categorias estão inclusas no pacote?",
+    answer: "O pacote conta com modelos inspirados em anime, miniaturas e figuras, acessórios para cosplay, designs funcionais e decorativos. Tudo organizado em pastas claras para você encontrar o arquivo certo em segundos."
   },
   {
-    "question": "Como é a organização por sistema de jogo?",
-    "answer": "Os arquivos estão separados por pastas claras: D&D 5e, Pathfinder, Call of Cthulhu, Warhammer, RPGs old-school, cenários genéricos e muito mais. Assim você encontra a miniatura certa em segundos."
+    question: "Recebo acesso na hora da compra?",
+    answer: "Sim! Após a confirmação do pagamento (instantânea para PIX e cartão), você recebe o link de acesso imediato no seu e-mail. O acesso é vitalício, então você pode baixar quando quiser."
   },
   {
-    "question": "Recebo acesso na hora?",
-    "answer": "Sim! Após a confirmação do pagamento (instantânea para PIX e cartão), você recebe o link de acesso imediato no seu e-mail. O acesso é vitalício."
+    question: "Posso usar os arquivos em projetos pessoais e comerciais?",
+    answer: "Sim! Você pode usar os arquivos STL tanto para projetos pessoais quanto para comerciais. Muitos clientes lucram vendendo impressões físicas, peças acabadas e produtos customizados em marketplaces e lojas online."
   },
   {
-    "question": "Posso vender as impressões físicas?",
-    "answer": "Sim! Você pode imprimir e vender as miniaturas físicas, cenários e peças sem problemas. Muitos mestres e lojistas já lucram vendendo em eventos de RPG, marketplaces e grupos de board game."
+    question: "Preciso saber modelar 3D?",
+    answer: "Não! Os modelos já vêm prontos. Você só precisa fatiar, adicionar suportes quando indicado e imprimir. O conteúdo é adequado para iniciantes e experientes."
   },
   {
-    "question": "Preciso saber modelar 3D?",
-    "answer": "Não! Os modelos já vêm prontos. Você só precisa fatiar, adicionar suportes quando indicado e imprimir. O guia de escala ensina cada passo para iniciantes."
+    question: "O pacote realmente tem mais de 20 milhões de arquivos?",
+    answer: "Sim. Você recebe acesso a um acervo massivo com milhões de arquivos STL organizados, cobrindo dezenas de nichos e estilos. É um verdadeiro mega pacote para quem quer variedade sem limites."
   },
   {
-    "question": "Qual a diferença para os acervos genéricos de STL?",
-    "answer": "Este é um recorte especializado: focamos exclusivamente em miniaturas e cenários de RPG/board game, com organização por sistema e padrão de escala. Você não paga por arquivos aleatórios que nunca vai usar."
+    question: "Qual a diferença deste pacote para acervos pequenos?",
+    answer: "Aqui você não paga por poucos modelos. Recebe milhões de arquivos organizados em um só lugar, com acesso vitalício e atualizações constantes do acervo."
   },
   {
-    "question": "Funciona para iniciantes em impressão 3D?",
-    "answer": "Sim! O guia de suporte/escala e a organização por pastas facilitam muito a vida de quem está começando. Você vai da compra à primeira peça impressa sem enrolação."
+    question: "Funciona para quem quer revender peças?",
+    answer: "Sim! O pacote é ideal para vendedores do Etsy, lojas online, criadores de cosplay, designers de miniaturas e entusiastas de impressão em resina que querem revender impressões físicas."
   }
 ];
 
