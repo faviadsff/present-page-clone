@@ -858,8 +858,7 @@ function SalesPage() {
         <section className="section-padding bg-section-1">
           <div className="container-narrow">
             <div className="text-center mb-12">
-              <span className="highlight-box mb-4 inline-block">Depoimentos Reais</span>
-              <h2 className="text-2xl md:text-4xl font-black mt-4">
+              <h2 className="text-2xl md:text-4xl font-black">
                 VEJA O QUE OS NOSSOS <span className="text-gradient">CLIENTES ESTÃO DIZENDO:</span>
               </h2>
             </div>
