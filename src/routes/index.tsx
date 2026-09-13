@@ -225,7 +225,7 @@ function UpsellDialog() {
               ))}
               <div className="flex items-start gap-2 rounded-md bg-red-500/10 p-1.5 sm:col-span-2">
                 <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-red-400" />
-                <span className="text-xs font-semibold text-red-400">🎁 BÔNUS ESPECIAL: Pack de Dragões e Criaturas Épicas</span>
+                <span className="text-xs font-semibold text-red-400">🎁 BÔNUS ESPECIAL: Pack de Colecionáveis e Troféus</span>
               </div>
             </div>
           </div>
