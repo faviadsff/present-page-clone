@@ -584,6 +584,8 @@ function SocialProofToasts() {
 }
 
 function SalesPage() {
+  const [downsellOpen, setDownsellOpen] = useState(false);
+
   return (
     <>
       <CountdownBar />
