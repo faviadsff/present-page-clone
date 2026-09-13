@@ -648,7 +648,7 @@ function SalesPage() {
         {/* SEÇÃO DE DOR — NOVA VERSÃO RPG */}
         <section className="section-padding bg-section-1">
           <div className="container-narrow">
-            <h2 className="text-2xl md:text-4xl font-black text-center mb-10 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-black text-center mb-14 md:mb-20 leading-tight">
               SUA MESA DE RPG MERECE MAIS QUE FICHAS E MINIATURA <span className="text-gradient">GENÉRICA</span>
             </h2>
             <div className="space-y-0 mb-10">
