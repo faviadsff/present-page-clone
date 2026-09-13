@@ -654,6 +654,19 @@ function SalesPage() {
             <div className="flex justify-center mb-8 px-4">
               <VslPlayer />
             </div>
+
+            {/* CARROSSEL — VEJA O QUE VOCÊ IRÁ RECEBER */}
+            <section className="section-padding">
+              <div className="container-narrow">
+                <div className="text-center mb-12">
+                  <h2 className="text-2xl md:text-4xl font-black">
+                    VEJA OS MODELOS QUE <span className="text-gradient">VOCÊ IRÁ RECEBER:</span>
+                  </h2>
+                </div>
+                <ModelsMarquee />
+              </div>
+            </section>
+
             <div className="flex flex-col items-center gap-4 mb-8">
               <button
                 onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth", block: "start" })}
