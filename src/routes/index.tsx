@@ -31,6 +31,7 @@ import img14 from "@/assets/imgi_7_Impressao-07-B3RCvh-G.webp.asset.json";
 import img15 from "@/assets/imgi_8_Impressao-08-BuvyrUKU.webp.asset.json";
 import img16 from "@/assets/imgi_9_KbRcpTv-DoT3QpJN.webp.asset.json";
 import img17 from "@/assets/mascote-89sfIWzW.webp.asset.json";
+import imgViloes from "@/assets/viloes-e-chefes.jpg.asset.json";
 import testimonial1 from "@/assets/depoimento-whatsapp-1.jpg.asset.json";
 import testimonial2 from "@/assets/depoimento-whatsapp-2.jpg.asset.json";
 import testimonial3 from "@/assets/depoimento-whatsapp-3.jpg.asset.json";
