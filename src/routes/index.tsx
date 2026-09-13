@@ -1093,11 +1093,11 @@ function SalesPage() {
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-5 h-5 text-green-500 flex-shrink-0"><path d="M20 6 9 17l-5-5" /></svg>
-                    <span className="text-foreground/90 text-sm">+2.000 miniaturas STL</span>
+                    <span className="text-foreground/90 text-sm">Acesso a uma seleção de arquivos STL</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-5 h-5 text-green-500 flex-shrink-0"><path d="M20 6 9 17l-5-5" /></svg>
-                    <span className="text-foreground/90 text-sm">Acesso vitalício</span>
+                    <span className="text-foreground/90 text-sm">Download digital instantâneo</span>
                   </div>
                 </div>
                 <div className="text-center mb-6">
@@ -1107,7 +1107,9 @@ function SalesPage() {
                     <span className="text-5xl font-black text-primary">9,90</span>
                   </div>
                 </div>
-                <UpsellDialog />
+                <a id="begin_checkout_basic" href={CHECKOUT_BASIC} target="_blank" rel="noopener noreferrer" className="btn-cta w-full text-foreground animate-pulse-glow inline-flex items-center justify-center text-center">
+                  QUERO O PACOTE BÁSICO!
+                </a>
                 <div className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield w-4 h-4"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></svg>
                   <span>Compra Segura</span>
@@ -1131,8 +1133,8 @@ function SalesPage() {
                     </div>
                   ))}
                   <div className="flex items-center gap-3 bg-red-500/10 p-2 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-tree-pine w-4 h-4 text-red-400 flex-shrink-0"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z" /><path d="M12 22v-3" /></svg>
-                    <span className="text-red-400 text-sm font-semibold">🎁 BÔNUS ESPECIAL: Pack de Dragões e Criaturas Épicas</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-gift w-4 h-4 text-red-400 flex-shrink-0"><rect x="3" y="8" width="18" height="4" rx="1" /><path d="M12 8v13" /><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" /><path d="M7.5 8a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 2.5 2.5v5" /><path d="M16.5 8v-2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1-2.5 2.5h-5" /></svg>
+                    <span className="text-red-400 text-sm font-semibold">🎁 BÔNUS ESPECIAL: Pack de Modelos para Impressão 3D Premium</span>
                   </div>
                 </div>
                 <div className="text-center mb-6">
@@ -1142,11 +1144,11 @@ function SalesPage() {
                     <span className="text-5xl font-black text-gradient">27,90</span>
                   </div>
                 </div>
-                <a id="begin_checkout" href="https://ggcheckout.app/checkout/v5/X5ZHG65K5U9esfliTICX" target="_blank" rel="noopener noreferrer" className="btn-cta w-full text-foreground animate-pulse-glow inline-flex items-center justify-center text-center">
-                  QUERO ESSA SUPER OFERTA!
+                <a id="begin_checkout" href={CHECKOUT_PREMIUM} target="_blank" rel="noopener noreferrer" className="btn-cta w-full text-foreground animate-pulse-glow inline-flex items-center justify-center text-center">
+                  QUERO ESSE MEGA PACOTE!
                 </a>
                 <div className="text-center mt-4">
-                  <p className="text-sm text-red-400">🎲 ACERVO ESPECIALIZADO RPG! Aproveite os descontos apenas esse mês de setembro.</p>
+                  <p className="text-sm text-red-400">🎁 DESCONTO ESPECIAL! Aproveite apenas esse mês de setembro.</p>
                 </div>
                 <div className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield w-4 h-4"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></svg>
