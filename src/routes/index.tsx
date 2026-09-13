@@ -859,18 +859,7 @@ function SalesPage() {
           </div>
         </section>
 
-        {/* DEPOIMENTOS */}
-        <section className="section-padding bg-section-1">
-          <div className="container-narrow">
-            <div className="text-center mb-12">
-              <span className="highlight-box mb-4 inline-block">Depoimentos Reais</span>
-              <h2 className="text-2xl md:text-4xl font-black mt-4">
-                VEJA O QUE OS NOSSOS <span className="text-gradient">CLIENTES ESTÃO DIZENDO:</span>
-              </h2>
-            </div>
-            <TestimonialsMarquee />
-          </div>
-        </section>
+
 
         {/* PREÇOS */}
         <section id="pricing" className="section-padding bg-section-2">
