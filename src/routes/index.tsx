@@ -22,7 +22,7 @@ import img5 from "@/assets/imgi_13_fIIKkSn-3q6nPj8Y.webp.asset.json";
 import img6 from "@/assets/imgi_14_fIIKOFt-DrlOT3L8.webp.asset.json";
 import img7 from "@/assets/imgi_15_KbRrXUX-B7dNbi2d.webp.asset.json";
 
-import img9 from "@/assets/imgi_2_KbRrVfI-DADcOfDM.webp.asset.json";
+
 import img10 from "@/assets/imgi_3_KQNPtft-jJrvJbbN.webp.asset.json";
 import img11 from "@/assets/imgi_4_KQNPPbR-Hp0QWFjQ.webp.asset.json";
 import img12 from "@/assets/imgi_5_KQNPD0X-Bl-v5W96.webp.asset.json";
