@@ -919,7 +919,7 @@ function SalesPage() {
               />
             </div>
 
-            <div className="my-8 text-center text-white">
+            <div className="my-8 text-center text-foreground">
               <p className="text-3xl font-bold mb-2">🎁 NÃO ACABOU!</p>
               <p className="text-2xl">
                 <span className="font-bold italic bg-red-600 px-2 rounded-md text-[25px]">BÔNUS ESPECIAL</span> liberado apenas esse mês de setembro!
