@@ -299,11 +299,11 @@ function CountdownBar() {
 }
 
 const MODEL_SLIDES: { key: string; label: string }[] = [
-  { key: "imgi_1_KQNPeWB-D9d9-B09.webp", label: "fantasia" },
-  { key: "imgi_2_KbRrVfI-DADcOfDM.webp", label: "monstros" },
-  { key: "imgi_3_KQNPtft-jJrvJbbN.webp", label: "cenários" },
-  { key: "imgi_4_KQNPPbR-Hp0QWFjQ.webp", label: "heróis" },
-  { key: "imgi_5_KQNPD0X-Bl-v5W96.webp", label: "criaturas" },
+  { key: "imgi_1_KQNPeWB-D9d9-B09.webp", label: "anime" },
+  { key: "imgi_2_KbRrVfI-DADcOfDM.webp", label: "miniaturas" },
+  { key: "imgi_3_KQNPtft-jJrvJbbN.webp", label: "cosplay" },
+  { key: "imgi_4_KQNPPbR-Hp0QWFjQ.webp", label: "funcionais" },
+  { key: "imgi_5_KQNPD0X-Bl-v5W96.webp", label: "decorativos" },
   { key: "imgi_6_KbRrWlt-CrrCAzgT.webp", label: "muito mais" },
 ];
 
