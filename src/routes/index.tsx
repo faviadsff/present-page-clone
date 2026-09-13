@@ -753,7 +753,7 @@ function SalesPage() {
             <div className="text-center mb-12">
               <span className="highlight-box mb-4 inline-block">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lightbulb w-4 h-4 inline mr-2"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" /><path d="M9 18h6" /><path d="M10 22h4" /></svg>
-                ESTE PACK FOI FEITO PARA QUEM JOGA SÉRIO...
+                ESTE PACK FOI FEITO PARA QUEM QUER VARIEDADE SEM LIMITES...
               </span>
             </div>
             <div className="grid md:grid-cols-2 gap-4 mb-12">
@@ -761,25 +761,25 @@ function SalesPage() {
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-4 h-4 text-primary"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                 </div>
-                <p className="text-foreground/90 text-lg">Chega de pagar caro em modelos genéricos que não encaixam no seu sistema de jogo.</p>
+                <p className="text-foreground/90 text-lg">Chega de perder horas procurando modelos STL isolados na internet.</p>
               </div>
               <div className="flex items-start gap-4 p-5 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors">
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-4 h-4 text-primary"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                 </div>
-                <p className="text-foreground/90 text-lg">Pare de perder horas ajustando escala, suportes e resolvendo erros de impressão.</p>
+                <p className="text-foreground/90 text-lg">Pare de pagar caro por pacotes pequenos que não suprem suas ideias.</p>
               </div>
               <div className="flex items-start gap-4 p-5 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors">
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-4 h-4 text-primary"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                 </div>
-                <p className="text-foreground/90 text-lg">Não fique mais limitado a poucas miniaturas na sua mesa de RPG ou board game.</p>
+                <p className="text-foreground/90 text-lg">Não fique mais limitado a poucos designs para seus projetos e impressões.</p>
               </div>
               <div className="flex items-start gap-4 p-5 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors">
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x w-4 h-4 text-primary"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                 </div>
-                <p className="text-foreground/90 text-lg">Tenha miniaturas profissionais sem precisar modelar nada do zero.</p>
+                <p className="text-foreground/90 text-lg">Tenha milhões de arquivos profissionais sem precisar modelar nada do zero.</p>
               </div>
             </div>
           </div>
