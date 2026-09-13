@@ -936,7 +936,7 @@ function SalesPage() {
                     <span className="text-5xl font-black text-primary">9,90</span>
                   </div>
                 </div>
-                <a id="begin_checkout_basic" href={CHECKOUT_BASIC} target="_blank" rel="noopener noreferrer" className="w-full bg-white text-black font-bold rounded-lg px-6 py-4 inline-flex items-center justify-center text-center">
+                <a id="begin_checkout_basic" href={CHECKOUT_BASIC} target="_blank" rel="noopener noreferrer" className="w-full bg-transparent text-white font-bold border-2 border-white rounded-lg px-6 py-4 inline-flex items-center justify-center text-center">
                   QUERO O PACOTE BÁSICO!
                 </a>
                 <div className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground">
