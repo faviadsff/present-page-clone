@@ -99,14 +99,10 @@ const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
 ];
 
 const PREMIUM_BONUSES: ReadonlyArray<string> = [
-  "Bônus 1: Pack Anime & Mangá",
-  "Bônus 2: Pack de Miniaturas e Figuras",
-  "Bônus 3: Pack de Acessórios para Cosplay",
-  "Bônus 4: Pack de Designs Funcionais",
-  "Bônus 5: Pack de Designs Decorativos",
-  "Bônus 6: Pack de Cenários e Dioramas",
-  "Bônus 7: Pack de Monstros e Criaturas",
-  "Bônus 8: Pack de Peças Articuladas"
+  "Bônus 1: Pack de Miniaturas e Figuras",
+  "Bônus 2: Pack de Monstros e Criaturas",
+  "Bônus 3: Pack de Designs Decorativos",
+  "Bônus 4: Pack de Cenários e Dioramas"
 ];
 
 const PLAYER_ID = "696bdc9c9e020389f6684bd5";
