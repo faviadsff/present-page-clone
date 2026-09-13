@@ -921,16 +921,16 @@ function SalesPage() {
           <div className="container-narrow">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-4xl font-black">
-                FACILIDADES QUE SÓ <span className="text-gradient">ESSE PACK OFERECE!</span>
+                POR QUE ESCOLHER <span className="text-gradient">ESTE PACOTE STL?</span>
               </h2>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="card-dark hover:border-primary/50 transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <span className="text-3xl">🎲</span>
+                  <span className="text-3xl">🎯</span>
                   <div>
-                    <h3 className="text-lg font-bold mb-2">MESA MAIS IMERSIVA</h3>
-                    <p className="text-muted-foreground">Surpreenda seus jogadores com miniaturas e cenários que dão vida a cada combate e exploração.</p>
+                    <h3 className="text-lg font-bold mb-2">PERFEITO PARA CRIADORES</h3>
+                    <p className="text-muted-foreground">Ideal para entusiastas da impressão 3D, vendedores do Etsy, criadores de cosplay, designers de miniaturas e entusiastas de resina.</p>
                   </div>
                 </div>
               </div>
@@ -939,25 +939,25 @@ function SalesPage() {
                   <span className="text-3xl">💰</span>
                   <div>
                     <h3 className="text-lg font-bold mb-2">ECONOMIA REAL</h3>
-                    <p className="text-muted-foreground">Imprima dezenas de miniaturas pelo preço de uma única peça comprada em loja especializada.</p>
+                    <p className="text-muted-foreground">Pague uma única vez e tenha acesso a milhões de arquivos, sem precisar comprar modelos avulsos.</p>
                   </div>
                 </div>
               </div>
               <div className="card-dark hover:border-primary/50 transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <span className="text-3xl">🧠</span>
+                  <span className="text-3xl">🧩</span>
                   <div>
-                    <h3 className="text-lg font-bold mb-2">LIBERDADE PARA CRIAR</h3>
-                    <p className="text-muted-foreground">Monte exércitos, bosses, NPCs e cenários personalizados para qualquer campanha.</p>
+                    <h3 className="text-lg font-bold mb-2">VARIEDADE SEM FIM</h3>
+                    <p className="text-muted-foreground">Anime, miniaturas, figuras, acessórios para cosplay, designs funcionais e decorativos em um só pacote.</p>
                   </div>
                 </div>
               </div>
               <div className="card-dark hover:border-primary/50 transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <span className="text-3xl">🔥</span>
+                  <span className="text-3xl">⚡</span>
                   <div>
-                    <h3 className="text-lg font-bold mb-2">COMUNIDADE EXCLUSIVA</h3>
-                    <p className="text-muted-foreground">Faça parte de uma comunidade de mestres e entusiastas que valorizam miniaturas de qualidade.</p>
+                    <h3 className="text-lg font-bold mb-2">ACESSO INSTANTÂNEO</h3>
+                    <p className="text-muted-foreground">Receba o link de download imediatamente após a compra e comece a imprimir seus designs favoritos agora mesmo.</p>
                   </div>
                 </div>
               </div>
