@@ -593,7 +593,7 @@ function SalesPage() {
           <div className="container-narrow relative z-10 w-full">
             <div className="flex justify-center mb-4 animate-fade-in">
               <span className="highlight-box flex items-center gap-2 bg-red-500/20 text-red-400 border-red-500/30 text-center px-3 py-1">
-                🎅 NATAL 3D! Aproveite os descontos especiais apenas nesse mês de setembro.
+                Aproveite os descontos especiais apenas nesse mês de setembro.
               </span>
             </div>
             <div className="flex justify-center mb-6 animate-fade-in">
