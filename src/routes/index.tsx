@@ -221,7 +221,7 @@ function CountdownBar() {
   const seconds = String(secondsLeft % 60).padStart(2, "0");
 
   return (
-    <div className="sticky top-0 z-50 w-full bg-primary px-3 py-2 text-center text-primary-foreground">
+    <div className="timer-bar sticky top-0 z-50 w-full px-3 py-2 text-center">
       <p className="text-xs font-bold uppercase tracking-wide sm:text-sm">
         Oferta por tempo limitado - expira em{" "}
         <span className="tabular-nums">
