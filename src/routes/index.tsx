@@ -648,7 +648,7 @@ function SalesPage() {
         {/* SEÇÃO DE DOR — NOVA VERSÃO RPG */}
         <section className="section-padding bg-section-1">
           <div className="container-narrow">
-            <h2 className="text-2xl md:text-4xl font-black text-center mb-10 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-black text-center mb-14 md:mb-20 leading-tight">
               SUA MESA DE RPG MERECE MAIS QUE FICHAS E MINIATURA <span className="text-gradient">GENÉRICA</span>
             </h2>
             <div className="space-y-0 mb-10">
@@ -657,7 +657,7 @@ function SalesPage() {
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-alert-triangle w-4 h-4 text-yellow-400"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg>
                 </div>
                 <p className="text-foreground/90 text-lg leading-snug">
-                  Miniatura oficial custa R$40, R$60, R$100 cada — e um bicho só pra montar uma campanha inteira
+                  Miniatura oficial custa R$40, R$60, R$100 cada só pra montar uma campanha inteira
                 </p>
               </div>
               <div className="flex items-start gap-4 py-5 border-b border-border/40">
