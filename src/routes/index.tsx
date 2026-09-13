@@ -1168,7 +1168,7 @@ function SalesPage() {
               </div>
               <h2 className="text-2xl md:text-3xl font-black mb-4">GARANTIA DE 7 DIAS</h2>
               <p className="text-muted-foreground text-lg mb-6">
-                Se você não gostar do material, pode pedir reembolso total em até 7 dias. Risco zero para você.
+                Se você não gostar do pacote, pode pedir reembolso total em até 7 dias. Risco zero para você.
               </p>
               <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} className="btn-cta inline-flex items-center justify-center text-foreground">
                 QUERO GARANTIR MEU ACESSO
@@ -1193,10 +1193,10 @@ function SalesPage() {
         <footer className="section-padding bg-secondary/30 border-t border-border/50">
           <div className="container-narrow text-center">
             <p className="text-muted-foreground text-sm">
-              © 2026 Miniaturas RPG 3D. Todos os direitos reservados.
+              © 2026 Mega Pacote STL 3D. Todos os direitos reservados.
             </p>
             <p className="text-muted-foreground/60 text-xs mt-2">
-              Este site não é afiliado a nenhuma editora de RPG ou board game. Os modelos são para uso pessoal e comercial de peças físicas.
+              Este site é um canal de distribuição digital de arquivos STL. Os modelos são indicados para impressão 3D pessoal e comercial de peças físicas, conforme os termos de cada licença.
             </p>
           </div>
         </footer>
