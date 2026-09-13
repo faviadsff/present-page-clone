@@ -773,17 +773,6 @@ function SalesPage() {
           </div>
         </section>
 
-        {/* CARROSSEL */}
-        <section className="section-padding bg-secondary/30">
-          <div className="container-narrow">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-4xl font-black">
-                VEJA OS MODELOS QUE <span className="text-gradient">VOCÊ IRÁ RECEBER:</span>
-              </h2>
-            </div>
-            <ModelsMarquee />
-          </div>
-        </section>
 
         {/* SEM / COM */}
         <section className="section-padding">
