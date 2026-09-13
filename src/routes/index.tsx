@@ -77,36 +77,36 @@ function imgUrl(key: keyof typeof IMG): string {
 
 const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
   {
-    question: "Esses arquivos funcionam na minha impressora 3D?",
-    answer: "Sim! Os arquivos STL são universais e funcionam em praticamente todas as impressoras 3D, seja de resina ou FDM (Ender 3, Anycubic, Creality, Prusa, Phrozen, ELEGOO e outras). Basta importar no fatiador (Cura, PrusaSlicer, Lychee, Chitubox) e mandar imprimir."
+    question: "Como eu recebo os arquivos?",
+    answer: "Acesso liberado na hora, direto no seu e-mail, com link de download organizado por pastas."
   },
   {
-    question: "Quais categorias estão inclusas no pacote?",
-    answer: "O pacote conta com modelos inspirados em anime, miniaturas e figuras, acessórios para cosplay, designs funcionais e decorativos. Tudo organizado em pastas claras para você encontrar o arquivo certo em segundos."
+    question: "Funciona pra qualquer impressora 3D?",
+    answer: "Sim, os arquivos STL são compatíveis com qualquer impressora e fatiador (Cura, PrusaSlicer, etc)."
   },
   {
-    question: "Recebo acesso na hora da compra?",
-    answer: "Sim! Após a confirmação do pagamento (instantânea para PIX e cartão), você recebe o link de acesso imediato no seu e-mail. O acesso é vitalício, então você pode baixar quando quiser."
+    question: "Preciso saber modelar em 3D?",
+    answer: "Não. É só baixar o arquivo, jogar no fatiador e imprimir. Nenhuma edição necessária."
   },
   {
-    question: "Posso usar os arquivos em projetos pessoais e comerciais?",
-    answer: "Sim! Você pode usar os arquivos STL tanto para projetos pessoais quanto para comerciais. Muitos clientes lucram vendendo impressões físicas, peças acabadas e produtos customizados em marketplaces e lojas online."
+    question: "Os arquivos já veem no tamanho certo pra RPG?",
+    answer: "Sim, o guia de escala mostra como ajustar pra base padrão 25mm ou 32mm de mesa."
   },
   {
-    question: "Preciso saber modelar 3D?",
-    answer: "Não! Os modelos já vêm prontos. Você só precisa fatiar, adicionar suportes quando indicado e imprimir. O conteúdo é adequado para iniciantes e experientes."
+    question: "E se eu não gostar?",
+    answer: "Você tem 14 dias de garantia incondicional. Devolvemos 100% do valor."
   },
   {
-    question: "O pacote realmente tem mais de 2.000 miniaturas?",
-    answer: "Sim. Você recebe acesso a um acervo com mais de 2.000 miniaturas STL organizadas por sistema de jogo, incluindo monstros, heróis, vilões, NPCs e cenários para RPG e board games."
+    question: "O acesso é vitalício?",
+    answer: "Sim, pagamento único e acesso pra sempre, sem mensalidade."
   },
   {
-    question: "Qual a diferença deste pacote para acervos pequenos?",
-    answer: "Aqui você não paga por poucos modelos. Recebe milhões de arquivos organizados em um só lugar, com acesso vitalício e atualizações constantes do acervo."
+    question: "Posso usar pra board game também?",
+    answer: "Sim, boa parte do acervo (cenários, monstros, NPCs) serve pra qualquer board game de fantasia."
   },
   {
-    question: "Funciona para quem quer revender peças?",
-    answer: "Sim! O pacote é ideal para vendedores do Etsy, lojas online, criadores de cosplay, designers de miniaturas e entusiastas de impressão em resina que querem revender impressões físicas."
+    question: "Vale a pena se tem arquivo grátis na internet?",
+    answer: "Os gratuitos costumam vir com malha quebrada e sem organização. Aqui está tudo testado, catalogado e pronto pra imprimir sem perder tempo."
   }
 ];
 
