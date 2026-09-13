@@ -693,48 +693,6 @@ function SalesPage() {
           </div>
         </section>
 
-        {/* BENEFÍCIOS */}
-        <section className="section-padding bg-section-2">
-          <div className="container-narrow">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-4xl font-black mt-4">
-                COM NOSSO PACOTE <span className="text-gradient">VOCÊ RECEBE:</span>
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <div className="card-dark text-center hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
-                <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lightbulb w-7 h-7 text-primary"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" /><path d="M9 18h6" /><path d="M10 22h4" /></svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2">GRANDE COLEÇÃO DE ARQUIVOS STL</h3>
-                <p className="text-muted-foreground">Mais de 2.000 miniaturas STL organizadas em categorias para qualquer tipo de projeto.</p>
-              </div>
-              <div className="card-dark text-center hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
-                <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clock w-7 h-7 text-primary"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2">DOWNLOAD INSTANTÂNEO</h3>
-                <p className="text-muted-foreground">Acesso imediato após a compra. Baixe no computador, celular ou HD externo quando quiser.</p>
-              </div>
-              <div className="card-dark text-center hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
-                <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trending-up w-7 h-7 text-primary"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2">AMPLA VARIEDADE DE CATEGORIAS</h3>
-                <p className="text-muted-foreground">Anime, miniaturas, figuras, acessórios para cosplay, designs funcionais e decorativos em um só lugar.</p>
-              </div>
-              <div className="card-dark text-center hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
-                <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield w-7 h-7 text-primary"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2">USO PESSOAL E COMERCIAL</h3>
-                <p className="text-muted-foreground">Adequado para projetos pessoais e para quem quer imprimir e revender peças físicas.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
         {/* SEM / COM */}
         <section className="section-padding bg-section-1">
           <div className="container-narrow">
