@@ -952,48 +952,63 @@ function SalesPage() {
       </main>
 
       {/* DOWSELL */}
-      <Dialog open={downsellOpen} onOpenChange={setDownsellOpen}>
-        <DialogContent className="border-border bg-card text-foreground sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle className="text-center text-xl font-black text-gradient">
-              ESPERE! OFERTA ESPECIAL
-            </DialogTitle>
-            <DialogDescription className="text-center text-muted-foreground">
-              A equipe STL dos Magos preparou uma oferta exclusiva para você.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="space-y-4 py-2">
-            <p className="text-center text-foreground">
-              Ganhe <span className="font-bold text-green-500">R$ 10,00 de desconto</span> no Pacote Premium e leve todos os bônus inclusos!
-            </p>
-            <div className="rounded-lg bg-secondary/50 p-4 text-center">
-              <p className="text-sm text-muted-foreground line-through">De R$ 27,90</p>
-              <p className="text-3xl font-black text-gradient">R$ 17,90</p>
-              <p className="text-xs text-muted-foreground">Pacote Premium + todos os bônus</p>
-            </div>
-            <a
-              id="begin_checkout_downsell"
-              href={CHECKOUT_PREMIUM}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-buy w-full inline-flex items-center justify-center text-center text-foreground"
-              onClick={() => setDownsellOpen(false)}
-            >
-              EU QUERO ESSA OFERTA!
-            </a>
+      {downsellOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true">
+          <div
+            className="absolute inset-0 bg-black/80"
+            onClick={() => setDownsellOpen(false)}
+            aria-hidden="true"
+          />
+          <div className="relative z-10 w-full max-w-md rounded-lg border border-border bg-card p-6 shadow-lg">
             <button
               type="button"
-              onClick={() => {
-                setDownsellOpen(false);
-                window.open(CHECKOUT_BASIC, "_blank", "noopener,noreferrer");
-              }}
-              className="w-full text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
+              onClick={() => setDownsellOpen(false)}
+              className="absolute right-4 top-4 rounded-sm text-muted-foreground transition-opacity hover:text-foreground"
+              aria-label="Fechar"
             >
-              Quero continuar com o pacote básico
+              <X className="h-4 w-4" />
             </button>
+            <div className="mb-4 text-center">
+              <h2 className="text-xl font-black text-gradient">
+                ESPERE! OFERTA ESPECIAL
+              </h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                A equipe STL dos Magos preparou uma oferta exclusiva para você.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <p className="text-center text-foreground">
+                Ganhe <span className="font-bold text-green-500">R$ 10,00 de desconto</span> no Pacote Premium e leve todos os bônus inclusos!
+              </p>
+              <div className="rounded-lg bg-secondary/50 p-4 text-center">
+                <p className="text-sm text-muted-foreground line-through">De R$ 27,90</p>
+                <p className="text-3xl font-black text-gradient">R$ 17,90</p>
+                <p className="text-xs text-muted-foreground">Pacote Premium + todos os bônus</p>
+              </div>
+              <a
+                id="begin_checkout_downsell"
+                href={CHECKOUT_PREMIUM}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-buy w-full inline-flex items-center justify-center text-center text-foreground"
+                onClick={() => setDownsellOpen(false)}
+              >
+                EU QUERO ESSA OFERTA!
+              </a>
+              <button
+                type="button"
+                onClick={() => {
+                  setDownsellOpen(false);
+                  window.open(CHECKOUT_BASIC, "_blank", "noopener,noreferrer");
+                }}
+                className="w-full text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
+              >
+                Quero continuar com o pacote básico
+              </button>
+            </div>
           </div>
-        </DialogContent>
-      </Dialog>
+        </div>
+      )}
     </>
   );
 }
