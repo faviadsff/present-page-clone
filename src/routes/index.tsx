@@ -85,8 +85,8 @@ const FAQ_ITEMS: ReadonlyArray<{ question: string; answer: string }> = [
     answer: "Não! Os modelos já vêm prontos. Você só precisa fatiar, adicionar suportes quando indicado e imprimir. O conteúdo é adequado para iniciantes e experientes."
   },
   {
-    question: "O pacote realmente tem mais de 20 milhões de arquivos?",
-    answer: "Sim. Você recebe acesso a um acervo massivo com milhões de arquivos STL organizados, cobrindo dezenas de nichos e estilos. É um verdadeiro mega pacote para quem quer variedade sem limites."
+    question: "O pacote realmente tem mais de 2.000 miniaturas?",
+    answer: "Sim. Você recebe acesso a um acervo com mais de 2.000 miniaturas STL organizadas por sistema de jogo, incluindo monstros, heróis, vilões, NPCs e cenários para RPG e board games."
   },
   {
     question: "Qual a diferença deste pacote para acervos pequenos?",
