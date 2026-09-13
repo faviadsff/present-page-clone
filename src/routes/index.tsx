@@ -221,7 +221,7 @@ function CountdownBar() {
   const seconds = String(secondsLeft % 60).padStart(2, "0");
 
   return (
-    <div className="timer-bar sticky top-0 z-50 w-full px-3 py-2 text-center">
+    <div className="sticky top-0 z-50 w-full bg-primary px-3 py-2 text-center text-primary-foreground">
       <p className="text-xs font-bold uppercase tracking-wide sm:text-sm">
         Oferta por tempo limitado - expira em{" "}
         <span className="tabular-nums">
@@ -591,6 +591,11 @@ function SalesPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background"></div>
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
           <div className="container-narrow relative z-10 w-full">
+            <div className="flex justify-center mb-4 animate-fade-in">
+              <span className="highlight-box flex items-center gap-2 bg-red-500/20 text-red-400 border-red-500/30 text-center px-3 py-1">
+                🎅 NATAL 3D! Aproveite os descontos especiais apenas nesse mês de setembro.
+              </span>
+            </div>
             <div className="flex justify-center mb-6 animate-fade-in">
               <span className="highlight-box flex items-center gap-2 justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-star w-4 h-4 fill-current"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg>
@@ -858,7 +863,7 @@ function SalesPage() {
         <section className="section-padding bg-background">
           <div className="container-narrow">
             <div className="text-center mb-8">
-              <h2 className="mb-8 font-black text-3xl text-foreground md:text-4xl">COMPRE HOJE E GANHE BÔNUS EXCLUSIVOS 🎁</h2>
+              <h2 className="mb-8 font-black text-3xl text-white md:text-4xl">COMPRE HOJE E GANHE BÔNUS EXCLUSIVOS 🎁</h2>
             </div>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-8">
               <BonusCard
@@ -919,7 +924,7 @@ function SalesPage() {
               />
             </div>
 
-            <div className="my-8 text-center text-foreground">
+            <div className="my-8 text-center text-white">
               <p className="text-3xl font-bold mb-2">🎁 NÃO ACABOU!</p>
               <p className="text-2xl">
                 <span className="font-bold italic bg-red-600 px-2 rounded-md text-[25px]">BÔNUS ESPECIAL</span> liberado apenas esse mês de setembro!
@@ -948,7 +953,7 @@ function SalesPage() {
                 </div>
               </div>
             </div>
-            <p className="mt-8 text-lg font-medium text-foreground text-center">
+            <p className="mt-8 text-lg font-medium text-white text-center">
               Esses bônus valem <span className="font-bold">R$ 417,30</span> e somente hoje você recebe eles <span className="font-bold text-green-600">GRATUITAMENTE!</span>
             </p>
           </div>
