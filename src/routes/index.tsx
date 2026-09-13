@@ -886,11 +886,11 @@ function SalesPage() {
                     <div className="mb-4 overflow-hidden rounded-lg">
                       <img alt="3 Bônus exclusivo do STL do Mago" loading="lazy" width="400" height="300" decoding="async" className="aspect-[4/3] w-full object-cover" src={IMG["imgi_15_KbRrXUX-B7dNbi2d.webp"]} />
                     </div>
-                    <div className="flex-grow mb-4 space-y-2 text-left">
-                      <p className="text-base font-medium text-gray-800"><span className="font-bold text-red-600">Bônus 1:</span> Pack de Miniaturas e Figuras</p>
-                      <p className="text-base font-medium text-gray-800"><span className="font-bold text-red-600">Bônus 2:</span> Pack de Monstros e Criaturas</p>
-                      <p className="text-base font-medium text-gray-800"><span className="font-bold text-red-600">Bônus 3:</span> Pack de Designs Decorativos</p>
-                      <p className="text-base font-medium text-gray-800"><span className="font-bold text-red-600">Bônus 4:</span> Pack de Cenários e Dioramas</p>
+                    <div className="flex-grow mb-4 space-y-1 text-left">
+                      <p className="text-sm font-medium text-gray-800 leading-snug"><span className="font-bold text-red-600">Bônus 1:</span> Pack de Miniaturas e Figuras</p>
+                      <p className="text-sm font-medium text-gray-800 leading-snug"><span className="font-bold text-red-600">Bônus 2:</span> Pack de Monstros e Criaturas</p>
+                      <p className="text-sm font-medium text-gray-800 leading-snug"><span className="font-bold text-red-600">Bônus 3:</span> Pack de Designs Decorativos</p>
+                      <p className="text-sm font-medium text-gray-800 leading-snug"><span className="font-bold text-red-600">Bônus 4:</span> Pack de Cenários e Dioramas</p>
                     </div>
                     <div className="mt-auto text-center">
                       <p className="text-lg font-bold">
