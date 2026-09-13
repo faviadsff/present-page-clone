@@ -623,7 +623,7 @@ function SalesPage() {
             <div className="flex flex-col items-center gap-4 mb-8">
               <button
                 onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth", block: "start" })}
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:opacity-90 h-10 px-4 py-2 btn-cta text-foreground w-full sm:w-auto text-lg"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:opacity-90 h-10 px-4 py-2 btn-buy text-foreground w-full sm:w-auto text-lg animate-pulse-glow-green"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-download mr-2 w-5 h-5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
                 BAIXAR PACOTE COM DESCONTO!
@@ -936,7 +936,7 @@ function SalesPage() {
                     <span className="text-5xl font-black text-primary">9,90</span>
                   </div>
                 </div>
-                <a id="begin_checkout_basic" href={CHECKOUT_BASIC} target="_blank" rel="noopener noreferrer" className="btn-cta w-full text-foreground animate-pulse-glow inline-flex items-center justify-center text-center">
+                <a id="begin_checkout_basic" href={CHECKOUT_BASIC} target="_blank" rel="noopener noreferrer" className="btn-buy w-full text-foreground animate-pulse-glow-green inline-flex items-center justify-center text-center">
                   QUERO O PACOTE BÁSICO!
                 </a>
                 <div className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground">
@@ -973,7 +973,7 @@ function SalesPage() {
                     <span className="text-5xl font-black text-gradient">27,90</span>
                   </div>
                 </div>
-                <a id="begin_checkout" href={CHECKOUT_PREMIUM} target="_blank" rel="noopener noreferrer" className="btn-cta w-full text-foreground animate-pulse-glow inline-flex items-center justify-center text-center">
+                <a id="begin_checkout" href={CHECKOUT_PREMIUM} target="_blank" rel="noopener noreferrer" className="btn-buy w-full text-foreground animate-pulse-glow-green inline-flex items-center justify-center text-center">
                   QUERO ESSE MEGA PACOTE!
                 </a>
                 <div className="text-center mt-4">
@@ -999,7 +999,7 @@ function SalesPage() {
               <p className="text-muted-foreground text-lg mb-6">
                 Se você não gostar do pacote, pode pedir reembolso total em até 7 dias. Risco zero para você.
               </p>
-              <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} className="btn-cta inline-flex items-center justify-center text-foreground">
+              <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} className="btn-buy inline-flex items-center justify-center text-foreground">
                 QUERO GARANTIR MEU ACESSO
               </a>
             </div>
