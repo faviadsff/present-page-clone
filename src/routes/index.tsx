@@ -121,12 +121,12 @@ const CHECKOUT_PREMIUM = "https://ggcheckout.app/checkout/v5/US0R6AVPEESuj1qmeYc
 const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/k22Mgh9AbZBrC7iQ1jhO";
 
 /**
- * VSL hospedado no Vimeo.
+ * VSL hospedado no Vimeo (formato vertical).
  */
 function VslPlayer() {
   return (
     <div className="w-full">
-      <div className="relative aspect-video w-full">
+      <div className="relative mx-auto aspect-[9/16] w-full max-w-3xl sm:max-w-4xl lg:max-w-5xl">
         <iframe
           src="https://player.vimeo.com/video/1226402707?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
           frameBorder="0"
