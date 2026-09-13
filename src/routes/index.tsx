@@ -609,24 +609,6 @@ function SalesPage() {
             <p className="text-lg md:text-xl text-muted-foreground text-center max-w-2xl mx-auto mb-4 px-4">
               Desbloqueie uma enorme coleção de arquivos STL de alta qualidade com este pacote definitivo para impressão 3D. Desenvolvido para criadores, entusiastas e profissionais que buscam variedade sem limites.
             </p>
-            <div className="flex flex-col items-center gap-2 mb-8 text-foreground/90 px-4">
-              <p className="flex items-center gap-2 justify-center text-center w-full max-w-md">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap w-4 h-4 text-primary flex-shrink-0"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg>
-                <span className="text-sm md:text-base">Mais de 20.500.000 arquivos STL organizados em categorias</span>
-              </p>
-              <p className="flex items-center gap-2 justify-center text-center w-full max-w-md">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap w-4 h-4 text-primary flex-shrink-0"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg>
-                <span className="text-sm md:text-base">Compatível com impressoras 3D de resina e FDM</span>
-              </p>
-              <p className="flex items-center gap-2 justify-center text-center w-full max-w-md">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap w-4 h-4 text-primary flex-shrink-0"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg>
-                <span className="text-sm md:text-base">Acesso instantâneo para download digital vitalício</span>
-              </p>
-              <p className="flex items-center gap-2 justify-center text-center w-full max-w-md">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap w-4 h-4 text-primary flex-shrink-0"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg>
-                <span className="text-sm md:text-base">Adequado para projetos pessoais e comerciais</span>
-              </p>
-            </div>
             <div className="flex justify-center mb-8 px-4">
               <VslPlayer />
             </div>
