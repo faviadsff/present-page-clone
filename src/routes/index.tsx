@@ -683,7 +683,7 @@ function SalesPage() {
           <div className="container-narrow relative z-10 w-full">
             <div className="flex justify-center mb-4 animate-fade-in">
               <span className="highlight-box flex items-center gap-2 bg-red-500/20 text-red-400 border-red-500/30 text-center px-3 py-1">
-                🎲 ACERVO ESPECIALIZADO RPG! Aproveite os descontos apenas esse mês de setembro.
+                🎅 NATAL 3D! Aproveite os descontos especiais apenas nesse mês de setembro.
               </span>
             </div>
             <div className="flex justify-center mb-6 animate-fade-in">
@@ -693,28 +693,28 @@ function SalesPage() {
               </span>
             </div>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-center leading-tight mb-6 px-2">
-              MILHARES DE MINIATURAS PRONTAS PARA IMPRIMIR E ENRIQUECER SUA{" "}
-              <span className="text-gradient">MESA DE RPG</span>
+              PACOTE DE ARQUIVOS STL 3D COM{" "}
+              <span className="text-gradient">+20.500.000 MODELOS</span> PARA IMPRESSÃO
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground text-center max-w-2xl mx-auto mb-4 px-4">
-              Acesso imediato a +2.000 arquivos STL de miniaturas de fantasia, monstros e cenários, organizados por sistema de jogo.
+              Desbloqueie uma enorme coleção de arquivos STL de alta qualidade com este pacote definitivo para impressão 3D. Desenvolvido para criadores, entusiastas e profissionais que buscam variedade sem limites.
             </p>
             <div className="flex flex-col items-center gap-2 mb-8 text-foreground/90 px-4">
               <p className="flex items-center gap-2 justify-center text-center w-full max-w-md">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap w-4 h-4 text-primary flex-shrink-0"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg>
-                <span className="text-sm md:text-base">Modelos pré-escalados para D&D, Pathfinder, Warhammer e outros sistemas</span>
+                <span className="text-sm md:text-base">Mais de 20.500.000 arquivos STL organizados em categorias</span>
               </p>
               <p className="flex items-center gap-2 justify-center text-center w-full max-w-md">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap w-4 h-4 text-primary flex-shrink-0"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg>
-                <span className="text-sm md:text-base">Miniaturas de heróis, monstros, dragões, cenários épicos e muito mais</span>
+                <span className="text-sm md:text-base">Compatível com impressoras 3D de resina e FDM</span>
               </p>
               <p className="flex items-center gap-2 justify-center text-center w-full max-w-md">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap w-4 h-4 text-primary flex-shrink-0"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg>
-                <span className="text-sm md:text-base">Guia de suporte e escala para impressão perfeita desde a primeira peça</span>
+                <span className="text-sm md:text-base">Acesso instantâneo para download digital vitalício</span>
               </p>
               <p className="flex items-center gap-2 justify-center text-center w-full max-w-md">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap w-4 h-4 text-primary flex-shrink-0"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg>
-                <span className="text-sm md:text-base">Acesso vitalício ao acervo especializado</span>
+                <span className="text-sm md:text-base">Adequado para projetos pessoais e comerciais</span>
               </p>
             </div>
             <div className="flex justify-center mb-8 px-4">
@@ -733,7 +733,7 @@ function SalesPage() {
             <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-package w-5 h-5 text-primary"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z" /><path d="M12 22V12" /><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7" /><path d="m7.5 4.27 9 5.15" /></svg>
-                <span>+2.000 miniaturas STL</span>
+                <span>+20.500.000 arquivos STL</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-star w-5 h-5 text-accent fill-accent"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg>
