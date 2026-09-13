@@ -117,59 +117,23 @@ const PREMIUM_BONUSES: ReadonlyArray<string> = [
   "Bônus 4: Pack de Cenários e Dioramas"
 ];
 
-const PLAYER_ID = "696bdc9c9e020389f6684bd5";
-const PLAYER_ACCOUNT = "d9d9e187-4260-4eb4-9363-5bcdac2c24d6";
 const CHECKOUT_PREMIUM = "https://ggcheckout.app/checkout/v5/US0R6AVPEESuj1qmeYcF";
 const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/k22Mgh9AbZBrC7iQ1jhO";
 
 /**
- * VSL da converteai/vturb. O src do iframe é definido apos a montagem porque o
- * SDK precisa estar carregado antes do embed para registrar o player.
+ * VSL hospedado no Vimeo.
  */
 function VslPlayer() {
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-
-  useEffect(() => {
-    const sdkSrc = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js";
-    if (!document.querySelector(`script[src="${sdkSrc}"]`)) {
-      const script = document.createElement("script");
-      script.src = sdkSrc;
-      script.async = true;
-      document.head.appendChild(script);
-    }
-
-    const applySrc = () => {
-      const frame = iframeRef.current;
-      if (!frame) return;
-      const current = frame.src;
-      if (!current || current.includes("about:blank")) {
-        frame.src =
-          `https://scripts.converteai.net/${PLAYER_ACCOUNT}/players/${PLAYER_ID}/v4/embed.html` +
-          (window.location.search || "?") +
-          "&vl=" +
-          encodeURIComponent(window.location.href);
-      }
-    };
-
-    const timers = [100, 500, 1500].map((delay) => window.setTimeout(applySrc, delay));
-    return () => timers.forEach((timer) => window.clearTimeout(timer));
-  }, []);
-
   return (
-    <div id={`ifr_${PLAYER_ID}_wrapper`} style={{ margin: "0 auto", width: "100%", maxWidth: "400px" }}>
-      <div
-        id={`ifr_${PLAYER_ID}_aspect`}
-        style={{ position: "relative", padding: "177.77777777777777% 0 0 0" }}
-      >
+    <div className="mx-auto w-full max-w-3xl">
+      <div className="relative w-full" style={{ padding: "56.25% 0 0 0" }}>
         <iframe
-          ref={iframeRef}
+          src="https://player.vimeo.com/video/1226402707?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
           frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
           allowFullScreen
-          src="about:blank"
-          id={`ifr_${PLAYER_ID}`}
-          title="VSL STL Video"
-          referrerPolicy="origin"
-          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+          title="VSL STL do Mago"
+          className="absolute inset-0 h-full w-full rounded-xl"
         />
       </div>
     </div>
