@@ -610,6 +610,8 @@ function SocialToast({ plan, name, city, time }: SocialToastProps) {
 function SocialProofToasts() {
   useEffect(() => {
     let index = 0;
+    let started = false;
+    let interval: number | null = null;
 
     const show = () => {
       const plan = PLAN_PATTERN[index % PLAN_PATTERN.length] as SocialPlan;
@@ -625,9 +627,35 @@ function SocialProofToasts() {
       index += 1;
     };
 
-    show();
-    const interval = window.setInterval(show, 10000);
-    return () => window.clearInterval(interval);
+    const start = () => {
+      if (started) return;
+      started = true;
+      show();
+      interval = window.setInterval(show, 10000);
+    };
+
+    const vsl = document.getElementById("vsl");
+    if (!vsl) {
+      // Fallback caso o elemento nao exista
+      start();
+      return;
+    }
+
+    // Inicia as notificacoes somente quando o usuario rolar
+    // e a VSL sair completamente da viewport
+    const checkScroll = () => {
+      const rect = vsl.getBoundingClientRect();
+      const vslIsVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!vslIsVisible) start();
+    };
+
+    window.addEventListener("scroll", checkScroll, { passive: true });
+    checkScroll();
+
+    return () => {
+      if (interval) window.clearInterval(interval);
+      window.removeEventListener("scroll", checkScroll);
+    };
   }, []);
 
   return null;
