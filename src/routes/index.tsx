@@ -236,21 +236,6 @@ function VslPlayer() {
           <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-black shadow-lg backdrop-blur-sm transition-transform hover:scale-105">
             {playing ? <Pause className="h-7 w-7 fill-current" /> : <Play className="h-7 w-7 fill-current" />}
           </span>
-          {!playing && isMuted && (
-            <span className="absolute translate-y-14 rounded-full bg-black/70 px-4 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
-              Toque para ativar o som
-            </span>
-          )}
-        </button>
-
-        {/* Controle de som */}
-        <button
-          type="button"
-          onClick={toggleMute}
-          aria-label={isMuted ? "Ativar som" : "Desativar som"}
-          className="absolute right-3 top-3 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white shadow-md backdrop-blur-sm transition-transform hover:scale-105"
-        >
-          {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
         </button>
 
         {/* Progress bar verde colada na base do vídeo */}
