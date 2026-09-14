@@ -666,6 +666,20 @@ function SocialProofToasts() {
 function SalesPage() {
   const [downsellOpen, setDownsellOpen] = useState(false);
 
+  // Ao abrir a página, posiciona a rolagem em cima da VSL
+  useEffect(() => {
+    const scrollToVsl = () => {
+      document.getElementById("vsl")?.scrollIntoView({ block: "start", behavior: "auto" });
+    };
+    // pequeno atraso garante que o layout já foi calculado
+    const t1 = window.setTimeout(scrollToVsl, 100);
+    const t2 = window.setTimeout(scrollToVsl, 600);
+    return () => {
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+    };
+  }, []);
+
   return (
     <>
       <CountdownBar />
@@ -686,7 +700,7 @@ function SalesPage() {
               +2.000 Miniaturas STL de{" "}
               <span className="text-gradient">RPG e Board Games</span> Prontas pra Imprimir
             </h1>
-            <div className="vsl-frame mb-8">
+            <div id="vsl" className="vsl-frame mb-8">
               <VslPlayer />
             </div>
 
