@@ -117,7 +117,7 @@ const PREMIUM_BONUSES: ReadonlyArray<string> = [
   "Bônus 4: Pack de Cenários e Dioramas"
 ];
 
-const CHECKOUT_PREMIUM = "https://ggcheckout.app/checkout/v5/US0R6AVPEESuj1qmeYcF";
+const CHECKOUT_PREMIUM = "https://app.zuptos.com.br/checkout/8b22d48b460d1578";
 const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/k22Mgh9AbZBrC7iQ1jhO";
 
 /**
