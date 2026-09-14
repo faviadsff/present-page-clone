@@ -678,7 +678,7 @@ function SalesPage() {
               <VslPlayer />
             </div>
 
-            <div className="flex flex-col items-center gap-4 mb-8 mt-10">
+            <div className="flex flex-col items-center gap-4 mb-8 mt-16">
               <button
                 onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth", block: "start" })}
                 className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:opacity-90 h-10 px-4 py-2 btn-buy text-foreground w-full sm:w-auto text-lg animate-pulse-glow-green"
