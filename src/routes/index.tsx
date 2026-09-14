@@ -932,6 +932,13 @@ function SalesPage() {
             <p className="text-muted-foreground/60 text-xs mt-2">
               Este site é um canal de distribuição digital de arquivos STL. Os modelos são indicados para impressão 3D pessoal e comercial de peças físicas, conforme os termos de cada licença.
             </p>
+            <Link
+              to="/obrigado"
+              aria-label="Área reservada"
+              className="mt-4 inline-flex opacity-20 transition-opacity hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+            >
+              <Lock className="h-4 w-4 text-muted-foreground" />
+            </Link>
           </div>
         </footer>
       </main>
