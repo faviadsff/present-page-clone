@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CheckCircle, Download, Home, Mail, Shield } from "lucide-react";
+import { Check, CheckCircle, Crown, Home, Sparkles, Swords } from "lucide-react";
 
 export const Route = createFileRoute("/obrigado")({
   head: () => ({
@@ -8,7 +8,7 @@ export const Route = createFileRoute("/obrigado")({
       {
         name: "description",
         content:
-          "Seu acesso ao Pacote STL do Mago foi liberado. Confira seu e-mail e comece a imprimir suas miniaturas agora mesmo.",
+          "Seu acesso ao Pacote STL do Mago foi liberado. Aproveite a oferta exclusiva da Campanha Completa.",
       },
       { property: "og:title", content: "Obrigado pela compra! | STL do Mago" },
       {
@@ -27,7 +27,7 @@ function ObrigadoPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* HERO */}
-      <section className="relative flex min-h-screen items-center justify-center section-padding overflow-hidden">
+      <section className="relative flex min-h-screen flex-col items-center justify-center section-padding overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background" />
         <div className="absolute top-1/4 right-1/4 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
 
@@ -38,46 +38,58 @@ function ObrigadoPage() {
             </div>
           </div>
 
-          <h1 className="mb-6 text-center text-3xl font-black leading-tight md:text-5xl lg:text-6xl">
+          <h1 className="mb-12 text-center text-3xl font-black leading-tight md:text-5xl lg:text-6xl">
             Parabéns! Seu acesso foi{" "}
             <span className="text-gradient">liberado</span>.
           </h1>
 
-          <p className="mx-auto mb-10 max-w-2xl text-center text-lg text-muted-foreground md:text-xl">
-            Você acaba de garantir o <strong className="text-foreground">Pacote STL do Mago</strong>. Enviamos os dados de acesso para o seu e-mail.
-          </p>
-
-          <div className="card-dark mx-auto max-w-2xl border-primary/30 p-8 text-center md:p-12">
-            <h2 className="mb-6 text-xl font-black md:text-2xl">
-              E agora? Siga os passos:
-            </h2>
-
-            <div className="space-y-4 text-left">
-              <StepItem
-                icon={<Mail className="h-6 w-6 text-primary" />}
-                title="1. Acesse seu e-mail"
-                description="Abra a mensagem de confirmação e clique no link de acesso enviado. Verifique também a caixa de spam."
-              />
-              <StepItem
-                icon={<Download className="h-6 w-6 text-primary" />}
-                title="2. Baixe seus arquivos"
-                description="Dentro da área de membros você encontra todas as pastas organizadas por categoria, prontas para download."
-              />
-              <StepItem
-                icon={<Shield className="h-6 w-6 text-primary" />}
-                title="3. Imprima com segurança"
-                description="Use o guia de escala incluído para ajustar 25mm ou 32mm e mande ver na impressora 3D."
-              />
+          {/* UPSELL */}
+          <div className="card-dark mx-auto max-w-2xl border-primary/30 p-6 text-center md:p-10">
+            <div className="mb-4 flex justify-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 shadow-[0_0_40px_hsl(43_90%_52%_/_0.2)]">
+                <Crown className="h-7 w-7 text-primary" />
+              </div>
             </div>
 
-            <div className="mt-8 flex flex-col items-center gap-4">
+            <h2 className="mb-3 text-2xl font-black leading-tight md:text-3xl">
+              Campanha Completa: Vilões Épicos + Cenário de Batalha
+            </h2>
+
+            <p className="mx-auto mb-5 max-w-lg text-sm leading-relaxed text-muted-foreground md:text-base">
+              Oferecido logo após a compra. O cliente já pagou e está mais aberto
+              a aproveitar essa oferta especial por tempo limitado.
+            </p>
+
+            <div className="mb-6 inline-flex flex-col items-center rounded-2xl border border-primary/30 bg-primary/10 px-6 py-4">
+              <span className="text-sm text-muted-foreground line-through">
+                De R$ 297,90
+              </span>
+              <span className="text-3xl font-black text-foreground md:text-4xl">
+                por R$ 37,90
+              </span>
+            </div>
+
+            <ul className="mx-auto mb-8 max-w-md space-y-3 text-left">
+              <UpsellItem icon={<Swords className="h-5 w-5" />}>
+                Coleção de vilões e chefes épicos (minis grandes, alto detalhe)
+              </UpsellItem>
+              <UpsellItem icon={<Sparkles className="h-5 w-5" />}>
+                Cenário de batalha completo (arena, castelo em ruínas, ponte
+                sobre lava)
+              </UpsellItem>
+              <UpsellItem icon={<Check className="h-5 w-5" />}>
+                Bônus extra: módulo de aventura pronta pra rodar com essas peças
+              </UpsellItem>
+            </ul>
+
+            <div className="flex flex-col items-center gap-4">
               <a
                 href="https://app.zuptos.com.br/checkout/8b22d48b460d1578"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-buy inline-flex w-full items-center justify-center text-foreground sm:w-auto"
               >
-                ACESSAR ÁREA DE MEMBROS
+                QUERO A CAMPANHA COMPLETA!
               </a>
 
               <Link
@@ -88,12 +100,6 @@ function ObrigadoPage() {
                 Voltar para a página inicial
               </Link>
             </div>
-          </div>
-
-          <div className="mt-10 text-center">
-            <p className="text-sm text-muted-foreground">
-              Dúvidas? Entre em contato com o suporte respondendo ao e-mail de confirmação.
-            </p>
           </div>
         </div>
       </section>
@@ -110,24 +116,20 @@ function ObrigadoPage() {
   );
 }
 
-interface StepItemProps {
+interface UpsellItemProps {
   icon: React.ReactNode;
-  title: string;
-  description: string;
+  children: React.ReactNode;
 }
 
-function StepItem({ icon, title, description }: StepItemProps) {
+function UpsellItem({ icon, children }: UpsellItemProps) {
   return (
-    <div className="flex items-start gap-4 rounded-xl border border-border/50 bg-background/40 p-4">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
+    <li className="flex items-start gap-3 rounded-xl border border-border/50 bg-background/40 p-4">
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
         {icon}
       </div>
-      <div>
-        <h3 className="mb-1 font-bold text-foreground">{title}</h3>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          {description}
-        </p>
-      </div>
-    </div>
+      <span className="text-sm leading-relaxed text-foreground md:text-base">
+        {children}
+      </span>
+    </li>
   );
 }
