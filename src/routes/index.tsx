@@ -124,9 +124,8 @@ const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/k22Mgh9AbZBrC7iQ1jhO"
  * VSL hospedado no Vimeo (formato vertical) com HUD oculta e
  * progress bar customizado verde na base.
  *
- * Tentativa de autoplay com som. Se o navegador bloquear
- * (política de autoplay), cai para mudo e ativa o áudio
- * automaticamente na primeira interação do usuário com a página.
+ * O video inicia pausado; o usuario controla a reproducao pelo
+ * overlay de play/pause.
  */
 function VslPlayer() {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
@@ -138,7 +137,6 @@ function VslPlayer() {
   useEffect(() => {
     let destroyed = false;
     let player: InstanceType<typeof import("@vimeo/player").default> | null = null;
-    let removeUnlockListener: (() => void) | null = null;
 
     const init = async () => {
       const { default: Player } = await import("@vimeo/player");
@@ -159,40 +157,12 @@ function VslPlayer() {
       await player.ready();
       if (destroyed) return;
       setReady(true);
-
-      // 1) Tenta iniciar COM som
-      await player.setVolume(1).catch(() => {});
-      try {
-        await player.play();
-      } catch {
-        // 2) Navegador bloqueou autoplay com som — inicia mudo
-        await player.setVolume(0).catch(() => {});
-        await player.play().catch(() => {});
-
-        // 3) Na primeira interação do usuário em qualquer lugar, liga o som
-        const unlock = () => {
-          player?.setVolume(1).catch(() => {});
-          window.removeEventListener("pointerdown", unlock);
-          window.removeEventListener("keydown", unlock);
-          window.removeEventListener("touchstart", unlock);
-          removeUnlockListener = null;
-        };
-        window.addEventListener("pointerdown", unlock);
-        window.addEventListener("keydown", unlock);
-        window.addEventListener("touchstart", unlock);
-        removeUnlockListener = () => {
-          window.removeEventListener("pointerdown", unlock);
-          window.removeEventListener("keydown", unlock);
-          window.removeEventListener("touchstart", unlock);
-        };
-      }
     };
 
     init();
 
     return () => {
       destroyed = true;
-      removeUnlockListener?.();
       player?.destroy().catch(() => {});
       playerRef.current = null;
     };
@@ -215,7 +185,7 @@ function VslPlayer() {
       <div className="relative mx-auto aspect-[9/16] w-full max-w-3xl sm:max-w-4xl lg:max-w-5xl">
         <iframe
           ref={iframeRef}
-          src="https://player.vimeo.com/video/1226402707?controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&dnt=1&playsinline=1&autoplay=1&muted=0"
+          src="https://player.vimeo.com/video/1226402707?controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&dnt=1&playsinline=1"
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
           allowFullScreen
@@ -223,11 +193,11 @@ function VslPlayer() {
           className="absolute inset-0 h-full w-full rounded-xl"
         />
 
-        {/* Botão de play/pause customizado — a HUD do Vimeo está oculta */}
+        {/* Botao de play/pause customizado — a HUD do Vimeo esta oculta */}
         <button
           type="button"
           onClick={togglePlay}
-          aria-label={playing ? "Pausar vídeo" : "Reproduzir vídeo"}
+          aria-label={playing ? "Pausar video" : "Reproduzir video"}
           className={cn(
             "absolute inset-0 z-10 flex items-center justify-center bg-black/20 transition-opacity duration-300",
             playing ? "opacity-0 hover:opacity-100" : "opacity-100"
@@ -238,7 +208,7 @@ function VslPlayer() {
           </span>
         </button>
 
-        {/* Progress bar verde colada na base do vídeo */}
+        {/* Progress bar verde colada na base do video */}
         <div className="absolute bottom-0 left-0 right-0 z-20 h-2 overflow-hidden rounded-b-xl bg-white/20">
           <div
             className="h-full bg-green-500 transition-[width] duration-300 ease-linear"
@@ -666,27 +636,13 @@ function SocialProofToasts() {
 function SalesPage() {
   const [downsellOpen, setDownsellOpen] = useState(false);
 
-  // Ao abrir a página, posiciona a rolagem em cima da VSL
-  useEffect(() => {
-    const scrollToVsl = () => {
-      document.getElementById("vsl")?.scrollIntoView({ block: "start", behavior: "auto" });
-    };
-    // pequeno atraso garante que o layout já foi calculado
-    const t1 = window.setTimeout(scrollToVsl, 100);
-    const t2 = window.setTimeout(scrollToVsl, 600);
-    return () => {
-      window.clearTimeout(t1);
-      window.clearTimeout(t2);
-    };
-  }, []);
-
   return (
     <>
       <CountdownBar />
       <SocialProofToasts />
       <main className="min-h-screen bg-background">
         {/* HERO */}
-        <section className="relative min-h-screen flex items-center section-padding overflow-hidden">
+        <section id="hero" className="relative min-h-screen flex items-center section-padding overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background"></div>
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
           <div className="relative z-10 mx-auto w-full max-w-6xl">
@@ -703,18 +659,6 @@ function SalesPage() {
             <div id="vsl" className="vsl-frame mb-8">
               <VslPlayer />
             </div>
-
-            {/* CARROSSEL — VEJA O QUE VOCÊ IRÁ RECEBER */}
-            <section className="section-padding bg-section-2">
-              <div className="container-narrow">
-                <div className="text-center mb-12">
-                  <h2 className="text-2xl md:text-4xl font-black">
-                    VEJA OS MODELOS QUE <span className="text-gradient">VOCÊ IRÁ RECEBER:</span>
-                  </h2>
-                </div>
-                <ModelsMarquee />
-              </div>
-            </section>
 
             <div className="flex flex-col items-center gap-4 mb-8">
               <button
