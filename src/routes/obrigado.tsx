@@ -123,6 +123,30 @@ function ObrigadoPage() {
   );
 }
 
+function OfferTimer() {
+  const [secondsLeft, setSecondsLeft] = useState(5 * 60);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSecondsLeft((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const minutes = Math.floor(secondsLeft / 60)
+    .toString()
+    .padStart(2, "0");
+  const seconds = (secondsLeft % 60).toString().padStart(2, "0");
+
+  return (
+    <div className="inline-flex items-center gap-1 rounded-lg bg-primary/10 px-3 py-1.5 font-mono text-lg font-bold text-primary shadow-[0_0_20px_hsl(43_90%_52%_/_0.35)] md:text-xl">
+      <span>{minutes}</span>
+      <span className="animate-pulse">:</span>
+      <span>{seconds}</span>
+    </div>
+  );
+}
+
 interface UpsellItemProps {
   icon: React.ReactNode;
   children: React.ReactNode;
