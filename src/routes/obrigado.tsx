@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, CheckCircle, Castle, Swords } from "lucide-react";
+import { useEffect, useState } from "react";
 import campaignImg from "@/assets/mago-campanha.jpg.asset.json";
 
 export const Route = createFileRoute("/obrigado")({
