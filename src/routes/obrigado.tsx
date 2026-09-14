@@ -47,13 +47,21 @@ function ObrigadoPage() {
           {/* UPSELL */}
           <div className="card-dark mx-auto max-w-2xl border-primary/30 p-6 text-center md:p-10">
             <div className="mb-4 flex justify-center">
-              <div className="relative h-28 w-28 overflow-hidden rounded-2xl border-4 border-primary bg-primary/10 shadow-[0_0_50px_hsl(43_90%_52%_/_0.35)]">
-                <img
-                  src={campaignImg.url}
-                  alt="Vilões Épicos + Cenário de Batalha"
-                  className="h-full w-full object-cover"
-                />
-                <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-primary/40" />
+              <div className="relative h-32 w-32 rounded-2xl border-[6px] border-primary bg-primary/10 p-1 shadow-[0_0_60px_hsl(43_90%_52%_/_0.45)]">
+                <div className="relative h-full w-full overflow-hidden rounded-xl">
+                  <img
+                    src={campaignImg.url}
+                    alt="Vilões Épicos + Cenário de Batalha"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-xl ring-2 ring-inset ring-primary/30" />
+                </div>
+
+                {/* Cantos medievais dourados */}
+                <span className="absolute -top-1.5 -left-1.5 h-5 w-5 rounded-full border-4 border-primary bg-background" />
+                <span className="absolute -top-1.5 -right-1.5 h-5 w-5 rounded-full border-4 border-primary bg-background" />
+                <span className="absolute -bottom-1.5 -left-1.5 h-5 w-5 rounded-full border-4 border-primary bg-background" />
+                <span className="absolute -bottom-1.5 -right-1.5 h-5 w-5 rounded-full border-4 border-primary bg-background" />
               </div>
             </div>
 
