@@ -670,11 +670,11 @@ function SalesPage() {
       <SocialProofToasts />
       <main className="min-h-screen bg-background">
         {/* HERO */}
-        <section id="hero" className="relative min-h-screen flex items-center section-padding overflow-hidden">
+        <section id="hero" className="relative overflow-hidden pt-0 pb-8">
           <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background"></div>
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
           <div className="relative z-10 mx-auto w-full max-w-6xl">
-            <div id="vsl" className="vsl-frame mb-8">
+            <div id="vsl" className="vsl-frame">
               <VslPlayer />
             </div>
 
