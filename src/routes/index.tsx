@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { Play, Pause, ShoppingBag, X, Lock } from "lucide-react";
+import { Play, Pause, ShoppingBag, X, Lock, Volume2, VolumeX } from "lucide-react";
 import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
@@ -121,8 +121,11 @@ const CHECKOUT_PREMIUM = "https://app.zuptos.com.br/checkout/8b22d48b460d1578";
 const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/k22Mgh9AbZBrC7iQ1jhO";
 
 /**
- * VSL hospedado no Vimeo (formato vertical) com HUD oculta e
- * progress bar customizado verde na base.
+ * VSL hospedado no Vimeo (formato vertical) com HUD oculta,
+ * progress bar customizado verde na base e controle de som.
+ *
+ * Por política dos navegadores, o autoplay inicia sem som.
+ * Qualquer toque/clique no vídeo ativa o áudio automaticamente.
  */
 function VslPlayer() {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
@@ -130,6 +133,7 @@ function VslPlayer() {
   const [progress, setProgress] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [ready, setReady] = useState(false);
+  const [volume, setVolume] = useState<number | null>(null);
 
   useEffect(() => {
     let destroyed = false;
@@ -150,13 +154,15 @@ function VslPlayer() {
       player.on("play", () => setPlaying(true));
       player.on("pause", () => setPlaying(false));
       player.on("ended", () => setPlaying(false));
+      player.on("volumechange", (data: { volume: number }) => setVolume(data.volume));
 
       await player.ready();
       if (!destroyed) {
         setReady(true);
-        // Tenta iniciar automaticamente assim que o player estiver pronto.
-        // Navegadores podem bloquear autoplay com som; por isso o iframe usa muted=1.
+        // Autoplay inicia sem som para respeitar as políticas dos navegadores.
         await player.play().catch(() => {});
+        const currentVol = await player.getVolume().catch(() => 0);
+        setVolume(currentVol);
       }
     };
 
@@ -174,11 +180,29 @@ function VslPlayer() {
     if (!player || !ready) return;
     const isPaused = await player.getPaused().catch(() => true);
     if (isPaused) {
+      // Qualquer interação do usuário libera o áudio.
+      if ((volume ?? 0) < 0.1) {
+        await player.setVolume(1).catch(() => {});
+      }
       await player.play().catch(() => {});
     } else {
       await player.pause().catch(() => {});
     }
   };
+
+  const toggleMute = async (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    const player = playerRef.current;
+    if (!player || !ready || volume === null) return;
+    const next = volume > 0 ? 0 : 1;
+    await player.setVolume(next).catch(() => {});
+    setVolume(next);
+    if (next > 0 && !playing) {
+      await player.play().catch(() => {});
+    }
+  };
+
+  const isMuted = (volume ?? 0) < 0.1;
 
   return (
     <div className="w-full">
@@ -206,6 +230,21 @@ function VslPlayer() {
           <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-black shadow-lg backdrop-blur-sm transition-transform hover:scale-105">
             {playing ? <Pause className="h-7 w-7 fill-current" /> : <Play className="h-7 w-7 fill-current" />}
           </span>
+          {!playing && isMuted && (
+            <span className="absolute translate-y-14 rounded-full bg-black/70 px-4 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
+              Toque para ativar o som
+            </span>
+          )}
+        </button>
+
+        {/* Controle de som */}
+        <button
+          type="button"
+          onClick={toggleMute}
+          aria-label={isMuted ? "Ativar som" : "Desativar som"}
+          className="absolute right-3 top-3 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white shadow-md backdrop-blur-sm transition-transform hover:scale-105"
+        >
+          {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
         </button>
 
         {/* Progress bar verde colada na base do vídeo */}
