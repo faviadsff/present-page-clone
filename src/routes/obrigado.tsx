@@ -68,7 +68,7 @@ function ObrigadoPage() {
               <UpsellItem icon={<Swords className="h-5 w-5" />}>
                 Coleção de vilões e chefes épicos (minis grandes, alto detalhe)
               </UpsellItem>
-              <UpsellItem icon={<Sparkles className="h-5 w-5" />}>
+              <UpsellItem icon={<Castle className="h-5 w-5" />}>
                 Cenário de batalha completo (arena, castelo em ruínas, ponte
                 sobre lava)
               </UpsellItem>
