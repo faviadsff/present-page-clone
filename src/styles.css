@@ -167,10 +167,41 @@ a[href*="lovable.dev"][target="_blank"][class*="badge"],
   }
 }
 
-/* Remove o wrapper padrão do sonner por trás do toast customizado */
+/* Remove O wrapper padrao do sonner por tras do toast customizado */
 [data-sonner-toast] > [data-content] {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
+}
+
+/* Animacao natural das notificacoes sociais */
+[data-sonner-toast] {
+  animation: toast-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+[data-sonner-toast][data-removed="true"] {
+  animation: toast-out 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(120%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes toast-out {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(120%) scale(0.9);
+  }
 }
