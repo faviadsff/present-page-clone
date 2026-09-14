@@ -642,21 +642,19 @@ function SocialProofToasts() {
     }
 
     // Inicia as notificacoes somente quando o usuario rolar
-    // e a VSL sair da viewport
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) start();
-        });
-      },
-      { threshold: 0 }
-    );
+    // e a VSL sair completamente da viewport
+    const checkScroll = () => {
+      const rect = vsl.getBoundingClientRect();
+      const vslIsVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!vslIsVisible) start();
+    };
 
-    observer.observe(vsl);
+    window.addEventListener("scroll", checkScroll, { passive: true });
+    checkScroll();
 
     return () => {
       if (interval) window.clearInterval(interval);
-      observer.disconnect();
+      window.removeEventListener("scroll", checkScroll);
     };
   }, []);
 
