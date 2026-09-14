@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { Play, Pause, ShoppingBag, X, Lock, Volume2, VolumeX } from "lucide-react";
+import { Play, Pause, ShoppingBag, X, Lock } from "lucide-react";
 import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
@@ -215,7 +215,7 @@ function VslPlayer() {
       <div className="relative mx-auto aspect-[9/16] w-full max-w-3xl sm:max-w-4xl lg:max-w-5xl">
         <iframe
           ref={iframeRef}
-          src="https://player.vimeo.com/video/1226402707?controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&dnt=1&playsinline=1&autoplay=1&muted=1"
+          src="https://player.vimeo.com/video/1226402707?controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&dnt=1&playsinline=1&autoplay=1&muted=0"
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
           allowFullScreen
