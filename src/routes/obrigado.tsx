@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, CheckCircle, Castle, Swords } from "lucide-react";
+import { useEffect, useState } from "react";
 import campaignImg from "@/assets/mago-campanha.jpg.asset.json";
 
 export const Route = createFileRoute("/obrigado")({
@@ -46,6 +47,13 @@ function ObrigadoPage() {
 
           {/* UPSELL */}
           <div className="card-dark mx-auto max-w-2xl border-primary/30 p-6 text-center md:p-10">
+            <div className="mb-4 flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-3">
+              <span className="text-sm font-black uppercase tracking-widest text-foreground md:text-base">
+                Oferta especial
+              </span>
+              <OfferTimer />
+            </div>
+
             <div className="mb-6 flex justify-center">
               <div className="relative h-52 w-72 rounded-2xl border-[6px] border-primary bg-primary/10 p-1 shadow-[0_0_70px_hsl(43_90%_52%_/_0.5)] md:h-72 md:w-96">
                 <div className="relative h-full w-full overflow-hidden rounded-xl">
@@ -112,6 +120,30 @@ function ObrigadoPage() {
         </div>
       </footer>
     </main>
+  );
+}
+
+function OfferTimer() {
+  const [secondsLeft, setSecondsLeft] = useState(5 * 60);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSecondsLeft((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const minutes = Math.floor(secondsLeft / 60)
+    .toString()
+    .padStart(2, "0");
+  const seconds = (secondsLeft % 60).toString().padStart(2, "0");
+
+  return (
+    <div className="inline-flex items-center gap-1 rounded-lg bg-primary/10 px-3 py-1.5 font-mono text-lg font-bold text-primary shadow-[0_0_20px_hsl(43_90%_52%_/_0.35)] md:text-xl">
+      <span>{minutes}</span>
+      <span className="animate-pulse">:</span>
+      <span>{seconds}</span>
+    </div>
   );
 }
 
