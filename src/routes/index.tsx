@@ -152,7 +152,12 @@ function VslPlayer() {
       player.on("ended", () => setPlaying(false));
 
       await player.ready();
-      if (!destroyed) setReady(true);
+      if (!destroyed) {
+        setReady(true);
+        // Tenta iniciar automaticamente assim que o player estiver pronto.
+        // Navegadores podem bloquear autoplay com som; por isso o iframe usa muted=1.
+        await player.play().catch(() => {});
+      }
     };
 
     init();
