@@ -34,27 +34,39 @@ function ObrigadoPage() {
         <div className="absolute top-1/4 right-1/4 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
 
         <div className="relative z-10 mx-auto w-full max-w-3xl">
-          <div className="mb-8 flex justify-center">
+          <div
+            className="mb-8 flex justify-center animate-fade-in"
+            style={{ animationDelay: "0ms", animationFillMode: "both" }}
+          >
             <div className="flex h-24 w-24 items-center justify-center rounded-full bg-green-500/20 shadow-[0_0_60px_hsl(140_80%_45%_/_0.3)]">
               <CheckCircle className="h-12 w-12 text-green-500" />
             </div>
           </div>
 
-          <h1 className="mb-12 text-center text-3xl font-black leading-tight md:text-5xl lg:text-6xl">
+          <h1
+            className="mb-12 text-center text-3xl font-black leading-tight md:text-5xl lg:text-6xl animate-fade-in"
+            style={{ animationDelay: "100ms", animationFillMode: "both" }}
+          >
             Parabéns! Seu acesso foi{" "}
             <span className="text-gradient">liberado</span>.
           </h1>
 
           {/* UPSELL */}
-          <div className="card-dark mx-auto max-w-2xl border-primary/30 p-6 text-center md:p-10">
-            <div className="mb-4 flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-3">
-              <span className="text-xl font-black text-foreground md:text-2xl">
-                Oferta especial
-              </span>
+          <div
+            className="card-dark mx-auto max-w-2xl border-primary/30 p-6 text-center md:p-10 animate-fade-in"
+            style={{ animationDelay: "200ms", animationFillMode: "both" }}
+          >
+            <div
+              className="mb-4 flex justify-center animate-fade-in"
+              style={{ animationDelay: "300ms", animationFillMode: "both" }}
+            >
               <OfferTimer />
             </div>
 
-            <div className="mb-6 flex justify-center">
+            <div
+              className="mb-6 flex justify-center animate-fade-in"
+              style={{ animationDelay: "400ms", animationFillMode: "both" }}
+            >
               <div className="relative h-52 w-72 rounded-2xl border-[6px] border-primary bg-primary/10 p-1 shadow-[0_0_70px_hsl(43_90%_52%_/_0.5)] md:h-72 md:w-96">
                 <div className="relative h-full w-full overflow-hidden rounded-xl">
                   <img
@@ -73,11 +85,17 @@ function ObrigadoPage() {
               </div>
             </div>
 
-            <h2 className="mb-3 text-2xl font-black leading-tight md:text-3xl">
+            <h2
+              className="mb-3 text-2xl font-black leading-tight md:text-3xl animate-fade-in"
+              style={{ animationDelay: "500ms", animationFillMode: "both" }}
+            >
               Campanha Completa: Vilões Épicos + Cenário de Batalha
             </h2>
 
-            <div className="mb-6 inline-flex flex-col items-center rounded-2xl border border-primary/30 bg-primary/10 px-6 py-4">
+            <div
+              className="mb-6 inline-flex flex-col items-center rounded-2xl border border-primary/30 bg-primary/10 px-6 py-4 animate-fade-in"
+              style={{ animationDelay: "600ms", animationFillMode: "both" }}
+            >
               <span className="text-sm text-red-500 line-through">
                 R$ 297,90
               </span>
@@ -86,7 +104,10 @@ function ObrigadoPage() {
               </span>
             </div>
 
-            <ul className="mx-auto mb-8 max-w-md space-y-3 text-left">
+            <ul
+              className="mx-auto mb-8 max-w-md space-y-3 text-left animate-fade-in"
+              style={{ animationDelay: "700ms", animationFillMode: "both" }}
+            >
               <UpsellItem icon={<Swords className="h-5 w-5" />}>
                 Coleção de vilões e chefes épicos (minis grandes, alto detalhe)
               </UpsellItem>
@@ -103,7 +124,8 @@ function ObrigadoPage() {
               href="https://app.zuptos.com.br/checkout/8b22d48b460d1578"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-buy inline-flex w-full items-center justify-center text-foreground sm:w-auto"
+              className="btn-buy inline-flex w-full items-center justify-center text-foreground sm:w-auto animate-fade-in"
+              style={{ animationDelay: "800ms", animationFillMode: "both" }}
             >
               QUERO A CAMPANHA COMPLETA!
             </a>
@@ -112,7 +134,10 @@ function ObrigadoPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="section-padding border-t border-border/50 bg-section-1">
+      <footer
+        className="section-padding border-t border-border/50 bg-section-1 animate-fade-in"
+        style={{ animationDelay: "900ms", animationFillMode: "both" }}
+      >
         <div className="container-narrow text-center">
           <p className="text-sm text-muted-foreground">
             © 2026 Mega Pacote STL 3D. Todos os direitos reservados.
