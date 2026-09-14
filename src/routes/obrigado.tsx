@@ -55,17 +55,12 @@ function ObrigadoPage() {
               Campanha Completa: Vilões Épicos + Cenário de Batalha
             </h2>
 
-            <p className="mx-auto mb-5 max-w-lg text-sm leading-relaxed text-muted-foreground md:text-base">
-              Oferecido logo após a compra. O cliente já pagou e está mais aberto
-              a aproveitar essa oferta especial por tempo limitado.
-            </p>
-
             <div className="mb-6 inline-flex flex-col items-center rounded-2xl border border-primary/30 bg-primary/10 px-6 py-4">
-              <span className="text-sm text-muted-foreground line-through">
-                De R$ 297,90
+              <span className="text-sm text-red-500 line-through">
+                R$ 297,90
               </span>
-              <span className="text-3xl font-black text-foreground md:text-4xl">
-                por R$ 37,90
+              <span className="text-3xl font-black text-green-500 md:text-4xl">
+                R$ 37,90
               </span>
             </div>
 
