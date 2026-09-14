@@ -1,5 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check, CheckCircle, Crown, Home, Sparkles, Swords } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { Check, CheckCircle, Castle, Crown, Swords } from "lucide-react";
 
 export const Route = createFileRoute("/obrigado")({
   head: () => ({
@@ -68,7 +68,7 @@ function ObrigadoPage() {
               <UpsellItem icon={<Swords className="h-5 w-5" />}>
                 Coleção de vilões e chefes épicos (minis grandes, alto detalhe)
               </UpsellItem>
-              <UpsellItem icon={<Sparkles className="h-5 w-5" />}>
+              <UpsellItem icon={<Castle className="h-5 w-5" />}>
                 Cenário de batalha completo (arena, castelo em ruínas, ponte
                 sobre lava)
               </UpsellItem>
@@ -77,24 +77,14 @@ function ObrigadoPage() {
               </UpsellItem>
             </ul>
 
-            <div className="flex flex-col items-center gap-4">
-              <a
-                href="https://app.zuptos.com.br/checkout/8b22d48b460d1578"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-buy inline-flex w-full items-center justify-center text-foreground sm:w-auto"
-              >
-                QUERO A CAMPANHA COMPLETA!
-              </a>
-
-              <Link
-                to="/"
-                className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <Home className="h-4 w-4" />
-                Voltar para a página inicial
-              </Link>
-            </div>
+            <a
+              href="https://app.zuptos.com.br/checkout/8b22d48b460d1578"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-buy inline-flex w-full items-center justify-center text-foreground sm:w-auto"
+            >
+              QUERO A CAMPANHA COMPLETA!
+            </a>
           </div>
         </div>
       </section>
