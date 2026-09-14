@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { Play, Pause, ShoppingBag, X, Lock } from "lucide-react";
+import { Play, Pause, ShoppingBag, X, Lock, Volume2, VolumeX } from "lucide-react";
 import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
