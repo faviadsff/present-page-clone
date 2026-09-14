@@ -48,7 +48,7 @@ function ObrigadoPage() {
           {/* UPSELL */}
           <div className="card-dark mx-auto max-w-2xl border-primary/30 p-6 text-center md:p-10">
             <div className="mb-4 flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-3">
-              <span className="text-sm font-black uppercase tracking-widest text-foreground md:text-base">
+              <span className="text-xl font-black text-foreground md:text-2xl">
                 Oferta especial
               </span>
               <OfferTimer />
