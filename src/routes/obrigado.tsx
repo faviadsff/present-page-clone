@@ -47,8 +47,13 @@ function ObrigadoPage() {
           {/* UPSELL */}
           <div className="card-dark mx-auto max-w-2xl border-primary/30 p-6 text-center md:p-10">
             <div className="mb-4 flex justify-center">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 shadow-[0_0_40px_hsl(43_90%_52%_/_0.2)]">
-                <Crown className="h-7 w-7 text-primary" />
+              <div className="relative h-28 w-28 overflow-hidden rounded-2xl border-4 border-primary bg-primary/10 shadow-[0_0_50px_hsl(43_90%_52%_/_0.35)]">
+                <img
+                  src={campaignImg.url}
+                  alt="Vilões Épicos + Cenário de Batalha"
+                  className="h-full w-full object-cover"
+                />
+                <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-primary/40" />
               </div>
             </div>
 
