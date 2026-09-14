@@ -1,5 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check, CheckCircle, Crown, Home, Sparkles, Swords } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { Check, CheckCircle, Castle, Crown, Swords } from "lucide-react";
 
 export const Route = createFileRoute("/obrigado")({
   head: () => ({
