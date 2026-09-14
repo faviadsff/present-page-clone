@@ -121,11 +121,12 @@ const CHECKOUT_PREMIUM = "https://app.zuptos.com.br/checkout/8b22d48b460d1578";
 const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/k22Mgh9AbZBrC7iQ1jhO";
 
 /**
- * VSL hospedado no Vimeo (formato vertical) com HUD oculta,
- * progress bar customizado verde na base e controle de som.
+ * VSL hospedado no Vimeo (formato vertical) com HUD oculta e
+ * progress bar customizado verde na base.
  *
- * Por política dos navegadores, o autoplay inicia sem som.
- * Qualquer toque/clique no vídeo ativa o áudio automaticamente.
+ * Tentativa de autoplay com som. Se o navegador bloquear
+ * (política de autoplay), cai para mudo e ativa o áudio
+ * automaticamente na primeira interação do usuário com a página.
  */
 function VslPlayer() {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
@@ -133,11 +134,11 @@ function VslPlayer() {
   const [progress, setProgress] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [ready, setReady] = useState(false);
-  const [volume, setVolume] = useState<number | null>(null);
 
   useEffect(() => {
     let destroyed = false;
     let player: InstanceType<typeof import("@vimeo/player").default> | null = null;
+    let removeUnlockListener: (() => void) | null = null;
 
     const init = async () => {
       const { default: Player } = await import("@vimeo/player");
@@ -154,15 +155,36 @@ function VslPlayer() {
       player.on("play", () => setPlaying(true));
       player.on("pause", () => setPlaying(false));
       player.on("ended", () => setPlaying(false));
-      player.on("volumechange", (data: { volume: number }) => setVolume(data.volume));
 
       await player.ready();
-      if (!destroyed) {
-        setReady(true);
-        // Autoplay inicia sem som para respeitar as políticas dos navegadores.
+      if (destroyed) return;
+      setReady(true);
+
+      // 1) Tenta iniciar COM som
+      await player.setVolume(1).catch(() => {});
+      try {
+        await player.play();
+      } catch {
+        // 2) Navegador bloqueou autoplay com som — inicia mudo
+        await player.setVolume(0).catch(() => {});
         await player.play().catch(() => {});
-        const currentVol = await player.getVolume().catch(() => 0);
-        setVolume(currentVol);
+
+        // 3) Na primeira interação do usuário em qualquer lugar, liga o som
+        const unlock = () => {
+          player?.setVolume(1).catch(() => {});
+          window.removeEventListener("pointerdown", unlock);
+          window.removeEventListener("keydown", unlock);
+          window.removeEventListener("touchstart", unlock);
+          removeUnlockListener = null;
+        };
+        window.addEventListener("pointerdown", unlock);
+        window.addEventListener("keydown", unlock);
+        window.addEventListener("touchstart", unlock);
+        removeUnlockListener = () => {
+          window.removeEventListener("pointerdown", unlock);
+          window.removeEventListener("keydown", unlock);
+          window.removeEventListener("touchstart", unlock);
+        };
       }
     };
 
@@ -170,6 +192,7 @@ function VslPlayer() {
 
     return () => {
       destroyed = true;
+      removeUnlockListener?.();
       player?.destroy().catch(() => {});
       playerRef.current = null;
     };
@@ -180,29 +203,12 @@ function VslPlayer() {
     if (!player || !ready) return;
     const isPaused = await player.getPaused().catch(() => true);
     if (isPaused) {
-      // Qualquer interação do usuário libera o áudio.
-      if ((volume ?? 0) < 0.1) {
-        await player.setVolume(1).catch(() => {});
-      }
+      await player.setVolume(1).catch(() => {});
       await player.play().catch(() => {});
     } else {
       await player.pause().catch(() => {});
     }
   };
-
-  const toggleMute = async (e?: React.MouseEvent) => {
-    e?.stopPropagation();
-    const player = playerRef.current;
-    if (!player || !ready || volume === null) return;
-    const next = volume > 0 ? 0 : 1;
-    await player.setVolume(next).catch(() => {});
-    setVolume(next);
-    if (next > 0 && !playing) {
-      await player.play().catch(() => {});
-    }
-  };
-
-  const isMuted = (volume ?? 0) < 0.1;
 
   return (
     <div className="w-full">
