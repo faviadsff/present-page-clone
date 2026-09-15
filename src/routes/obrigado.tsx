@@ -129,6 +129,14 @@ function ObrigadoPage() {
             >
               QUERO A CAMPANHA COMPLETA!
             </a>
+
+            <a
+              href="/membros"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline animate-fade-in"
+              style={{ animationDelay: "900ms", animationFillMode: "both" }}
+            >
+              Acessar meus arquivos na área de membros
+            </a>
           </div>
         </div>
       </section>
