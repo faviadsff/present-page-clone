@@ -855,7 +855,7 @@ function SalesPage() {
                   <p className="text-sm text-muted-foreground mb-2">De <span className="line-through">R$ 189,90</span> por apenas:</p>
                   <div className="flex items-center justify-center gap-1">
                     <span className="text-2xl font-bold">R$</span>
-                    <span className="text-5xl font-black text-primary">9,90</span>
+                    <span className="text-5xl font-black text-primary">17,90</span>
                   </div>
                 </div>
                 <button
@@ -889,7 +889,7 @@ function SalesPage() {
                   <p className="text-sm text-muted-foreground mb-2">De <span className="line-through">R$ 489,90</span> por apenas:</p>
                   <div className="flex items-center justify-center gap-1">
                     <span className="text-2xl font-bold">R$</span>
-                    <span className="text-5xl font-black text-gradient">27,90</span>
+                    <span className="text-5xl font-black text-gradient">37,90</span>
                   </div>
                 </div>
                 <a id="begin_checkout" href={CHECKOUT_PREMIUM} target="_blank" rel="noopener noreferrer" className="btn-buy w-full text-foreground animate-pulse-glow-green inline-flex items-center justify-center text-center">
@@ -987,8 +987,8 @@ function SalesPage() {
                 Ganhe <span className="font-bold text-green-500">R$ 10,00 de desconto</span> no Pacote Premium e leve todos os bônus inclusos!
               </p>
               <div className="rounded-lg bg-secondary/50 p-4 text-center">
-                <p className="text-sm text-muted-foreground line-through">De R$ 27,90</p>
-                <p className="text-3xl font-black text-gradient">R$ 17,90</p>
+                <p className="text-sm text-muted-foreground line-through">De R$ 37,90</p>
+                <p className="text-3xl font-black text-gradient">R$ 27,90</p>
                 <p className="text-xs text-muted-foreground">Pacote Premium + todos os bônus</p>
               </div>
               <a
