@@ -216,11 +216,11 @@ function MembrosPage() {
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab)}
-                  className={`inline-flex items-center gap-2 whitespace-nowrap rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
-                    activeTab === tab
-                      ? "bg-green-600 text-foreground"
-                      : "text-muted-foreground hover:bg-card hover:text-foreground"
-                  }`}
+                  className={`inline-flex items-center gap-2 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-semibold transition-colors sm:px-4 ${
+                  activeTab === tab
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:bg-card hover:text-foreground"
+                }`}
                 >
                   {CATEGORY_ICONS[tab]}
                   {tab}
@@ -236,7 +236,7 @@ function MembrosPage() {
               {activeTab === "Home" ? "Todos os Packs" : activeTab}
             </h2>
 
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
               {visiblePacks.map((pack, index) => (
                 <article
                   key={pack.name}
@@ -246,7 +246,7 @@ function MembrosPage() {
                     animationFillMode: "both",
                   }}
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className="relative aspect-[5/4] overflow-hidden sm:aspect-[4/3]">
                     <img
                       src={pack.image}
                       alt={pack.name}
@@ -258,17 +258,17 @@ function MembrosPage() {
                     </span>
                   </div>
 
-                  <div className="p-4">
-                    <h3 className="text-base font-black leading-tight">
+                  <div className="p-3 sm:p-4">
+                    <h3 className="text-sm font-black leading-tight sm:text-base">
                       {pack.name}
                     </h3>
-                    <p className="mt-1 text-xs text-muted-foreground">
+                    <p className="mt-1 text-[11px] leading-snug text-muted-foreground sm:text-xs">
                       {pack.description}
                     </p>
 
                     <a
                       href={DOWNLOAD_LINK}
-                      className="btn-buy mt-4 flex w-full items-center justify-center gap-2 !rounded-lg !px-4 !py-2.5 !text-sm text-foreground"
+                      className="btn-buy mt-3 flex w-full items-center justify-center gap-2 !rounded-lg !px-3 !py-2 text-xs text-foreground sm:mt-4 sm:!px-4 sm:!py-2.5 sm:!text-sm"
                     >
                       <Download className="h-4 w-4" />
                       Download
@@ -280,7 +280,7 @@ function MembrosPage() {
           </section>
 
           {/* FOOTER */}
-          <footer className="border-t border-border/50 px-4 py-6 text-center md:px-8">
+          <footer className="border-t border-border/50 px-3 py-6 text-center md:px-8">
             <p className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
               <Users className="h-3.5 w-3.5" />© 2026 STL do Mago. Todos os
               direitos reservados.
