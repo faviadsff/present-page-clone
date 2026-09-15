@@ -189,7 +189,7 @@ function MembrosPage() {
 
         {/* CONTEÚDO */}
         <div className="min-w-0 flex-1">
-          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 border-b border-border/50 bg-card/80 px-4 py-3 backdrop-blur-sm md:hidden">
+          <div className="members-mobile-header grid-cols-[minmax(0,1fr)_auto] items-center gap-3 border-b border-border/50 bg-card/80 px-4 py-3 backdrop-blur-sm">
             <div className="flex min-w-0 items-center gap-3">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
                 <Crown className="h-5 w-5" />
