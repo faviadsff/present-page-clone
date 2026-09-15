@@ -837,6 +837,38 @@ function SalesPage() {
               <h2 className="text-2xl md:text-4xl font-black mt-4">ESCOLHA SEU PACOTE</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div className="card-dark border-primary/50 relative overflow-hidden">
+                <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 rounded-bl-lg">MAIS VENDIDO</div>
+                <div className="text-center mb-4">
+                  <h3 className="text-2xl font-bold mb-2">Pacote Premium</h3>
+                </div>
+                <div className="space-y-2 mb-6">
+                  {PREMIUM_BONUSES.map((bonus, i) => (
+                    <div key={bonus} className="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-4 h-4 text-green-500 flex-shrink-0"><path d="M20 6 9 17l-5-5" /></svg>
+                      <span className="text-foreground/90 text-sm">{bonus}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="text-center mb-6">
+                  <p className="text-sm text-muted-foreground mb-2">De <span className="line-through">R$ 489,90</span> por apenas:</p>
+                  <div className="flex items-center justify-center gap-1">
+                    <span className="text-2xl font-bold">R$</span>
+                    <span className="text-5xl font-black text-gradient">37,90</span>
+                  </div>
+                </div>
+                <a id="begin_checkout" href={CHECKOUT_PREMIUM} target="_blank" rel="noopener noreferrer" className="btn-buy w-full text-foreground animate-pulse-glow-green inline-flex items-center justify-center text-center">
+                  QUERO ESSE MEGA PACOTE!
+                </a>
+                <div className="text-center mt-4">
+                  <p className="text-sm text-red-400">🎁 DESCONTO ESPECIAL! Aproveite apenas esse mês de setembro.</p>
+                </div>
+                <div className="flex items-center justify-center gap-2 mt-4 text-sm text-green-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield w-4 h-4"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></svg>
+                  <span>Compra Segura</span>
+                </div>
+              </div>
+
               <div className="card-dark">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-2">Pacote Básico</h3>
@@ -855,7 +887,7 @@ function SalesPage() {
                   <p className="text-sm text-muted-foreground mb-2">De <span className="line-through">R$ 189,90</span> por apenas:</p>
                   <div className="flex items-center justify-center gap-1">
                     <span className="text-2xl font-bold">R$</span>
-                    <span className="text-5xl font-black text-primary">9,90</span>
+                    <span className="text-5xl font-black text-primary">17,90</span>
                   </div>
                 </div>
                 <button
@@ -866,38 +898,6 @@ function SalesPage() {
                 >
                   QUERO O PACOTE BÁSICO!
                 </button>
-                <div className="flex items-center justify-center gap-2 mt-4 text-sm text-green-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield w-4 h-4"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></svg>
-                  <span>Compra Segura</span>
-                </div>
-              </div>
-
-              <div className="card-dark border-primary/50 relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 rounded-bl-lg">MAIS VENDIDO</div>
-                <div className="text-center mb-4">
-                  <h3 className="text-2xl font-bold mb-2">Pacote Premium</h3>
-                </div>
-                <div className="space-y-2 mb-6">
-                  {PREMIUM_BONUSES.map((bonus, i) => (
-                    <div key={bonus} className="flex items-center gap-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-4 h-4 text-green-500 flex-shrink-0"><path d="M20 6 9 17l-5-5" /></svg>
-                      <span className="text-foreground/90 text-sm">{bonus}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="text-center mb-6">
-                  <p className="text-sm text-muted-foreground mb-2">De <span className="line-through">R$ 489,90</span> por apenas:</p>
-                  <div className="flex items-center justify-center gap-1">
-                    <span className="text-2xl font-bold">R$</span>
-                    <span className="text-5xl font-black text-gradient">27,90</span>
-                  </div>
-                </div>
-                <a id="begin_checkout" href={CHECKOUT_PREMIUM} target="_blank" rel="noopener noreferrer" className="btn-buy w-full text-foreground animate-pulse-glow-green inline-flex items-center justify-center text-center">
-                  QUERO ESSE MEGA PACOTE!
-                </a>
-                <div className="text-center mt-4">
-                  <p className="text-sm text-red-400">🎁 DESCONTO ESPECIAL! Aproveite apenas esse mês de setembro.</p>
-                </div>
                 <div className="flex items-center justify-center gap-2 mt-4 text-sm text-green-500">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield w-4 h-4"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></svg>
                   <span>Compra Segura</span>
@@ -987,8 +987,8 @@ function SalesPage() {
                 Ganhe <span className="font-bold text-green-500">R$ 10,00 de desconto</span> no Pacote Premium e leve todos os bônus inclusos!
               </p>
               <div className="rounded-lg bg-secondary/50 p-4 text-center">
-                <p className="text-sm text-muted-foreground line-through">De R$ 27,90</p>
-                <p className="text-3xl font-black text-gradient">R$ 17,90</p>
+                <p className="text-sm text-muted-foreground line-through">De R$ 37,90</p>
+                <p className="text-3xl font-black text-gradient">R$ 27,90</p>
                 <p className="text-xs text-muted-foreground">Pacote Premium + todos os bônus</p>
               </div>
               <a
