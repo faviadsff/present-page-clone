@@ -100,7 +100,7 @@ function ObrigadoPage() {
                 R$ 297,90
               </span>
               <span className="text-3xl font-black text-green-500 md:text-4xl">
-                R$ 37,90
+                R$ 27,90
               </span>
             </div>
 
