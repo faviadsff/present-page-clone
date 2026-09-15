@@ -13,6 +13,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import heroisImg from "@/assets/herois-e-racas.jpg.asset.json";
 import monstrosImg from "@/assets/monstros-e-feras.jpg.asset.json";
 import viloesImg from "@/assets/viloes-e-chefes.jpg.asset.json";
@@ -31,6 +32,13 @@ export const Route = createFileRoute("/membros")({
         content:
           "Área de membros do STL do Mago. Baixe seus pacotes de miniaturas STL organizados por categoria.",
       },
+      { property: "og:title", content: "Área de Membros | STL do Mago" },
+      {
+        property: "og:description",
+        content: "Acesse e baixe seus pacotes de miniaturas STL do Mago.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
@@ -135,8 +143,8 @@ function MembrosPage() {
       : PACKS.filter((pack) => pack.category === activeTab);
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <div className="flex min-h-screen">
+    <main className="min-h-screen overflow-x-hidden bg-background text-foreground">
+      <div className="flex min-h-screen min-w-0">
         {/* SIDEBAR */}
         <aside className="hidden w-56 shrink-0 flex-col border-r border-border/50 bg-card/60 p-6 md:flex">
           <div className="mb-8 flex items-center gap-3">
@@ -180,7 +188,28 @@ function MembrosPage() {
         </aside>
 
         {/* CONTEÚDO */}
-        <div className="flex-1">
+        <div className="min-w-0 flex-1">
+          <div className="members-mobile-header grid-cols-[minmax(0,1fr)_auto] items-center gap-3 border-b border-border/50 bg-card/80 px-4 py-3 backdrop-blur-sm">
+            <div className="flex min-w-0 items-center gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
+                <Crown className="h-5 w-5" />
+              </div>
+              <div className="min-w-0">
+                <p className="truncate text-sm font-black uppercase">STL do Mago</p>
+                <p className="truncate text-xs text-muted-foreground">Seus arquivos estão liberados</p>
+              </div>
+            </div>
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              aria-label="Abrir suporte"
+              className="h-10 w-10 shrink-0 text-muted-foreground hover:text-primary"
+            >
+              <LifeBuoy />
+            </Button>
+          </div>
+
           {/* HERO BANNER */}
           <header className="relative overflow-hidden border-b border-border/50">
             <img
@@ -190,33 +219,39 @@ function MembrosPage() {
               className="absolute inset-0 h-full w-full object-cover opacity-25"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-background/40 to-background" />
-            <div className="relative z-10 flex flex-col items-center px-6 py-12 text-center md:py-16">
-              <h1 className="text-3xl font-black md:text-4xl">
+            <div className="relative z-10 flex flex-col items-center px-4 py-8 text-center sm:px-6 md:py-16">
+              <h1 className="text-2xl font-black sm:text-3xl md:text-4xl">
                 <span className="text-gradient">STL do Mago</span>
               </h1>
               <p className="mt-3 max-w-xl text-sm text-muted-foreground md:text-base">
                 Sua coleção completa de miniaturas STL prontas pra imprimir.
                 Clique nos cards abaixo para baixar cada pacote.
               </p>
-              <a
-                href="#packs"
-                className="btn-buy mt-6 inline-flex items-center gap-2 !px-5 !py-2.5 text-sm text-foreground"
-              >
-                <Download className="h-4 w-4" />
-                COMO BAIXAR MEUS ARQUIVOS
-              </a>
+              <Button asChild className="btn-buy mt-5 h-12 w-full max-w-sm !px-4 !py-3 text-sm text-foreground sm:mt-6 sm:w-auto sm:!px-5">
+                <a href="#packs">
+                  <Download className="h-4 w-4" />
+                  COMO BAIXAR MEUS ARQUIVOS
+                </a>
+              </Button>
             </div>
           </header>
 
           {/* TABS */}
-          <div className="border-b border-border/50 px-4 md:px-8">
-            <div className="flex gap-1 overflow-x-auto py-3">
+          <div className="relative min-w-0 border-b border-border/50 px-3 md:px-8">
+            <div
+              role="tablist"
+              aria-label="Categorias de arquivos"
+              className="flex max-w-full gap-1 overflow-x-auto py-3 pr-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            >
               {TABS.map((tab) => (
-                <button
+                <Button
                   key={tab}
                   type="button"
+                  role="tab"
+                  aria-selected={activeTab === tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`inline-flex items-center gap-2 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-semibold transition-colors sm:px-4 ${
+                  variant="ghost"
+                  className={`h-11 shrink-0 gap-2 rounded-lg px-3 text-sm font-semibold transition-colors sm:px-4 ${
                   activeTab === tab
                     ? "bg-primary text-primary-foreground"
                     : "text-muted-foreground hover:bg-card hover:text-foreground"
@@ -224,19 +259,20 @@ function MembrosPage() {
                 >
                   {CATEGORY_ICONS[tab]}
                   {tab}
-                </button>
+                </Button>
               ))}
             </div>
+            <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-r from-transparent to-background md:hidden" />
           </div>
 
           {/* GRID DE PACKS */}
-          <section id="packs" className="px-4 py-8 md:px-8">
-            <h2 className="mb-6 flex items-center gap-2 text-lg font-bold">
+          <section id="packs" className="min-w-0 scroll-mt-4 px-3 py-6 sm:px-4 md:px-8 md:py-8">
+            <h2 className="mb-4 flex min-w-0 items-center gap-2 text-lg font-bold sm:mb-6">
               <Ghost className="h-5 w-5 text-primary" />
               {activeTab === "Home" ? "Todos os Packs" : activeTab}
             </h2>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
               {visiblePacks.map((pack, index) => (
                 <article
                   key={pack.name}
@@ -266,13 +302,12 @@ function MembrosPage() {
                       {pack.description}
                     </p>
 
-                    <a
-                      href={DOWNLOAD_LINK}
-                      className="btn-buy mt-3 flex w-full items-center justify-center gap-2 !rounded-lg !px-3 !py-2 text-xs text-foreground sm:mt-4 sm:!px-4 sm:!py-2.5 sm:!text-sm"
-                    >
-                      <Download className="h-4 w-4" />
-                      Download
-                    </a>
+                    <Button asChild className="btn-buy mt-3 h-12 w-full !rounded-lg !px-3 !py-3 text-sm text-foreground sm:mt-4 sm:!px-4">
+                      <a href={DOWNLOAD_LINK}>
+                        <Download className="h-4 w-4" />
+                        Download
+                      </a>
+                    </Button>
                   </div>
                 </article>
               ))}

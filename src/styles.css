@@ -143,6 +143,16 @@
   }
 }
 
+.members-mobile-header {
+  display: grid;
+}
+
+@media (min-width: 768px) {
+  .members-mobile-header {
+    display: none;
+  }
+}
+
 /* Hide the "Edit with Lovable" badge */
 #lovable-badge,
 a[href*="lovable.dev"][target="_blank"][class*="badge"],
