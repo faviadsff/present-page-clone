@@ -42,7 +42,14 @@ fbq('track', 'PageView');`,
 
 function ObrigadoPage() {
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <div
+        aria-hidden="true"
+        dangerouslySetInnerHTML={{
+          __html: `<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1255680179855372&ev=PageView&noscript=1" /></noscript>`,
+        }}
+      />
+      <main className="min-h-screen bg-background">
       {/* HERO */}
       <section className="relative flex min-h-screen flex-col items-center justify-center section-padding overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background" />
