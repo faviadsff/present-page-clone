@@ -682,6 +682,12 @@ function SalesPage() {
 
   return (
     <>
+      <div
+        aria-hidden="true"
+        dangerouslySetInnerHTML={{
+          __html: `<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1255680179855372&ev=PageView&noscript=1" /></noscript>`,
+        }}
+      />
       <CountdownBar />
       <SocialProofToasts />
       <main className="min-h-screen bg-background">
