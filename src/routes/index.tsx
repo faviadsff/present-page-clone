@@ -118,7 +118,8 @@ const PREMIUM_BONUSES: ReadonlyArray<string> = [
 ];
 
 const CHECKOUT_PREMIUM = "https://app.zuptos.com.br/checkout/8b22d48b460d1578";
-const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/k22Mgh9AbZBrC7iQ1jhO";
+const CHECKOUT_BASIC = "https://app.zuptos.com.br/checkout/e59e370e9600f2c5";
+const CHECKOUT_DOWNSELL = "https://app.zuptos.com.br/checkout/f89241c13a36747e";
 
 /**
  * VSL hospedado no Vimeo (formato vertical) com HUD oculta e
@@ -993,7 +994,7 @@ function SalesPage() {
               </div>
               <a
                 id="begin_checkout_downsell"
-                href={CHECKOUT_PREMIUM}
+                href={CHECKOUT_DOWNSELL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-buy w-full inline-flex items-center justify-center text-center text-foreground"
@@ -1001,16 +1002,16 @@ function SalesPage() {
               >
                 EU QUERO ESSA OFERTA!
               </a>
-              <button
-                type="button"
-                onClick={() => {
-                  setDownsellOpen(false);
-                  window.open(CHECKOUT_BASIC, "_blank", "noopener,noreferrer");
-                }}
-                className="w-full text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
+              <a
+                id="begin_checkout_basic"
+                href={CHECKOUT_BASIC}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
+                onClick={() => setDownsellOpen(false)}
               >
                 Quero continuar com o pacote básico
-              </button>
+              </a>
             </div>
           </div>
         </div>
