@@ -118,7 +118,8 @@ const PREMIUM_BONUSES: ReadonlyArray<string> = [
 ];
 
 const CHECKOUT_PREMIUM = "https://app.zuptos.com.br/checkout/8b22d48b460d1578";
-const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/k22Mgh9AbZBrC7iQ1jhO";
+const CHECKOUT_BASIC = "https://app.zuptos.com.br/checkout/e59e370e9600f2c5";
+const CHECKOUT_DOWNSELL = "https://app.zuptos.com.br/checkout/f89241c13a36747e";
 
 /**
  * VSL hospedado no Vimeo (formato vertical) com HUD oculta e
