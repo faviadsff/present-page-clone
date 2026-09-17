@@ -118,8 +118,8 @@ const PREMIUM_BONUSES: ReadonlyArray<string> = [
 ];
 
 const CHECKOUT_PREMIUM = "https://pay.wiapy.com/6aab373fcf13c78c72e9d8be";
-const CHECKOUT_BASIC = "https://app.zuptos.com.br/checkout/e59e370e9600f2c5";
-const CHECKOUT_DOWNSELL = "https://app.zuptos.com.br/checkout/f89241c13a36747e";
+const CHECKOUT_BASIC = "https://pay.wiapy.com/j2yps-zAcjjD";
+const CHECKOUT_DOWNSELL = "https://pay.wiapy.com/J_0dotXazN7r";
 
 /**
  * VSL hospedado no Vimeo (formato vertical) com HUD oculta e
