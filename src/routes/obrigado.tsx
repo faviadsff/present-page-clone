@@ -143,7 +143,7 @@ function ObrigadoPage() {
             </ul>
 
             <a
-              href="https://app.zuptos.com.br/checkout/8b22d48b460d1578"
+              href="https://pay.wiapy.com/W2CMNStng9eO"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-buy inline-flex w-full items-center justify-center text-foreground sm:w-auto animate-fade-in"
