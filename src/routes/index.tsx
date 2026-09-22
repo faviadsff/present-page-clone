@@ -701,10 +701,10 @@ function SalesPage() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
                 4,98 (5286 AVALIAÇÕES)
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-foreground max-w-4xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-foreground max-w-4xl mb-8">
                 +2.000 Miniaturas <span className="text-gradient">STL</span> de <span className="text-gradient">RPG e Board Games</span> Prontas pra Imprimir
               </h1>
-              <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted-foreground">
+              <p className="max-w-2xl text-base sm:text-lg text-muted-foreground">
                 Monstros, herois, viloes, NPCs e cenarios organizados por sistema. Baixe, imprima e leve sua mesa pro proximo nivel.
               </p>
             </div>
