@@ -692,10 +692,23 @@ function SalesPage() {
       <SocialProofToasts />
       <main className="min-h-screen bg-background">
         {/* HERO */}
-        <section id="hero" className="relative overflow-hidden pt-0 pb-8">
+        <section id="hero" className="relative overflow-hidden pt-8 pb-8">
           <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background"></div>
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
-          <div className="relative z-10 mx-auto w-full max-w-6xl">
+          <div className="relative z-10 mx-auto w-full max-w-6xl px-4">
+            <div className="flex flex-col items-center text-center mb-8">
+              <div className="inline-flex items-center gap-2 rounded-full bg-primary/15 border border-primary/30 px-4 py-1.5 text-sm font-bold text-primary mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                4,98 (5286 AVALIAÇÕES)
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-foreground max-w-4xl">
+                +2.000 Miniaturas <span className="text-gradient">STL</span> de <span className="text-gradient">RPG e Board Games</span> Prontas pra Imprimir
+              </h1>
+              <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted-foreground">
+                Monstros, herois, viloes, NPCs e cenarios organizados por sistema. Baixe, imprima e leve sua mesa pro proximo nivel.
+              </p>
+            </div>
+
             <div id="vsl" className="vsl-frame">
               <VslPlayer />
             </div>
