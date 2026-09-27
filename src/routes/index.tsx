@@ -174,12 +174,9 @@ function SalesPage() {
           <div className="absolute right-1/4 top-1/4 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
           <div className="relative z-10 mx-auto w-full max-w-6xl px-4">
             <div className="mb-8 flex flex-col items-center text-center">
-              <h1 className="mb-5 max-w-4xl text-[1.7rem] font-black leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
+              <h1 className="mb-6 max-w-4xl text-[1.7rem] font-black leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
                 Pare de pagar R$ 60 por miniatura: <span className="text-gradient">+2.000 STLs de RPG</span> prontos pra imprimir hoje
               </h1>
-              <p className="mb-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
-                Monstros, heróis, vilões, NPCs e cenários organizados por sistema. Baixe, imprima e leve sua mesa para o próximo nível.
-              </p>
               <CtaButton />
               <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground sm:text-sm">
                 <li>✓ Acesso imediato</li>
