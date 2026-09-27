@@ -470,7 +470,7 @@ function CompareCard({ tone, title, items, result }: CompareCardProps) {
           <li
             key={text}
             className="flex items-center gap-3 rounded-lg p-3"
-            style={{ border: `1px solid ${accent}`, background: `${accent} / 0.10`.replace(" /", "00 /").slice(0, 0) || `color-mix(in srgb, ${accent} 10%, transparent)` }}
+            style={{ border: `1px solid ${accent}`, background: `hsl(${bad ? "0 84% 60%" : "142 76% 45%"} / 0.10)` }}
           >
             <span
               className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full"
