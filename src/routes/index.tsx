@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
-import { Castle, Check, CreditCard, Diamond, Gift, Lock, Shield, Skull, Sparkles, Swords, X } from "lucide-react";
+import { Castle, Check, CreditCard, Diamond, Lock, Shield, Skull, Sparkles, Swords, X } from "lucide-react";
 
 import {
   Accordion,
@@ -460,4 +460,3 @@ function CompareCard({ tone, title, items, result }: CompareCardProps) {
   );
 }
 
-export { Gift };
