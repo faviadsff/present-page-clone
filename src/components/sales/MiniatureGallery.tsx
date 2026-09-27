@@ -12,7 +12,6 @@ export interface GalleryItem {
 /** Duas fileiras em loop contínuo, com lightbox para as fotos originais. */
 export function MiniatureGallery({ items }: { items: ReadonlyArray<GalleryItem> }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [galleryNearby, setGalleryNearby] = useState(false);
   const galleryRef = useRef<HTMLDivElement>(null);
   const open = openIndex !== null ? items[openIndex] : undefined;
   const rows = [items.slice(0, 6), items.slice(6, 12)];
@@ -22,19 +21,22 @@ export function MiniatureGallery({ items }: { items: ReadonlyArray<GalleryItem> 
   useEffect(() => {
     const gallery = galleryRef.current;
     if (!gallery) return;
-    if (!('IntersectionObserver' in window)) {
-      setGalleryNearby(true);
-      return;
-    }
+    const preload = () => items.forEach((item) => {
+      if (item.image) {
+        const image = new Image();
+        image.src = item.image;
+      }
+    });
+    if (!('IntersectionObserver' in window)) { preload(); return; }
     const observer = new IntersectionObserver(([entry]) => {
       if (entry?.isIntersecting) {
-        setGalleryNearby(true);
+        preload();
         observer.disconnect();
       }
     }, { rootMargin: "600px 0px" });
     observer.observe(gallery);
     return () => observer.disconnect();
-  }, []);
+  }, [items]);
 
   useEffect(() => {
     if (openIndex === null) return;
@@ -65,7 +67,7 @@ export function MiniatureGallery({ items }: { items: ReadonlyArray<GalleryItem> 
                           <img
                             src={item.image}
                             alt={duplicate ? "" : `${item.name} — ${item.category}`}
-                            loading={galleryNearby ? "eager" : "lazy"}
+                            loading="lazy"
                             decoding="async"
                             width={400}
                             height={400}
