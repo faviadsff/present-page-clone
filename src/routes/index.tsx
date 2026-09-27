@@ -37,6 +37,9 @@ import b1 from "@/assets/stl-b1.webp.asset.json";
 import b2 from "@/assets/stl-b2.webp.asset.json";
 import b3 from "@/assets/stl-b3.webp.asset.json";
 import b4 from "@/assets/stl-b4.webp.asset.json";
+import thumbPremium from "@/assets/pacote-premium.jpg.asset.json";
+import thumbBasico from "@/assets/pacote-basico.jpg.asset.json";
+import thumbPremiumDesconto from "@/assets/pacote-premium-desconto.jpg.asset.json";
 
 /* Links de checkout — NÃO alterar. */
 const CHECKOUT_PREMIUM = "https://pay.wiapy.com/Ey_3zhXcvuRm";
