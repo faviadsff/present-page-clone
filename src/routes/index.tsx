@@ -65,11 +65,11 @@ const GALLERY: ReadonlyArray<GalleryItem> = [
   { name: "Troll das Cavernas", category: "Monstros e Feras", image: g12.url },
 ];
 
-/** PLACEHOLDERS de depoimentos: troque por depoimentos e fotos reais. */
+/** Depoimentos reais: prints de WhatsApp dos clientes. */
 const TESTIMONIALS: ReadonlyArray<Testimonial> = [
-  { name: "Rafael M.", system: "Mestre de D&D 5e", text: "Imprimi o chefe da campanha na mesma semana. Meus jogadores piraram quando ele apareceu na mesa.", image: imgViloes.url },
-  { name: "Juliana S.", system: "Jogadora de Pathfinder 2e", text: "Tudo organizado por pasta, achei os monstros que eu queria em minutos. Malhas perfeitas.", image: imgMonstros.url },
-  { name: "Bruno H.", system: "Mestre de Tormenta20", text: "Economizei muito comparado com miniatura oficial. Os cenários deixaram a sessão outra coisa.", image: imgCenarios.url },
+  { image: depoWa1.url, alt: "Depoimento de cliente no WhatsApp sobre o pack de miniaturas" },
+  { image: depoWa2.url, alt: "Depoimento de cliente no WhatsApp sobre os modelos organizados" },
+  { image: depoWa3.url, alt: "Depoimento de cliente no WhatsApp sobre venda de miniaturas impressas" },
 ];
 
 const BONUSES: ReadonlyArray<{ icon: ReactNode; image: string; title: string; description: string }> = [
