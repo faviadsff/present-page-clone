@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { Pause, Play } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import vslThumb from "@/assets/vsl-thumb.png.asset.json";
 
 const VIDEO_ID = "1226402707";
-const THUMBNAIL = `https://vumbnail.com/${VIDEO_ID}.jpg`;
+const THUMBNAIL = vslThumb.url;
 
 type VimeoPlayer = InstanceType<typeof import("@vimeo/player").default>;
 
@@ -14,7 +15,6 @@ type VimeoPlayer = InstanceType<typeof import("@vimeo/player").default>;
  */
 export function VslPlayer() {
   const [activated, setActivated] = useState(false);
-  const [thumbFailed, setThumbFailed] = useState(false);
 
   return (
     <div className="w-full">
