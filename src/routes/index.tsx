@@ -11,7 +11,6 @@ import {
 import { CheckoutLink } from "@/components/sales/CheckoutLink";
 import { MiniatureGallery, type GalleryItem } from "@/components/sales/MiniatureGallery";
 import { MobileStickyCta } from "@/components/sales/MobileStickyCta";
-import { SocialProofToasts } from "@/components/sales/SocialProofToasts";
 import { TestimonialCards, type Testimonial } from "@/components/sales/TestimonialCards";
 import { VslPlayer } from "@/components/sales/VslPlayer";
 import { scrollToPricing } from "@/lib/checkout-utm";
@@ -22,6 +21,22 @@ import imgHerois from "@/assets/herois-e-racas.jpg.asset.json";
 import imgNPCs from "@/assets/npcs.jpg.asset.json";
 import imgCenarios from "@/assets/cenarios.jpg.asset.json";
 import imgMuitoMais from "@/assets/muito-mais.jpg.asset.json";
+import g01 from "@/assets/stl-g01.webp.asset.json";
+import g02 from "@/assets/stl-g02.webp.asset.json";
+import g03 from "@/assets/stl-g03.webp.asset.json";
+import g04 from "@/assets/stl-g04.webp.asset.json";
+import g05 from "@/assets/stl-g05.webp.asset.json";
+import g06 from "@/assets/stl-g06.webp.asset.json";
+import g07 from "@/assets/stl-g07.webp.asset.json";
+import g08 from "@/assets/stl-g08.webp.asset.json";
+import g09 from "@/assets/stl-g09.webp.asset.json";
+import g10 from "@/assets/stl-g10.webp.asset.json";
+import g11 from "@/assets/stl-g11.webp.asset.json";
+import g12 from "@/assets/stl-g12.webp.asset.json";
+import b1 from "@/assets/stl-b1.webp.asset.json";
+import b2 from "@/assets/stl-b2.webp.asset.json";
+import b3 from "@/assets/stl-b3.webp.asset.json";
+import b4 from "@/assets/stl-b4.webp.asset.json";
 
 /* Links de checkout — NÃO alterar. */
 const CHECKOUT_PREMIUM = "https://pay.wiapy.com/Ey_3zhXcvuRm";
@@ -33,18 +48,18 @@ const CHECKOUT_DOWNSELL = "https://pay.wiapy.com/ubjw8IZYMUK6";
  * Por enquanto usam as artes das categorias.
  */
 const GALLERY: ReadonlyArray<GalleryItem> = [
-  { name: "Lich Ancião", category: "Vilões e Chefes", image: imgViloes.url },
-  { name: "Dragão Vermelho", category: "Monstros e Feras", image: imgMonstros.url },
-  { name: "Paladino Anão", category: "Heróis e Raças", image: imgHerois.url },
-  { name: "Taverneiro", category: "NPCs", image: imgNPCs.url },
-  { name: "Torre em Ruínas", category: "Cenários", image: imgCenarios.url },
-  { name: "Baú do Tesouro", category: "Cenários", image: imgMuitoMais.url },
-  { name: "Beholder", category: "Monstros e Feras", image: imgMonstros.url },
-  { name: "Elfa Arqueira", category: "Heróis e Raças", image: imgHerois.url },
-  { name: "Mercador Viajante", category: "NPCs", image: imgNPCs.url },
-  { name: "Ponte de Pedra", category: "Cenários", image: imgCenarios.url },
-  { name: "Cavaleiro Sombrio", category: "Vilões e Chefes", image: imgViloes.url },
-  { name: "Owlbear", category: "Monstros e Feras", image: imgMonstros.url },
+  { name: "Lich Ancião", category: "Vilões e Chefes", image: g01.url },
+  { name: "Dragão Vermelho", category: "Monstros e Feras", image: g02.url },
+  { name: "Paladino Anão", category: "Heróis e Raças", image: g03.url },
+  { name: "Taverneiro", category: "NPCs", image: g04.url },
+  { name: "Torre em Ruínas", category: "Cenários", image: g05.url },
+  { name: "Baú do Tesouro", category: "Cenários", image: g06.url },
+  { name: "Hidra das Profundezas", category: "Monstros e Feras", image: g07.url },
+  { name: "Elfa Arqueira", category: "Heróis e Raças", image: g08.url },
+  { name: "Mercador Viajante", category: "NPCs", image: g09.url },
+  { name: "Ponte de Pedra", category: "Cenários", image: g10.url },
+  { name: "Cavaleiro Sombrio", category: "Vilões e Chefes", image: g11.url },
+  { name: "Troll das Cavernas", category: "Monstros e Feras", image: g12.url },
 ];
 
 /** PLACEHOLDERS de depoimentos: troque por depoimentos e fotos reais. */
@@ -54,11 +69,11 @@ const TESTIMONIALS: ReadonlyArray<Testimonial> = [
   { name: "Bruno H.", system: "Mestre de Tormenta20", text: "Economizei muito comparado com miniatura oficial. Os cenários deixaram a sessão outra coisa.", image: imgCenarios.url },
 ];
 
-const BONUSES: ReadonlyArray<{ icon: ReactNode; title: string; description: string }> = [
-  { icon: <Swords className="h-6 w-6" />, title: "Pack de Miniaturas e Figuras", description: "Heróis e figuras extras para montar seu grupo." },
-  { icon: <Skull className="h-6 w-6" />, title: "Pack de Monstros e Criaturas", description: "Criaturas prontas para qualquer encontro." },
-  { icon: <Sparkles className="h-6 w-6" />, title: "Pack de Designs Decorativos", description: "Peças decorativas para enfeitar a mesa e a estante." },
-  { icon: <Castle className="h-6 w-6" />, title: "Pack de Cenários e Dioramas", description: "Terrenos e dioramas para batalhas épicas." },
+const BONUSES: ReadonlyArray<{ icon: ReactNode; image: string; title: string; description: string }> = [
+  { icon: <Swords className="h-6 w-6" />, image: b1.url, title: "Pack de Miniaturas e Figuras", description: "Heróis e figuras extras para montar seu grupo." },
+  { icon: <Skull className="h-6 w-6" />, image: b2.url, title: "Pack de Monstros e Criaturas", description: "Criaturas prontas para qualquer encontro." },
+  { icon: <Sparkles className="h-6 w-6" />, image: b3.url, title: "Pack de Designs Decorativos", description: "Peças decorativas para enfeitar a mesa e a estante." },
+  { icon: <Castle className="h-6 w-6" />, image: b4.url, title: "Pack de Cenários e Dioramas", description: "Terrenos e dioramas para batalhas épicas." },
 ];
 
 const PREMIUM_FEATURES: ReadonlyArray<string> = [
@@ -150,7 +165,6 @@ function SalesPage() {
       <div className="sticky top-0 z-50 w-full bg-primary px-3 py-2 text-center text-primary-foreground">
         <p className="text-xs font-bold sm:text-sm">🎁 4 bônus exclusivos inclusos por tempo limitado</p>
       </div>
-      <SocialProofToasts />
       <MobileStickyCta />
 
       <main className="min-h-screen bg-background">
@@ -236,10 +250,10 @@ function SalesPage() {
               <p className="mb-2 text-2xl font-black md:text-3xl">🎁 NÃO ACABOU!</p>
               <p className="text-base text-muted-foreground md:text-lg">Bônus liberados por tempo limitado</p>
             </div>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 md:gap-4 lg:grid-cols-4">
               {BONUSES.map((b, i) => (
                 <div key={b.title} className="card-dark flex flex-col items-center text-center">
-                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary/15 text-primary">{b.icon}</div>
+                  <img src={b.image} alt={b.title} loading="lazy" decoding="async" width={400} height={400} className="mb-3 aspect-square w-full rounded-xl object-cover" />
                   <p className="text-xs font-bold uppercase text-primary">Bônus {i + 1}</p>
                   <h3 className="mt-1 font-bold text-foreground">{b.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{b.description}</p>
