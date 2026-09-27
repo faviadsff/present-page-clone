@@ -21,7 +21,10 @@ export function VslPlayer() {
 
   return (
     <div className="w-full">
-      <div className="relative mx-auto aspect-[9/16] w-full max-w-[300px] overflow-hidden rounded-xl border-2 border-[hsl(43_90%_52%)] bg-card shadow-[0_0_35px_hsl(43_90%_52%_/_0.35)] sm:max-w-sm md:max-w-md lg:max-w-lg">
+      <div
+        className="relative mx-auto aspect-[9/16] w-full max-w-[300px] overflow-hidden rounded-xl border-2 bg-card shadow-[0_0_35px_hsl(43_90%_52%_/_0.35)] sm:max-w-sm md:max-w-md lg:max-w-lg"
+        style={{ borderColor: "hsl(43 90% 52%)" }}
+      >
         {activated ? (
           <ActivePlayer onProgress={handleProgress} />
         ) : (
