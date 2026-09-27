@@ -176,7 +176,7 @@ function SalesPage() {
           <div className="absolute right-1/4 top-1/4 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
           <div className="relative z-10 mx-auto w-full max-w-6xl px-4">
             <div className="mb-8 flex flex-col items-center text-center">
-              <h1 className="mb-6 max-w-4xl text-[2.2rem] font-black leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
+              <h1 className="mb-6 max-w-4xl text-[2.5rem] font-black leading-tight tracking-tight text-foreground sm:text-6xl md:text-7xl">
                 Pare de pagar R$ 60 por miniatura: <span className="text-gradient">+2.000 STLs de RPG</span> prontos pra imprimir hoje
               </h1>
               <CtaButton />
@@ -271,10 +271,10 @@ function SalesPage() {
               <h2 className="mt-4 text-2xl font-black md:text-4xl">ESCOLHA SEU PACOTE</h2>
             </div>
             <div className="mx-auto grid max-w-4xl items-center gap-6 md:grid-cols-2">
-              <div className="card-dark relative overflow-hidden border-2 !border-primary shadow-[0_0_40px_hsl(43_90%_52%_/_0.25)] md:scale-105">
+              <div className="card-dark relative overflow-hidden border-2 !border-primary shadow-[0_0_40px_hsl(43_90%_52%_/_0.25)]">
                 <div className="absolute right-0 top-0 rounded-bl-lg bg-primary px-4 py-1 text-xs font-bold text-primary-foreground">MAIS VENDIDO</div>
-                <img src={thumbPremium.url} alt="Pacote Premium do STL do Mago" loading="lazy" decoding="async" width={1000} height={1000} className="mb-4 aspect-square w-full rounded-xl object-cover" />
-                <h3 className="mb-4 text-center text-2xl font-bold">Pacote Premium</h3>
+                <img src={thumbPremium.url} alt="Pacote Premium do STL do Mago" loading="lazy" decoding="async" width={480} height={480} className="mx-auto mb-3 aspect-square w-full max-w-[180px] rounded-xl object-cover md:max-w-[220px]" />
+                <h3 className="mb-3 text-center text-xl font-bold">Pacote Premium</h3>
                 <ul className="mb-6 space-y-2">
                   {PREMIUM_FEATURES.map((f) => (
                     <li key={f} className="flex items-center gap-3">
@@ -285,8 +285,8 @@ function SalesPage() {
                 </ul>
                 <div className="mb-6 text-center">
                   <div className="flex items-center justify-center gap-1">
-                    <span className="text-2xl font-bold">R$</span>
-                    <span className="text-6xl font-black text-gradient">37,90</span>
+                    <span className="text-xl font-bold">R$</span>
+                    <span className="text-5xl font-black text-gradient">37,90</span>
                   </div>
                   <p className="mt-1 text-sm text-muted-foreground">pagamento único · acesso vitalício</p>
                 </div>
@@ -303,8 +303,8 @@ function SalesPage() {
               </div>
 
               <div className="card-dark">
-                <img src={thumbBasico.url} alt="Pacote Básico do STL do Mago" loading="lazy" decoding="async" width={1000} height={1000} className="mb-4 aspect-square w-full rounded-xl object-cover" />
-                <h3 className="mb-4 text-center text-2xl font-bold">Pacote Básico</h3>
+                <img src={thumbBasico.url} alt="Pacote Básico do STL do Mago" loading="lazy" decoding="async" width={480} height={480} className="mx-auto mb-3 aspect-square w-full max-w-[180px] rounded-xl object-cover md:max-w-[220px]" />
+                <h3 className="mb-3 text-center text-xl font-bold">Pacote Básico</h3>
                 <ul className="mb-6 space-y-3">
                   {["Acesso a uma seleção de arquivos STL", "Download digital instantâneo"].map((f) => (
                     <li key={f} className="flex items-center gap-3">
@@ -315,8 +315,8 @@ function SalesPage() {
                 </ul>
                 <div className="mb-6 text-center">
                   <div className="flex items-center justify-center gap-1">
-                    <span className="text-2xl font-bold">R$</span>
-                    <span className="text-5xl font-black text-primary">17,90</span>
+                    <span className="text-xl font-bold">R$</span>
+                    <span className="text-4xl font-black text-primary">17,90</span>
                   </div>
                   <p className="mt-1 text-sm text-muted-foreground">pagamento único · acesso vitalício</p>
                 </div>
