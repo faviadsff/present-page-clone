@@ -117,9 +117,9 @@ const PREMIUM_BONUSES: ReadonlyArray<string> = [
   "Bônus 4: Pack de Cenários e Dioramas"
 ];
 
-const CHECKOUT_PREMIUM = "https://pay.wiapy.com/6aab373fcf13c78c72e9d8be";
-const CHECKOUT_BASIC = "https://pay.wiapy.com/j2yps-zAcjjD";
-const CHECKOUT_DOWNSELL = "https://pay.wiapy.com/J_0dotXazN7r";
+const CHECKOUT_PREMIUM = "https://pay.wiapy.com/Ey_3zhXcvuRm";
+const CHECKOUT_BASIC = "https://pay.wiapy.com/Lmot7yzK4XXe";
+const CHECKOUT_DOWNSELL = "https://pay.wiapy.com/ubjw8IZYMUK6";
 
 /**
  * VSL hospedado no Vimeo (formato vertical) com HUD oculta e
