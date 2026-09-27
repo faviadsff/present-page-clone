@@ -143,7 +143,7 @@ function ObrigadoPage() {
             </ul>
 
             <a
-              href="https://pay.wiapy.com/W2CMNStng9eO"
+              href="https://pay.wiapy.com/EYw4kSXLywvY"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-buy inline-flex w-full items-center justify-center text-foreground sm:w-auto animate-fade-in"
