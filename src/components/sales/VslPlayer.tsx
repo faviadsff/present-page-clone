@@ -28,16 +28,13 @@ export function VslPlayer() {
             aria-label="Reproduzir vídeo"
             className="group absolute inset-0 flex items-center justify-center"
           >
-            {!thumbFailed && (
-              <img
-                src={THUMBNAIL}
-                alt="Capa do vídeo STL do Mago"
-                fetchPriority="high"
-                decoding="async"
-                onError={() => setThumbFailed(true)}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            )}
+            <img
+              src={THUMBNAIL}
+              alt="Capa do vídeo STL do Mago"
+              fetchPriority="high"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
             <span className="absolute inset-0 bg-black/30" aria-hidden="true" />
             <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_0_40px_hsl(43_90%_52%_/_0.6)] transition-transform group-hover:scale-105">
               <Play className="ml-1 h-9 w-9 fill-current" />
