@@ -176,7 +176,7 @@ function SalesPage() {
           <div className="absolute right-1/4 top-1/4 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
           <div className="relative z-10 mx-auto w-full max-w-6xl px-4">
             <div className="mb-8 flex flex-col items-center text-center">
-              <h1 className="mb-6 max-w-4xl text-[1.7rem] font-black leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
+              <h1 className="mb-6 max-w-4xl text-[2.2rem] font-black leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
                 Pare de pagar R$ 60 por miniatura: <span className="text-gradient">+2.000 STLs de RPG</span> prontos pra imprimir hoje
               </h1>
               <CtaButton />
