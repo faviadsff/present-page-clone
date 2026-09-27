@@ -15,11 +15,11 @@ import { TestimonialCards, type Testimonial } from "@/components/sales/Testimoni
 import { VslPlayer } from "@/components/sales/VslPlayer";
 import { scrollToPricing } from "@/lib/checkout-utm";
 
-import imgViloes from "@/assets/viloes-e-chefes.jpg.asset.json";
-import imgMonstros from "@/assets/monstros-e-feras.jpg.asset.json";
-import imgHerois from "@/assets/herois-e-racas.jpg.asset.json";
 import imgNPCs from "@/assets/npcs.jpg.asset.json";
-import imgCenarios from "@/assets/cenarios.jpg.asset.json";
+import imgMuitoMais from "@/assets/muito-mais.jpg.asset.json";
+import depoWa1 from "@/assets/depoimento-wa-1.jpg.asset.json";
+import depoWa2 from "@/assets/depoimento-wa-2.jpg.asset.json";
+import depoWa3 from "@/assets/depoimento-wa-3.jpg.asset.json";
 import imgMuitoMais from "@/assets/muito-mais.jpg.asset.json";
 import g01 from "@/assets/stl-g01.webp.asset.json";
 import g02 from "@/assets/stl-g02.webp.asset.json";
