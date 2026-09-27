@@ -456,29 +456,30 @@ interface CompareCardProps {
 function CompareCard({ tone, title, items, result }: CompareCardProps) {
   const bad = tone === "bad";
   const color = bad ? "text-destructive" : "text-green-500";
-  // Vermelho fixo via inline style: utilitários de borda/fundo podem não aplicar no celular
-  const red = "hsl(0 84% 60%)";
+  // Cores fixas via inline style: utilitários de borda/fundo podem não aplicar no celular
+  const accent = bad ? "hsl(0 84% 60%)" : "hsl(142 76% 45%)";
+  const bgCard = bad ? "hsl(0 50% 12%)" : "hsl(142 55% 10%)";
   return (
     <div
-      className={`card-dark p-5 md:p-6 ${bad ? "" : "border-green-500/30"}`}
-      style={bad ? { borderWidth: 2, borderColor: red, background: "hsl(0 50% 12%)" } : undefined}
+      className="card-dark p-5 md:p-6"
+      style={{ borderWidth: 2, borderColor: accent, background: bgCard }}
     >
       <h3 className={`mb-5 text-center text-lg font-black md:text-xl ${color}`}>{title}</h3>
       <ul className="space-y-3">
         {items.map((text) => (
           <li
             key={text}
-            className={`flex items-center gap-3 rounded-lg p-3 ${bad ? "" : "border bg-background/40 border-green-500/10"}`}
-            style={bad ? { border: `1px solid ${red}`, background: "hsl(0 84% 60% / 0.10)" } : undefined}
+            className="flex items-center gap-3 rounded-lg p-3"
+            style={{ border: `1px solid ${accent}`, background: `${accent} / 0.10`.replace(" /", "00 /").slice(0, 0) || `color-mix(in srgb, ${accent} 10%, transparent)` }}
           >
             <span
-              className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full ${bad ? "" : "bg-green-500/20"}`}
-              style={bad ? { background: red } : undefined}
+              className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full"
+              style={{ background: accent }}
             >
               {bad ? (
                 <X className="h-5 w-5 text-white" strokeWidth={3} />
               ) : (
-                <Check className={`h-5 w-5 text-green-500`} strokeWidth={3} />
+                <Check className="h-5 w-5 text-white" strokeWidth={3} />
               )}
             </span>
             <span className="text-sm font-semibold text-foreground md:text-base">{text}</span>
@@ -486,8 +487,8 @@ function CompareCard({ tone, title, items, result }: CompareCardProps) {
         ))}
       </ul>
       <div
-        className={`mt-4 rounded-lg border p-3 text-center ${bad ? "" : "border-green-500/20 bg-green-500/10"}`}
-        style={bad ? { border: `1px solid ${red}`, background: "hsl(0 84% 60% / 0.18)" } : undefined}
+        className="mt-4 rounded-lg border p-3 text-center"
+        style={{ border: `1px solid ${accent}`, background: `color-mix(in srgb, ${accent} 18%, transparent)` }}
       >
         <span className={`text-sm font-bold ${color}`}>{result}</span>
       </div>
