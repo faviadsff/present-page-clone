@@ -36,8 +36,9 @@ export function MobileStickyCta() {
       aria-hidden={!visible}
       className={cn(
         "fixed inset-x-0 bottom-0 z-40 border-t border-primary/30 bg-card/95 px-4 py-3 backdrop-blur transition-transform duration-300 md:hidden",
-        visible ? "translate-y-0" : "pointer-events-none translate-y-full",
+        !visible && "pointer-events-none",
       )}
+      style={{ transform: visible ? "translateY(0)" : "translateY(110%)" }}
     >
       <div className="flex items-center justify-between gap-3">
         <p className="min-w-0 text-sm font-bold leading-tight text-foreground">

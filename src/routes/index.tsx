@@ -38,13 +38,13 @@ const GALLERY: ReadonlyArray<GalleryItem> = [
   { name: "Paladino Anão", category: "Heróis e Raças", image: imgHerois.url },
   { name: "Taverneiro", category: "NPCs", image: imgNPCs.url },
   { name: "Torre em Ruínas", category: "Cenários", image: imgCenarios.url },
-  { name: "Senhor Demônio", category: "Vilões e Chefes", image: imgMuitoMais.url },
+  { name: "Baú do Tesouro", category: "Cenários", image: imgMuitoMais.url },
   { name: "Beholder", category: "Monstros e Feras", image: imgMonstros.url },
   { name: "Elfa Arqueira", category: "Heróis e Raças", image: imgHerois.url },
   { name: "Mercador Viajante", category: "NPCs", image: imgNPCs.url },
   { name: "Ponte de Pedra", category: "Cenários", image: imgCenarios.url },
   { name: "Cavaleiro Sombrio", category: "Vilões e Chefes", image: imgViloes.url },
-  { name: "Owlbear", category: "Monstros e Feras", image: imgMuitoMais.url },
+  { name: "Owlbear", category: "Monstros e Feras", image: imgMonstros.url },
 ];
 
 /** PLACEHOLDERS de depoimentos: troque por depoimentos e fotos reais. */
