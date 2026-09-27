@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export interface GalleryItem {
   name: string;
@@ -8,10 +9,11 @@ export interface GalleryItem {
   image?: string;
 }
 
-/** Grade 2 colunas (mobile) / 4 (desktop) com lightbox em tela cheia. */
+/** Duas fileiras em loop contínuo, com lightbox para as fotos originais. */
 export function MiniatureGallery({ items }: { items: ReadonlyArray<GalleryItem> }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const open = openIndex !== null ? items[openIndex] : undefined;
+  const rows = [items.slice(0, 6), items.slice(6, 12)];
 
   useEffect(() => {
     if (openIndex === null) return;
@@ -22,58 +24,68 @@ export function MiniatureGallery({ items }: { items: ReadonlyArray<GalleryItem> 
 
   return (
     <>
-      <ul className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-        {items.map((item, i) => (
-          <li key={`${item.name}-${i}`}>
-            <button
-              type="button"
-              onClick={() => setOpenIndex(i)}
-              aria-label={`Ampliar foto: ${item.name}`}
-              className="block w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-xl"
-            >
-              <div className="aspect-square overflow-hidden rounded-xl border border-border bg-secondary">
-                {item.image ? (
-                  <img
-                    src={item.image}
-                    alt={`${item.name} — ${item.category}`}
-                    loading="lazy"
-                    decoding="async"
-                    width={400}
-                    height={400}
-                    className="h-full w-full object-cover"
-                  />
-                ) : (
-                  <div className="flex h-full items-center justify-center text-xs text-muted-foreground">Foto em breve</div>
-                )}
-              </div>
-              <p className="mt-2 truncate text-sm font-bold text-foreground">{item.name}</p>
-              <p className="truncate text-xs text-primary">{item.category}</p>
-            </button>
-          </li>
+      <div className="miniature-gallery" aria-label="Miniaturas disponíveis">
+        {rows.map((row, rowIndex) => (
+          <div className="miniature-gallery-row" key={rowIndex}>
+            <div className={`miniature-gallery-track ${rowIndex === 1 ? "miniature-gallery-track-reverse" : ""}`}>
+              {[false, true].map((duplicate) => (
+                <ul className="miniature-gallery-group" key={duplicate ? "copy" : "original"} aria-hidden={duplicate ? "true" : undefined}>
+                  {row.map((item, index) => (
+                    <li className="miniature-gallery-card" key={item.name}>
+                      <Button
+                        variant="ghost"
+                        type="button"
+                        tabIndex={duplicate ? -1 : undefined}
+                        onClick={() => setOpenIndex(rowIndex * 6 + index)}
+                        aria-label={`Ampliar foto: ${item.name}`}
+                        className="relative block h-full w-full overflow-hidden rounded-lg border border-border bg-secondary p-0 text-left focus-visible:ring-2 focus-visible:ring-ring"
+                      >
+                        {item.image ? (
+                          <img
+                            src={item.image}
+                            alt={duplicate ? "" : `${item.name} — ${item.category}`}
+                            loading="lazy"
+                            decoding="async"
+                            width={400}
+                            height={400}
+                            className="h-full w-full object-cover"
+                          />
+                        ) : (
+                          <span className="flex h-full items-center justify-center text-xs text-muted-foreground">Foto em breve</span>
+                        )}
+                        <span className="miniature-gallery-caption" aria-hidden={duplicate ? "true" : undefined}>{item.name}</span>
+                      </Button>
+                    </li>
+                  ))}
+                </ul>
+              ))}
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
 
       {open && (
         <div
           role="dialog"
           aria-modal="true"
           aria-label={open.name}
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-background/95 p-4"
           onClick={() => setOpenIndex(null)}
         >
-          <button
+          <Button
+            variant="ghost"
             type="button"
             aria-label="Fechar"
             onClick={() => setOpenIndex(null)}
-            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
+            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-foreground/10 text-foreground"
           >
             <X className="h-5 w-5" />
-          </button>
+          </Button>
           <figure className="max-h-full max-w-2xl" onClick={(e) => e.stopPropagation()}>
             {open.image && (
               <img src={open.image} alt={open.name} className="max-h-[80vh] w-full rounded-xl object-contain" />
             )}
-            <figcaption className="mt-3 text-center text-white">
+            <figcaption className="mt-3 text-center text-foreground">
               <span className="font-bold">{open.name}</span> · <span className="text-primary">{open.category}</span>
             </figcaption>
           </figure>

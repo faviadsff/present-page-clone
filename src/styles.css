@@ -143,6 +143,92 @@
   }
 }
 
+/* Two seamless six-item strips. One step is exactly one group plus its gap. */
+.miniature-gallery {
+  --gallery-tile: 140px;
+  --gallery-gap: 12px;
+  --gallery-step: calc(6 * (var(--gallery-tile) + var(--gallery-gap)));
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  display: grid;
+  gap: var(--gallery-gap);
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.miniature-gallery-row {
+  overflow: hidden;
+}
+
+.miniature-gallery-track,
+.miniature-gallery-group {
+  display: flex;
+  gap: var(--gallery-gap);
+  width: max-content;
+}
+
+.miniature-gallery-track {
+  will-change: transform;
+  animation: gallery-left 35s linear infinite;
+}
+
+.miniature-gallery-track-reverse {
+  animation-name: gallery-right;
+}
+
+.miniature-gallery-row:is(:hover, :active, :focus-within) .miniature-gallery-track {
+  animation-play-state: paused;
+}
+
+.miniature-gallery-card {
+  width: var(--gallery-tile);
+  height: var(--gallery-tile);
+  flex: none;
+}
+
+.miniature-gallery-caption {
+  position: absolute;
+  inset: auto 0 0;
+  overflow: hidden;
+  padding: 24px 8px 8px;
+  background: linear-gradient(transparent, hsl(var(--background) / .95));
+  color: hsl(var(--foreground));
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes gallery-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-1 * var(--gallery-step))); }
+}
+
+@keyframes gallery-right {
+  from { transform: translateX(calc(-1 * var(--gallery-step))); }
+  to { transform: translateX(0); }
+}
+
+@media (min-width: 768px) {
+  .miniature-gallery { --gallery-tile: 200px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .miniature-gallery { mask-image: none; }
+  .miniature-gallery-row {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+  .miniature-gallery-track { animation: none; transform: none; will-change: auto; }
+  .miniature-gallery-track-reverse { transform: none; }
+  .miniature-gallery-card { scroll-snap-align: start; }
+  .miniature-gallery-group[aria-hidden="true"] { display: none; }
+}
+
 .members-mobile-header {
   display: grid;
 }
