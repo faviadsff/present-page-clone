@@ -196,13 +196,13 @@ function SalesPage() {
         </section>
 
         {/* GALERIA */}
-        <section className="bg-section-2 px-0 py-4 md:py-16">
+        <section className="bg-section-2 px-0 py-0 md:py-16">
           <div className="container-narrow">
             <h2 className="mb-3 px-4 text-center text-2xl font-black md:mb-10 md:text-4xl">
               Veja algumas das miniaturas <span className="text-gradient">que você vai receber</span>
             </h2>
             <MiniatureGallery items={GALLERY} />
-            <div className="mt-4 flex justify-center px-4 md:mt-10">
+            <div className="mt-2 flex justify-center px-4 md:mt-10">
               <CtaButton />
             </div>
           </div>
