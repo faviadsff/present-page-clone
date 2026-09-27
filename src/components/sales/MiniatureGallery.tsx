@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -12,8 +12,29 @@ export interface GalleryItem {
 /** Duas fileiras em loop contínuo, com lightbox para as fotos originais. */
 export function MiniatureGallery({ items }: { items: ReadonlyArray<GalleryItem> }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [galleryNearby, setGalleryNearby] = useState(false);
+  const galleryRef = useRef<HTMLDivElement>(null);
   const open = openIndex !== null ? items[openIndex] : undefined;
   const rows = [items.slice(0, 6), items.slice(6, 12)];
+
+  // Native lazy loading does not reliably discover images moving inside a transformed track.
+  // Keep them lazy until the gallery approaches, then preload both complete loops.
+  useEffect(() => {
+    const gallery = galleryRef.current;
+    if (!gallery) return;
+    if (!('IntersectionObserver' in window)) {
+      setGalleryNearby(true);
+      return;
+    }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry?.isIntersecting) {
+        setGalleryNearby(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: "600px 0px" });
+    observer.observe(gallery);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (openIndex === null) return;
@@ -24,7 +45,7 @@ export function MiniatureGallery({ items }: { items: ReadonlyArray<GalleryItem> 
 
   return (
     <>
-      <div className="miniature-gallery" aria-label="Miniaturas disponíveis">
+      <div ref={galleryRef} className="miniature-gallery" aria-label="Miniaturas disponíveis">
         {rows.map((row, rowIndex) => (
           <div className="miniature-gallery-row" key={rowIndex}>
             <div className={`miniature-gallery-track ${rowIndex === 1 ? "miniature-gallery-track-reverse" : ""}`}>
@@ -44,7 +65,7 @@ export function MiniatureGallery({ items }: { items: ReadonlyArray<GalleryItem> 
                           <img
                             src={item.image}
                             alt={duplicate ? "" : `${item.name} — ${item.category}`}
-                            loading="lazy"
+                            loading={galleryNearby ? "eager" : "lazy"}
                             decoding="async"
                             width={400}
                             height={400}
