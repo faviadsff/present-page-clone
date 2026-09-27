@@ -196,7 +196,7 @@ function SalesPage() {
         </section>
 
         {/* GALERIA */}
-        <section className="bg-section-2 px-0 py-0 md:py-16">
+        <section className="overflow-hidden bg-section-2 px-0 py-0 md:py-16">
           <div className="container-narrow">
             <h2 className="mb-3 px-4 text-center text-2xl font-black md:mb-10 md:text-4xl">
               Veja algumas das miniaturas <span className="text-gradient">que você vai receber</span>
