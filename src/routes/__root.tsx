@@ -153,6 +153,7 @@ function RootComponent() {
       <Outlet />
       <Toaster
         position="bottom-right"
+        mobileOffset={{ bottom: 88 }}
         toastOptions={{
           className: "!bg-transparent !border-none !shadow-none p-0",
         }}
