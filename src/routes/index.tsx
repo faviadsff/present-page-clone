@@ -273,7 +273,7 @@ function SalesPage() {
             <div className="mx-auto grid max-w-4xl items-center gap-6 md:grid-cols-2">
               <div className="card-dark relative overflow-hidden border-2 !border-primary shadow-[0_0_40px_hsl(43_90%_52%_/_0.25)]">
                 <div className="absolute right-0 top-0 rounded-bl-lg bg-primary px-4 py-1 text-xs font-bold text-primary-foreground">MAIS VENDIDO</div>
-                <img src={thumbPremium.url} alt="Pacote Premium do STL do Mago" loading="lazy" decoding="async" width={480} height={480} className="mx-auto mb-3 aspect-square w-full max-w-[180px] rounded-xl object-cover md:max-w-[220px]" />
+                <img src={thumbPremium.url} alt="Pacote Premium do STL do Mago" loading="lazy" decoding="async" width={480} height={480} style={{ border: "3px solid hsl(43 90% 52%)" }} className="mx-auto mb-3 aspect-square w-full max-w-[180px] rounded-xl object-cover md:max-w-[220px]" />
                 <h3 className="mb-3 text-center text-xl font-bold">Pacote Premium</h3>
                 <ul className="mb-6 space-y-2">
                   {PREMIUM_FEATURES.map((f) => (
@@ -303,7 +303,7 @@ function SalesPage() {
               </div>
 
               <div className="card-dark">
-                <img src={thumbBasico.url} alt="Pacote Básico do STL do Mago" loading="lazy" decoding="async" width={480} height={480} className="mx-auto mb-3 aspect-square w-full max-w-[180px] rounded-xl object-cover md:max-w-[220px]" />
+                <img src={thumbBasico.url} alt="Pacote Básico do STL do Mago" loading="lazy" decoding="async" width={480} height={480} style={{ border: "3px solid hsl(28 55% 45%)" }} className="mx-auto mb-3 aspect-square w-full max-w-[180px] rounded-xl object-cover md:max-w-[220px]" />
                 <h3 className="mb-3 text-center text-xl font-bold">Pacote Básico</h3>
                 <ul className="mb-6 space-y-3">
                   {["Acesso a uma seleção de arquivos STL", "Download digital instantâneo"].map((f) => (
@@ -409,7 +409,7 @@ function SalesPage() {
               <p className="mt-1 text-sm text-muted-foreground">A equipe STL dos Magos preparou uma oferta exclusiva para você.</p>
             </div>
             <div className="space-y-4">
-              <img src={thumbPremiumDesconto.url} alt="Pacote Premium com desconto especial" loading="lazy" decoding="async" width={1000} height={1000} className="mx-auto mb-4 aspect-square w-full max-w-56 rounded-xl object-cover" />
+              <img src={thumbPremiumDesconto.url} alt="Pacote Premium com desconto especial" loading="lazy" decoding="async" width={1000} height={1000} style={{ border: "3px solid hsl(43 90% 52%)" }} className="mx-auto mb-4 aspect-square w-full max-w-56 rounded-xl object-cover" />
               <p className="text-center text-foreground">
                 Ganhe <span className="font-bold text-green-500">R$ 10,00 de desconto</span> no Pacote Premium e leve todos os bônus inclusos!
               </p>
