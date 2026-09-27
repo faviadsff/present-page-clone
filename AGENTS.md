@@ -8,3 +8,4 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+- Checkout links (pay.wiapy.com) must render through `CheckoutLink` so URL tracking params (utm_*, fbclid, src, sck) are forwarded on click — why: Utmify rewrites hrefs with empty/organic values.

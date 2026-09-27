@@ -215,3 +215,10 @@ a[href*="lovable.dev"][target="_blank"][class*="badge"],
     transform: translateX(120%) scale(0.9);
   }
 }
+
+/* No celular, as notificações ficam acima da barra fixa de compra */
+@media (max-width: 767px) {
+  [data-sonner-toaster][data-y-position="bottom"] {
+    bottom: 88px !important;
+  }
+}
