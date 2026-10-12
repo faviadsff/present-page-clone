@@ -41,9 +41,9 @@ import thumbBasico from "@/assets/pacote-basico.jpg.asset.json";
 import thumbPremiumDesconto from "@/assets/pacote-premium-desconto.jpg.asset.json";
 
 /* Links de checkout — NÃO alterar. */
-const CHECKOUT_PREMIUM = "https://pay.wiapy.com/Ey_3zhXcvuRm";
-const CHECKOUT_BASIC = "https://pay.wiapy.com/Lmot7yzK4XXe";
-const CHECKOUT_DOWNSELL = "https://pay.wiapy.com/ubjw8IZYMUK6";
+const CHECKOUT_PREMIUM = "https://app.zuptos.com.br/checkout/b1e3c452877e5847";
+const CHECKOUT_BASIC = "https://app.zuptos.com.br/checkout/d0f0dfeeb7ef5d9a";
+const CHECKOUT_DOWNSELL = "https://app.zuptos.com.br/checkout/4e690cc25d7edf86";
 
 /**
  * PLACEHOLDERS da galeria: troque `image` pelas fotos reais das miniaturas impressas.
