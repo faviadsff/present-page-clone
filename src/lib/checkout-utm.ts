@@ -1,5 +1,5 @@
 /**
- * Repasse de parâmetros de rastreamento para os links de checkout (pay.wiapy.com).
+ * Repasse de parâmetros de rastreamento para os links de checkout (app.zuptos.com.br).
  *
  * Regras:
  * - Lê os parâmetros da URL atual da página.
