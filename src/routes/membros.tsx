@@ -1,11 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Castle,
   Download,
   Gift,
   Home,
   LifeBuoy,
+  Lock,
   LogOut,
+  Package,
   Swords,
   Users,
   Crown,
@@ -14,16 +16,11 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import heroisImg from "@/assets/herois-e-racas.jpg.asset.json";
-import monstrosImg from "@/assets/monstros-e-feras.jpg.asset.json";
-import viloesImg from "@/assets/viloes-e-chefes.jpg.asset.json";
-import npcsImg from "@/assets/npcs.jpg.asset.json";
-import cenariosImg from "@/assets/cenarios.jpg.asset.json";
-import muitoMaisImg from "@/assets/muito-mais.jpg.asset.json";
-import bonusImg from "@/assets/bonus-especial.jpg.asset.json";
+import { listStlFiles, type StlFileItem } from "@/lib/stl-files.functions";
 import campanhaImg from "@/assets/mago-campanha.jpg.asset.json";
 
 export const Route = createFileRoute("/membros")({
+  loader: () => listStlFiles(),
   head: () => ({
     meta: [
       { title: "Área de Membros | STL do Mago" },
@@ -45,85 +42,6 @@ export const Route = createFileRoute("/membros")({
   component: MembrosPage,
 });
 
-// Troque pelos links reais de download (Google Drive, Dropbox, etc.)
-const DOWNLOAD_LINK = "#";
-
-interface Pack {
-  name: string;
-  description: string;
-  image: string;
-  category: string;
-}
-
-const PACKS: Pack[] = [
-  {
-    name: "Heróis e Raças",
-    description: "Guerreiros, magos, elfos, anões e todas as raças jogáveis",
-    image: heroisImg.url,
-    category: "Miniaturas",
-  },
-  {
-    name: "Monstros e Feras",
-    description: "Dragões, goblins, bestas e criaturas selvagens",
-    image: monstrosImg.url,
-    category: "Miniaturas",
-  },
-  {
-    name: "Vilões e Chefes",
-    description: "Chefes épicos em escala grande, alto nível de detalhe",
-    image: viloesImg.url,
-    category: "Miniaturas",
-  },
-  {
-    name: "NPCs",
-    description: "Comerciantes, taverneiros, guardas e personagens de apoio",
-    image: npcsImg.url,
-    category: "Miniaturas",
-  },
-  {
-    name: "Cenários e Dioramas",
-    description: "Arenas, castelos, masmorras e terrenos de batalha",
-    image: cenariosImg.url,
-    category: "Cenários",
-  },
-  {
-    name: "Muito Mais",
-    description: "Props, itens mágicos, marcadores e peças extras",
-    image: muitoMaisImg.url,
-    category: "Extras",
-  },
-  {
-    name: "Bônus 1: Miniaturas e Figuras",
-    description: "Pack extra de miniaturas e figuras exclusivas",
-    image: bonusImg.url,
-    category: "Bônus",
-  },
-  {
-    name: "Bônus 2: Monstros e Criaturas",
-    description: "Pack extra de monstros e criaturas",
-    image: monstrosImg.url,
-    category: "Bônus",
-  },
-  {
-    name: "Bônus 3: Designs Decorativos",
-    description: "Peças decorativas para pintura e exposição",
-    image: muitoMaisImg.url,
-    category: "Bônus",
-  },
-  {
-    name: "Bônus 4: Cenários e Dioramas",
-    description: "Pack extra de cenários e dioramas completos",
-    image: cenariosImg.url,
-    category: "Bônus",
-  },
-  {
-    name: "Campanha Completa",
-    description: "Vilões épicos + cenário de batalha + módulo de aventura",
-    image: campanhaImg.url,
-    category: "Extras",
-  },
-];
-
 const TABS = ["Home", "Miniaturas", "Cenários", "Bônus", "Extras"] as const;
 
 const CATEGORY_ICONS: Record<string, React.ReactNode> = {
@@ -135,12 +53,13 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
 };
 
 function MembrosPage() {
+  const packs = Route.useLoaderData();
   const [activeTab, setActiveTab] = useState<(typeof TABS)[number]>("Home");
 
   const visiblePacks =
     activeTab === "Home"
-      ? PACKS
-      : PACKS.filter((pack) => pack.category === activeTab);
+      ? packs
+      : packs.filter((pack) => pack.category === activeTab);
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-background text-foreground">
@@ -272,46 +191,17 @@ function MembrosPage() {
               {activeTab === "Home" ? "Todos os Packs" : activeTab}
             </h2>
 
-            <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
-              {visiblePacks.map((pack, index) => (
-                <article
-                  key={pack.name}
-                  className="card-dark overflow-hidden !p-0 animate-fade-in"
-                  style={{
-                    animationDelay: `${Math.min(index, 8) * 60}ms`,
-                    animationFillMode: "both",
-                  }}
-                >
-                  <div className="relative aspect-[5/4] overflow-hidden sm:aspect-[4/3]">
-                    <img
-                      src={pack.image}
-                      alt={pack.name}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
-                    />
-                    <span className="absolute left-3 top-3 rounded-full bg-primary/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary-foreground">
-                      {pack.category}
-                    </span>
-                  </div>
-
-                  <div className="p-3 sm:p-4">
-                    <h3 className="text-sm font-black leading-tight sm:text-base">
-                      {pack.name}
-                    </h3>
-                    <p className="mt-1 text-[11px] leading-snug text-muted-foreground sm:text-xs">
-                      {pack.description}
-                    </p>
-
-                    <Button asChild className="btn-buy mt-3 h-12 w-full !rounded-lg !px-3 !py-3 text-sm text-foreground sm:mt-4 sm:!px-4">
-                      <a href={DOWNLOAD_LINK}>
-                        <Download className="h-4 w-4" />
-                        Download
-                      </a>
-                    </Button>
-                  </div>
-                </article>
-              ))}
-            </div>
+            {visiblePacks.length === 0 ? (
+              <p className="rounded-xl border border-dashed border-border/50 p-8 text-center text-sm text-muted-foreground">
+                Nenhum arquivo publicado nesta categoria ainda. Volte em breve!
+              </p>
+            ) : (
+              <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
+                {visiblePacks.map((pack, index) => (
+                  <PackCard key={pack.id} pack={pack} index={index} />
+                ))}
+              </div>
+            )}
           </section>
 
           {/* FOOTER */}
@@ -319,11 +209,67 @@ function MembrosPage() {
             <p className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
               <Users className="h-3.5 w-3.5" />© 2026 STL do Mago. Todos os
               direitos reservados.
+              {/* Cadeado escondido: acesso do administrador */}
+              <Link
+                to="/auth"
+                aria-label="Acesso do administrador"
+                className="text-muted-foreground/30 transition-colors hover:text-muted-foreground"
+              >
+                <Lock className="h-3 w-3" />
+              </Link>
             </p>
           </footer>
         </div>
       </div>
     </main>
+  );
+}
+
+function PackCard({ pack, index }: { pack: StlFileItem; index: number }) {
+  return (
+    <article
+      className="card-dark overflow-hidden !p-0 animate-fade-in"
+      style={{
+        animationDelay: `${Math.min(index, 8) * 60}ms`,
+        animationFillMode: "both",
+      }}
+    >
+      <div className="relative aspect-[5/4] overflow-hidden sm:aspect-[4/3]">
+        {pack.imageUrl ? (
+          <img
+            src={pack.imageUrl}
+            alt={pack.name}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-primary/10 text-primary">
+            <Package className="h-12 w-12" />
+          </div>
+        )}
+        <span className="absolute left-3 top-3 rounded-full bg-primary/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary-foreground">
+          {pack.category}
+        </span>
+      </div>
+
+      <div className="p-3 sm:p-4">
+        <h3 className="text-sm font-black leading-tight sm:text-base">
+          {pack.name}
+        </h3>
+        {pack.description ? (
+          <p className="mt-1 text-[11px] leading-snug text-muted-foreground sm:text-xs">
+            {pack.description}
+          </p>
+        ) : null}
+
+        <Button asChild className="btn-buy mt-3 h-12 w-full !rounded-lg !px-3 !py-3 text-sm text-foreground sm:mt-4 sm:!px-4">
+          <a href={pack.downloadUrl} target="_blank" rel="noopener noreferrer">
+            <Download className="h-4 w-4" />
+            Download
+          </a>
+        </Button>
+      </div>
+    </article>
   );
 }
 
